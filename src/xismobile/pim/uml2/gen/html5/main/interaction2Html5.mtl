@@ -1,7 +1,23 @@
 [comment encoding = UTF-8 /]
 [module interaction2Html5('http://www.eclipse.org/uml2/4.0.0/UML')]
 
+[import xismobile::pim::uml2::gen::html5::common::xisMobileUtils /]
+[import xismobile::pim::uml2::gen::html5::files::screen /]
+[import xismobile::pim::uml2::gen::html5::files::script /]
+[import xismobile::pim::uml2::gen::html5::files::style /]
+[import xismobile::pim::uml2::gen::html5::files::dbHelper /]
+[import xismobile::pim::uml2::gen::html5::services::services /]
 
 [template public interaction2Html5(m : Model)]
 
+[let spaces: OrderedSet(Class) = m.getAllXisInteractionSpaces()]
+	[if (spaces->size() > 0)]
+		[for(c : Class | spaces)]
+			[generateScreen() /]
+			[generateScript() /]
+			[generateDBHelper() /]
+		[/for]
+			[generateStyle() /]
+	[/if]
+[/let]
 [/template]
