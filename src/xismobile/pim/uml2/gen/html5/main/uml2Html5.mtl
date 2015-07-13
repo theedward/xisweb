@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module uml2Html5('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+[import xismobile::pim::uml2::gen::html5::main::domain2Html5 /]
+[import xismobile::pim::uml2::gen::html5::main::navigation2Html5 /]
+[import xismobile::pim::uml2::gen::html5::main::interaction2Html5 /]
+[import xismobile::pim::uml2::gen::html5::main::architectural2Html5 /]
+
+[template public generateElement(m : Model)]
+[comment @main/]
+
+[/template]
