@@ -3,13 +3,17 @@
 
 [import xismobile::pim::uml2::gen::html5::common::utils /]
 [import xismobile::pim::uml2::gen::html5::common::xisMobileUtils /]
+[import xismobile::pim::uml2::gen::html5::files::widgets /]
+[import xismobile::pim::uml2::gen::html5::services::services /]
 
 [template public generateScript(c : Class)]
-
-[file ('src/js' + c.getPackageDirectoryPath() + '/'.concat(c.name.toLower()).concat('.js'), false, 'UTF-8')]
-
-/* For testing purposes */
-
+[file ('src/js/'.concat(c.name.toLower()).concat('.js'), false, 'UTF-8')]
+[let widgets : Sequence(Class) = c.getXisInteractionSpaceWidgets()]
+[for (w : Class | widgets) separator('\n')]
+	[if(widgets->size() > 0)]
+	[w.writeWidgetJS(widgets, w) /]
+	[/if]
+[/for]
+[/let]
 [/file]
-
 [/template]

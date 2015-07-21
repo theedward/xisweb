@@ -9,7 +9,6 @@
 [import xismobile::pim::uml2::gen::html5::services::services /]
 
 [template public interaction2Html5(m : Model)]
-
 [let spaces: OrderedSet(Class) = m.getAllXisInteractionSpaces()]
 	[if (spaces->size() > 0)]
 		[for(c : Class | spaces)]

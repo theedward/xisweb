@@ -1,0 +1,253 @@
+[comment encoding = UTF-8 /]
+[module widgets('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+[import xismobile::pim::uml2::gen::html5::common::xisMobileUtils /]
+[import xismobile::pim::uml2::gen::html5::files::action /]
+[import xismobile::pim::uml2::gen::html5::services::services /]
+
+[template public widgets(c : Class)]
+
+[/template]
+
+[template public writePageTitle(c : Class)]
+[let name : String = 'header' + c.name.toUpperFirst() + 'Title']
+	<h2 id=[name/]>
+[let value : String = c.getXisWidgetValue(c.getXisLabel())]
+	[if (not value.oclIsUndefined())]
+	[value/]
+	[/if]
+[/let]
+	</h2>
+[/let]
+[/template]
+
+[template public writeWidget(widgets : Sequence(Class), c : Class) post (trim())]
+[if (c.isXisLabel())]
+[writeLabel(widgets, c)/]
+[elseif (c.isXisTextBox())]
+[writeTextBox(widgets, c)/]
+[elseif (c.isXisCheckBox())]
+[writeCheckBox(widgets, c)/]
+[elseif (c.isXisButton())]
+[writeButton(widgets, c)/]
+[elseif (c.isXisLink())]
+[writeLink(widgets, c)/]
+[elseif (c.isXisImage())]
+[writeImage(widgets, c)/]
+[elseif (c.isXisDatePicker())]
+[writeDatePicker(widgets, c)/]
+[elseif (c.isXisTimePicker())]
+[writeTimePicker(widgets, c)/]
+[elseif (c.isXisMapView())]
+[writeMap(widgets, c)/]
+[elseif (c.isXisList())]
+[writeListView(c)/]
+[elseif (c.isXisDropdown())]
+[writeDropdown(widgets, c)/]
+[elseif (c.isXisRadioButton())]
+[writeRadioButton(widgets, c)/]
+[elseif (c.isXisForm())]
+[writeForm(widgets, c)/]
+[/if]
+[/template]
+
+[template public writeWidgetJS(widgets : Sequence(Class), c : Class) post (trim())]
+[if (c.isXisDatePicker())]
+[writeDatePickerJquery(widgets, c) /]
+[elseif (c.isXisTimePicker())]
+[writeTimePickerJquery(widgets, c) /]
+[elseif (c.isXisMapView())]
+[writeMapJS(widgets, c) /]
+[/if]
+[/template]
+
+[template private writeLabel(widgets : Sequence(Class), c : Class)]
+[let name : String = 'label' + c.name.toUpperFirst()]
+<span id=[name/]>
+[let value : String = c.getXisWidgetValue(c.getXisLabel())]
+	[if (not value.oclIsUndefined())]
+	[value /]
+	[else]
+	Empty Label
+	[/if]
+[/let]
+</span>
+[/let]
+[/template]
+
+[template private writeTextBox(widgets : Sequence(Class), c : Class)]
+[let name : String = 'textBox' + c.name.toUpperFirst()]
+[if (c.getXisTextBoxLines() > 1)]
+	<textarea rows=[c.getXisTextBoxLines() /]
+	[if (c.xisTextBoxHasHint())]
+		placeholder="[c.getXisTextBoxHint() /]"
+	[/if]
+	>
+[let value : String = c.getXisWidgetValue(c.getXisTextBox())]
+	[if (not value.oclIsUndefined())]
+	[value/]
+	[/if]
+[/let]
+	</textarea>
+[else]
+	<input type="text" name=[name/]>
+[let value : String = c.getXisWidgetValue(c.getXisTextBox())]
+	[if (not value.oclIsUndefined())]
+	[value/]
+	[/if]
+[/let]
+	</input>
+[/if]
+[/let]
+[/template]
+
+[template private writeCheckBox(widgets : Sequence(Class), c : Class)]
+[let name : String = 'checkBox' + c.name.toUpperFirst()]
+	<input type="checkbox" name=[name/]
+	[if (c.hasXisAction())]
+	onClick="[c.getXisAction().name.toLowerFirst()/]"
+	[/if]
+	>
+	[comment Does checkbox need a value? /]
+	</input>
+[/let]
+[/template]
+
+[template private writeButton(widgets : Sequence(Class), c : Class)]
+[let name : String = 'button' + c.name.toUpperFirst()]
+	<a href="editis.html"><input type="submit" id=[name/]
+	[if (c.hasXisAction())]
+	onClick="[c.getXisAction().name.toLowerFirst()/]"
+	[/if]
+[let value : String = c.getXisWidgetValue(c.getXisButton())]
+	[if (not value.oclIsUndefined())]
+	value="[value/]"
+	[/if]
+	>
+[/let]
+	</input>
+	</a>
+[/let]
+
+[/template]
+
+[template private writeLink(widgets : Sequence(Class), c : Class)]
+[let name : String = 'link' + c.name.toUpperFirst()]
+	<a href="[c.getXisLinkURL()/]">[name/]</a>
+[/let]
+[/template]
+
+[template private writeImage(widgets: Sequence(Class), c : Class)]
+[let name : String = 'image' + c.name.toUpperFirst()]
+	<img src="[c.getXisImagePath() /]"/>
+[/let]
+[/template]
+
+[comment This function is worthless without writeDatePickerJQuery/]
+[template private writeDatePicker(widgets: Sequence(Class), c : Class)]
+[let name : String = 'datepicker' + c.name.toUpperFirst()]
+	<p>Date: <input type="text" id="[name/]" onclick="return datePickerOnFocus()"></input> </p>
+[/let]
+[/template]
+
+[comment This function should be called when writting the JS File equivalent to the datepicker .html File/]
+[template private writeDatePickerJquery(widgets: Sequence(Class), c : Class)]
+[let name : String = 'datepicker' + c.name.toUpperFirst()]
+    function datePickerOnFocus() {
+    $("#[name/]").datepicker();
+}
+[/let]
+[/template]
+
+[comment This function is worthless without writeTimePickerJQuery/]
+[template private writeTimePicker(widgets : Sequence(Class), c : Class)]
+[let name : String = 'timePicker' + c.name.toUpperFirst()]
+	[comment TODO/]
+[/let]
+[/template]
+
+[comment This function should be called when writting the JS File equivalent to the timepicker .html File/]
+[template private writeTimePickerJquery(widgets: Sequence(Class), c : Class)]
+[let name : String = 'timepicker' + c.name.toUpperFirst()]
+	[comment TODO/]
+[/let]
+[/template]
+
+[comment This function is worthless without writeTimePickerJS/]
+[template private writeMap(widgets : Sequence(Class), c : Class)]
+[let name : String = 'map' + c.name.toUpperFirst()]
+	<div id="[name/]" style="width:500px;height:380px;"></div>
+[/let]
+[/template]
+
+[comment This function should be called when writting the JS File equivalent to the map .html File/]
+[template private writeMapJS(widgets : Sequence(Class), c : Class)]
+[let name : String = 'map' + c.name.toUpperFirst()]
+	function initialize() {
+  		var mapProp = {
+    	center:new google.maps.LatLng([c.getMapLatitute()/],[c.getMapLongitude()/]),
+    	zoom:[c.getMapZoom()/],
+    	mapTypeId:google.maps.MapTypeId.ROADMAP
+  	};
+  	var map=new google.maps.Map(document.getElementById("[name/]"),mapProp);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+[/let]
+[/template]
+
+[template private writeListView(c : Class)]
+[let name : String = 'list' + c.name.toUpperFirst()]
+<ul data-role="listview" id="[name/]">
+[for (false)]
+[comment TODO: Iterate on all the list elements for a given XisList (maybe passed as argument) and create a li for each/]
+[/for]
+	<li><a href="#">Just a test LI</a></li>
+</ul>
+[/let]
+[/template]
+
+[template private writeDropdown(widgets : Sequence(Class), c : Class)]
+[let name : String = 'dropdown' + c.name.toUpperFirst()]
+<select id="[name/]">
+[for (false)]
+[comment Iterate through the items and populate the menu/]
+[/for]
+	<option value="test">Test Value</option>
+</select>
+[/let]
+[/template]
+
+[template private writeRadioButton(widgets : Sequence(Class), c : Class)]
+[let name : String = 'radioButton' + c.name.toUpperFirst()]
+<input id="[name/]" type="radio" 
+[let value: String = c.getXisWidgetValue(c.getXisRadioButton())]
+	[if (not value.oclIsUndefined())]
+		value="[value/]
+	[/if]
+	></input>
+[/let]
+[/let]
+[/template]
+
+[template private writeForm(widgets : Sequence(Class), c : Class)]
+[let name : String = 'form' + c.name.toUpperFirst()]
+	<div>
+[let w : Sequence(Class) = orderWidgetsByPosition(c.getXisInteractionSpaceWidgets())]
+[for (cl : Class | w)]
+	[writeWidget(w, cl)/]
+[/for]
+[/let]
+	</div>
+[/let]
+[/template]
+
+
+
+
+
+
+
+
+
+
+

@@ -619,7 +619,7 @@
 	not c.getXisTextBox().oclIsUndefined()
 /]
 
-[query public getXisTexBoxLines(c : Class) : Integer =
+[query public getXisTextBoxLines(c : Class) : Integer =
 	c.getValue(c.getXisTextBox(), 'lines')
 /]
 
@@ -627,7 +627,7 @@
 	not c.getValue(c.getXisTextBox(), 'hint').oclIsUndefined()
 /]
 
-[query public getXisTexBoxHint(c : Class) : String =
+[query public getXisTextBoxHint(c : Class) : String =
 	c.getValue(c.getXisTextBox(), 'hint')
 /]
 

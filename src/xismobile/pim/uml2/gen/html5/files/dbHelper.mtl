@@ -6,7 +6,7 @@
 
 [template public generateDBHelper(c : Class)]
 
-[file ('src/db' + c.getPackageDirectoryPath() + '/'.concat(c.name.toLower()).concat('DB.js'), false, 'UTF-8')]
+[file ('src/db/'.concat(c.name.toLower()).concat('DB.js'), false, 'UTF-8')]
 
 /* For testing purposes */
 

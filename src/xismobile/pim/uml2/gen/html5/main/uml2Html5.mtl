@@ -6,7 +6,7 @@
 [import xismobile::pim::uml2::gen::html5::main::interaction2Html5 /]
 [import xismobile::pim::uml2::gen::html5::main::architectural2Html5 /]
 
-[template public generateElement(m : Model)]
+[template public uml2Html5(m : Model)]
 [comment @main/]
-
+[m.interaction2Html5()/]
 [/template]
