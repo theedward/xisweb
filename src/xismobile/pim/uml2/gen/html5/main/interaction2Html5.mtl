@@ -14,9 +14,10 @@
 		[for(c : Class | spaces)]
 			[generateScreen() /]
 			[generateScript() /]
-			[generateDBHelper() /]
+			
 		[/for]
-			[generateStyle() /]
 	[/if]
 [/let]
+[generateDBHelper(m) /]
+[generateStyle() /]
 [/template]

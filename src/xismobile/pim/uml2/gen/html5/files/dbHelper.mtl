@@ -4,12 +4,42 @@
 [import xismobile::pim::uml2::gen::html5::common::utils /]
 [import xismobile::pim::uml2::gen::html5::common::xisMobileUtils /]
 
-[template public generateDBHelper(c : Class)]
+[template public generateDBHelper(m : Model)]
 
-[file ('src/db/'.concat(c.name.toLower()).concat('DB.js'), false, 'UTF-8')]
+[file ('src/db/'.concat(m.name.toLower()).concat('DB.js'), false, 'UTF-8')]
+var db = openDatabase('[name/]', '2.0', '[name.toUpperFirst()/] DB', 2 * 1024 * 1024);	
 
-/* For testing purposes */
+[for (c : Class | m.getAllXisEntities())]
+	[createTable(c)/]
+	[insertEntityIntoDB(c)/]
+	[comment][selectAllFromTable(c)/][/comment]
+[/for]
 
 [/file]
 
+[/template]
+
+[template public createTable(c : Class)]	
+db.transaction(function (tx) {
+	tx.executeSql('CREATE TABLE IF NOT EXISTS [name.toUpper()/] ([c.getXisEntityAttributes().getXisEntityAttributeName()->sep(', ')/])');
+});
+[/template]
+
+[template public insertEntityIntoDB(c : Class)]
+db.transaction(function (tx) {
+	tx.executeSql('INSERT INTO [name.toUpper()/] ([c.getXisEntityAttributes().getXisEntityAttributeName()->sep(', ')/]) VALUES ("[c.getXisEntityAttributes().getXisEntityAttributeValue()->sep(', ')/]")');
+});
+[/template]
+
+[template public dropTable(c : Class)]
+db.transaction(function (tx) {
+  tx.executeSql('DROP TABLE [name.toUpper()/]');
+});
+[/template]
+
+[comment This is not working properly /]
+[template public selectAllFromTable(c : Class)]
+db.transaction(function (tx) {
+	tx.executeSql('SELECT * FROM [name.toUpper()/]);
+});
 [/template]

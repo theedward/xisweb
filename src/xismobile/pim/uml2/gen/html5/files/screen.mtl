@@ -26,6 +26,9 @@
 		<script src="js/[c.name.toLower().concat('.js')/]">
 			[comment Here go the JS functions /]
 		</script>
+		<script src="db/[c.getModel().name.toLower().concat('DB.js')/]">
+			[comment Here go the DB functions /]
+		</script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -62,7 +65,8 @@
 	</div>
 	[/if]
 [/for]
-		</div
+	</div>
+	<div id="status" name="status">Status Message</div>
 	</body>
 </html>
 
