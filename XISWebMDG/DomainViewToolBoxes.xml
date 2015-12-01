@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="AD61B3F2-0" name="Domain View Diagram" version="1.0" notes="Domain View Diagram"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Domain_Elements" alias="Domain Elements" notes="Elements for Domain View Diagrams" cx="304" cy="85" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisEntity" type="" description="" unit="" values="" default="XisEntity"/>
+					<Tag name="XIS-Web::XisEntityAttribute" type="" description="" unit="" values="" default="XisEntityAttribute"/>
+					<Tag name="XIS-Web::XisEnumeration" type="" description="" unit="" values="" default="XisEnumeration"/>
+					<Tag name="XIS-Web::XisEnumerationValue" type="" description="" unit="" values="" default="XisEnumerationValue"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Domain_Relationships" alias="Domain Relationships" notes="Relationships for Domain View Diagrams" cx="286" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisEntityAssociation" type="" description="" unit="" values="" default="XisEntityAssociation"/>
+					<Tag name="XIS-Web::XisEntityInheritance" type="" description="" unit="" values="" default="XisEntityInheritance"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

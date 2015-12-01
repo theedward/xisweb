@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="43C3DBE8-1" name="XIS-Web Views Diagram" version="1.0" notes="XIS-Web Views Diagram"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="XIS-Web_Views_Packages" alias="XIS-Web Views Packages" notes="Packages for XIS-Web Views Diagrams" cx="355" cy="111" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::Architectural View" type="" description="" unit="" values="" default="Architectural View"/>
+					<Tag name="XIS-Web::BusinessEntities View" type="" description="" unit="" values="" default="BusinessEntities View"/>
+					<Tag name="XIS-Web::Domain View" type="" description="" unit="" values="" default="Domain View"/>
+					<Tag name="XIS-Web::InteractionSpace View" type="" description="" unit="" values="" default="InteractionSpace View"/>
+					<Tag name="XIS-Web::NavigationSpace View" type="" description="" unit="" values="" default="NavigationSpace View"/>
+					<Tag name="XIS-Web::UseCases View" type="" description="" unit="" values="" default="UseCases View"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

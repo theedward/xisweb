@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="BBFA0C6C-2" name="BusinessEntities View Diagram" version="1.0" notes="BusinessEntities View Diagram"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="BusinessEntity_Elements" alias="BusinessEntity Elements" notes="Elements for BusinessEntities View Diagrams" cx="260" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisBusinessEntity" type="" description="" unit="" values="" default="XisBusinessEntity"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="BusinessEntity_Relationships" alias="BusinessEntity_Relationships" notes="Relationships for BusinessEntities View Diagrams" cx="340" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisBE-EntityDetailAssociation" type="" description="" unit="" values="" default="XisBE-EntityDetailAssociation"/>
+					<Tag name="XIS-Web::XisBE-EntityMasterAssociation" type="" description="" unit="" values="" default="XisBE-EntityMasterAssociation"/>
+					<Tag name="XIS-Web::XisBE-EntityReferenceAssociation" type="" description="" unit="" values="" default="XisBE-EntityReferenceAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

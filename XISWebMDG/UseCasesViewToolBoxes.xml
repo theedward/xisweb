@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="A01732AA-8" name="UseCases View Diagram" version="1.0" notes="UseCases View Diagram"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="UseCase_Elements" alias="UseCase Elements" notes="Elements for UseCases View Diagrams" cx="276" cy="76" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisActor" type="" description="" unit="" values="" default="XisActor"/>
+					<Tag name="XIS-Web::XisEntityUseCase" type="" description="" unit="" values="" default="XisEntityUseCase"/>
+					<Tag name="XIS-Web::XisServiceUseCase" type="" description="" unit="" values="" default="XisServiceUseCase"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="UseCase_Relationships" alias="UseCase Relationships" notes="Relationships for UseCases View Diagrams" cx="341" cy="101" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="UML::UCExtend" type="" description="" unit="" values="" default="Extend"/>
+					<Tag name="XIS-Web::XisActor-UCAssociation" type="" description="" unit="" values="" default="XisActor-UCAssociation"/>
+					<Tag name="XIS-Web::XisEntityUC-BEAssociation" type="" description="" unit="" values="" default="XisEntityUC-BEAssociation"/>
+					<Tag name="XIS-Web::XisServiceUC-BEAssociation" type="" description="" unit="" values="" default="XisServiceUC-BEAssociation"/>
+					<Tag name="XIS-Web::XisServiceUC-ProviderAssociation" type="" description="" unit="" values="" default="XisServiceUC-ProviderAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

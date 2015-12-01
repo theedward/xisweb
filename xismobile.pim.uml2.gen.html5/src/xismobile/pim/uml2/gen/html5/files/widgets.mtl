@@ -241,6 +241,11 @@
 [/let]
 [/template]
 
+[template private writeAudio(widgets : Sequence(Class), c : Class)]
+[let name : String = 'audio' + c.name.toUpperFirst()]
+[/let]
+[/template]
+
 
 
 

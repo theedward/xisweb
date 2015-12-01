@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="3B86CD54-F" name="NavigationSpace View Diagram" version="1.0" notes="NavigationSpace View Diagram"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="NavigationSpace_View_Relationships" alias="NavigationSpace View Relationships" notes="Relationships for NavigationSpace View Diagrams" cx="324" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisInteractionSpaceAssociation" type="" description="" unit="" values="" default="XisInteractionSpaceAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

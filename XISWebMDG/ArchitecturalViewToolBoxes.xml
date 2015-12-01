@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="AD6AF231-0" name="Architectural View Diagram" version="1.0" notes="Architectural View Diagram"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Architectural_View_Elements" alias="Architectural View Elements" notes="Elements for Architectural View Diagrams" cx="286" cy="126" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisClientWebApp" type="" description="" unit="" values="" default="XisClientWebApp"/>
+					<Tag name="XIS-Web::XisInternalProvider" type="" description="" unit="" values="" default="XisInternalProvider"/>
+					<Tag name="XIS-Web::XisInternalService" type="" description="" unit="" values="" default="XisInternalService"/>
+					<Tag name="XIS-Web::XisRemoteService" type="" description="" unit="" values="" default="XisRemoteService"/>
+					<Tag name="XIS-Web::XisServer" type="" description="" unit="" values="" default="XisServer"/>
+					<Tag name="XIS-Web::XisServiceMethod" type="" description="" unit="" values="" default="XisServiceMethod"/>
+					<Tag name="XIS-Web::XisWebApp" type="" description="" unit="" values="" default="XisWebApp"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Architectural_View_Relationships" alias="Architectural View Relationships" notes="Relationships for Architectural View Diagrams" cx="321" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisProvider-ServiceRealization" type="" description="" unit="" values="" default="XisProvider-ServiceRealization"/>
+					<Tag name="XIS-Web::XisWebApp-ServiceAssociation" type="" description="" unit="" values="" default="XisWebApp-ServiceAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>
