@@ -13,17 +13,19 @@
 					<Tag name="XIS-Web::XisInteractionSpace" type="" description="" unit="" values="" default="XisInteractionSpace"/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="Simple_Widget_Elements" alias="Simple Widget Elements" notes="Simple Widget Elements for InteractionSpace View Diagrams" cx="292" cy="270" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="Simple_Widget_Elements" alias="Simple Widget Elements" notes="Simple Widget Elements for InteractionSpace View Diagrams" cx="292" cy="309" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="ToolboxPage"/>
 				</AppliesTo>
 				<TaggedValues>
+					<Tag name="XIS-Web::XisArticle" type="" description="" unit="" values="" default="XisArticle"/>
 					<Tag name="XIS-Web::XisAudio" type="" description="" unit="" values="" default="XisAudio"/>
 					<Tag name="XIS-Web::XisButton" type="" description="" unit="" values="" default="XisButton"/>
 					<Tag name="XIS-Web::XisCheckBox" type="" description="" unit="" values="" default="XisCheckBox"/>
 					<Tag name="XIS-Web::XisDatePicker" type="" description="" unit="" values="" default="XisDatePicker"/>
 					<Tag name="XIS-Web::XisDropdown" type="" description="" unit="" values="" default="XisDropdown"/>
 					<Tag name="XIS-Web::XisEmbed" type="" description="" unit="" values="" default="XisEmbed"/>
+					<Tag name="XIS-Web::XisHeading" type="" description="" unit="" values="" default="XisHeading"/>
 					<Tag name="XIS-Web::XisIFrame" type="" description="" unit="" values="" default="XisIFrame"/>
 					<Tag name="XIS-Web::XisImage" type="" description="" unit="" values="" default="XisImage"/>
 					<Tag name="XIS-Web::XisInput" type="" description="" unit="" values="" default="XisInput"/>
@@ -32,6 +34,7 @@
 					<Tag name="XIS-Web::XisMapMarker" type="" description="" unit="" values="" default="XisMapMarker"/>
 					<Tag name="XIS-Web::XisMapView" type="" description="" unit="" values="" default="XisMapView"/>
 					<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
+					<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
 					<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
 					<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
 					<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
