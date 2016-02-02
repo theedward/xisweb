@@ -1,0 +1,242 @@
+[comment encoding = UTF-8 /]
+[module jsUtils('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+[import xismobile::pim::uml2::gen::html5::common::utils /]
+[import xismobile::pim::uml2::gen::html5::common::xisWebUtils /]
+
+[template public generateJSUtils(m : Model)]
+
+[file ('src/js/'.concat(m.name.toLower()).concat('.js'), false, 'UTF-8')]
+
+[comment This file will have 2 areas: General DB JS Instrumentation and Specific site JS functions /]
+
+[comment This code is for testing purposes, this class is not intended to do ocl logic /]
+[createDatabase(m) /]
+
+[for (c : Class | m.getAllXisEntities())]
+	[createTable(c)/]
+	[insertEntityIntoDB(c)/]
+	[comment][selectAllFromTable(c)/][/comment]
+[/for]
+[comment Other files should call methods inside this class /]
+[/file]
+
+[/template]
+
+[template public createDatabase(m : Model)]
+[name.toLower()/].db = {}
+
+//Holding database instance inside a global variable
+[name.toLower()/].open = function(){
+	[name.toLower()/].db = openDatabase("[name/]", "2.0", "[name.toUpperFirst()/] DB", 5 * 1024 * 1024);	
+}
+[/template]
+
+[template public createTable(c : Class)]
+//Will create a table if it doesn't exist already
+[name.toLower()/].createTable = function(){
+	var database = [name.toLower()/].db;	
+	database.transaction(function (tx) {
+		tx.executeSql("CREATE TABLE IF NOT EXISTS [name.toUpper()/] ([c.getXisEntityAttributes().getXisEntityAttributeName()->sep(', ')/]),[ '[' /][']'/]");
+	});
+}
+[/template]
+
+[template public insertEntityIntoDB(c : Class)]
+//Inserts or Updates (if exists) the Todo in the db. Passing values as parameters
+[comment Must see if this is correct, the arguments /]
+[name.toLower()/].addItem = function([c.getXisEntityAttributes().getXisEntityAttributeName()->sep(', ')/]){
+	var database = [name.toLower()/].db;
+	var id = $.QueryString[ '[' /]"id"[']'/];
+	
+	if(id > 0){
+		database.transaction(function(tx){
+			tx.executeSql("UPDATE [name.toLower()/] SET [c.getXisEntityAttributes().getXisEntityAttributeName()->sep('= ?, ')/] = ? WHERE id = ?",
+			['['/][c.getXisEntityAttributes().getXisEntityAttributeName()->sep(', ')/][']'/],
+			[name.toLower()/].onSuccess,
+			[name.toLower()/].onError);
+		});
+	}else
+	{
+		database.transaction(function(tx){
+			tx.executeSql("INSERT INTO [name.toLower()/]([c.getXisEntityAttributes().getXisEntityAttributeName()->sep('= ?, ')/]) VALUES (
+			[for (p : Property | c.getXisEntityAttributes()) separator (',')]
+				?
+			[/for]
+			)",
+			['['/][c.getXisEntityAttributes().getXisEntityAttributeName()->sep(', ')/][']'/],
+			[name.toLower()/].onSuccess,
+			[name.toLower()/].onError);
+		});
+	}
+	
+}
+[/template]
+
+[template public dropTable(c : Class)]
+[name.toLower()/].dropTable = function() {
+	if(confirm('Confirm Deletion?')){	
+		var database = [name.toLower()/].db;
+		database.transaction(function (tx) {
+		  tx.executeSql("DROP TABLE [name.toUpper()/]", [ '[' /][']'/]);
+		});
+		
+		location.reload();
+	}else{
+		//Do nothing!
+	}
+}
+[/template]
+
+
+[template public deleteItem(c : Class)]
+//Delete Entry from database given the id
+[name.toLower()/].deleteItem = function(id) {
+  	var database = [name.toLower()/].db;
+  	database.transaction(function(tx){
+   	 tx.executeSql("DELETE FROM [name.toUpper()/] WHERE ID=?", [ '[' /]id[']'/],
+   	 [name.toLower()/].onSuccess,
+   	 [name.toLower()/].onError);
+	});
+}
+[/template]
+
+[template public onError(c : Class)]
+//Function to be called when database queries fail
+[name.toLower()/].onError = function(tx, e) {
+  alert("There has been an error: " + e.message);
+}
+[/template]
+
+[template public onSuccess(c : Class)]
+//Function to be called when database queries succeeed.
+[name.toLower()/].onSuccess = function(tx, r) {
+  // empty
+}
+[/template]
+
+[comment Test /]
+[template public selectAllFromTable(c : Class)]
+[name.toLower()/].getAllItems = function(renderFunc) {
+	var database = [name.toLower()/].db;
+	database.transaction(function (tx) {
+		tx.executeSql("SELECT * FROM [name.toLower()/]", [ '[' /][']'/], renderFunc, [name.toLower()/].onError);
+	});
+}
+[/template]
+
+[comment End of Generic DB JS Instrumentation /]
+
+[comment Site specific JS - Every desired functionallity must be here /]
+
+[comment] Assumptions:
+	There is an Ordered List (ol) in the page that contains the Master Items
+	There is a Delete All Button (should make some ocl verifications)
+[/comment]
+
+[template public loadListItems(c : Class)]
+//Iterate through the set and call the function that knows how to print the Item on each element
+	function loadListItems(tx, rs) {
+	  var items = document.getElementById("ol_item_list");
+	  for (var i=0; i < rs.rows.length; i++) {
+	    renderItem(rs.rows.item(i), todoItems);
+	  }
+	}
+	
+[comment TODO: Define a pattern to apply here that must always be the same /]
+//Find the ol, each Item is an <li> surrounded by an <a> with a <span> with the id inside
+	function renderItem(row, ol) {
+		var a = document.createElement('a');
+		var li = document.createElement('li');
+		var span = document.createElement('span');
+		
+		ol.appendChild(a);
+		a.appendChild(li);
+		li.appendChild(span);
+		
+		a.setAttribute('href', "[name.toLower()/].html?name=" + row.name + "&content=" + row.content + "&id=" + row.id);
+		a.setAttribute('class', 'list-group-item')
+		li.setAttribute('class','list-group-item');
+		span.setAttribute('class', 'badge')
+		span.innerHTML = span.innerHTML + row.id;
+        li.innerHTML=li.innerHTML + row.name + ": " + row.content;
+	}
+[/template]
+
+
+[comment These functions should be a little more abstract, passing the item as argument /]
+[template public hideDeleteAllButton(c : Class)]
+//If there are no Items hide the DeleteAll button
+	function hideDeleteAllButton(tx, rs) {
+		if(rs.rows.length == 0){
+			$('#btn_delete_all').hide();
+		}
+	}
+[/template]	
+	
+[template public DeleteAllOnClick(c : Class)]
+//OnClick listener for DeleteAll button
+	$('#btn_delete_all').click(function(){
+		[name.toLower()/].dropTable();
+	});
+[/template]
+
+[template public CreateOnClick(c : Class)] 	
+//Create Button OnClick Listener
+	$('#btn_create_todo').click(function(){
+		var item_name = $('#name').val();
+		var item_content = $('#content').val();
+		
+		if(item.length == '' || item.length == '')
+		{
+			
+		}
+		else
+		{
+			[name.toLower()/].addItem(item_name,item_content);
+		}
+	});
+[/template]
+
+[template public DeleteOnClick(c : Class)]	
+//Delete Button OnClick Listener
+	$('#btn_delete_todo').click(function(){
+		var id = $.QueryString['['/]"id"[']'/];
+		
+		if(id > 0){
+			[name.toLower()/].deleteItem(id);
+		}
+	});
+[/template]
+
+[template public readQueryString(c : Class)]
+//Function that reads the query string. Should be used like: var param = $.QueryString['['/]"param"[']'/]; returns the param value;
+    $.QueryString = (function(query) {
+        if (query == "") return {};
+        var parameter = {};
+        for (var i = 0; i < query.length; ++i)
+        {
+            var value=query['['/]i[']'/].split('=');
+            if (value.length != 2) continue;
+            parameter['['/]value['['/]0[']'/][']'/] = decodeURIComponent(value['['/]1[']'/].replace(/\+/g, " "));
+        }
+        return parameter;
+    })(window.location.search.substr(1).split('&'));
+[/template]
+
+[template public renderPage(c : Class)]
+//When page is in edit mode, fill contents, else hide Delete button
+	todolist.fillContent = function() {
+		var id = $.QueryString['['/]"id"[']'/];
+		var name = $.QueryString['['/]"name"[']'/];
+		var content = $.QueryString['['/]"content"[']'/];
+		
+		if(id > 0 && name !== 'undefined' && content !== 'undefined'){
+			$('#name').val(name);
+			$('#content').val(content);
+		}else
+		{
+			$('#btn_delete_todo').hide();
+		}
+	}
+[/template]
