@@ -6,7 +6,7 @@
 
 [template public generateJSUtils(m : Model)]
 
-[file ('src/js/'.concat(m.name.toLower()).concat('.js'), false, 'UTF-8')]
+[file ('src/js/jsUtils.js', false, 'UTF-8')]
 
 [comment This file will have 2 areas: General DB JS Instrumentation and Specific site JS functions /]
 

@@ -17,27 +17,29 @@
 		<title>[c.name.toUpperFirst() /]</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>	
 		<script src="js/[c.name.toLower().concat('.js')/]">
-			[comment Here go the JS functions /]
+			[comment Here go the Page Specific JS functions /]
 		</script>
-		<script src="db/[c.getModel().name.toLower().concat('DB.js')/]">
-			[comment Here go the DB functions /]
+		<script src="js/jsUtils.js">
+			[comment Here go the DB + JS functions /]
 		</script>
 	</head>
-	<body class="homepage">
-		<div id="page-wrapper">
+	<body>
+		<div id="page-wrapper" class="container">
 
 			<!-- Header -->
 				<div id="header-wrapper">
-					<div id="header" class="container">
+					<div id="header">
 
 						<!-- Logo -->
-							<h1 id="logo"><a href="index.html">[c.name.toUpperFirst() /]</a></h1>
+							<h1 id="logo"><a href="#">[c.name.toUpperFirst() /]</a></h1>
 							<p>HTML5.</p>
 
 						<!-- Nav -->

@@ -1,0 +1,29 @@
+context XisEntity {
+	
+	constraint nameDummy {
+		check : self.name == 'Dummy'
+		message : 'Name of the class ' + self.name + 'must be Dummy.'
+	}
+	
+}
+
+context Class {
+
+	 constraint NameStartsWithCapital {
+	 
+		check : self.name.firstToUpperCase() == self.name
+		
+		message : 'The name of the class ' + self.name +
+			' should start with a capital letter.'
+
+		fix {
+		
+			title : 'Rename to Class ' + self.name + 'to ' +
+				self.name.firstToUpperCase()
+			 
+			do {
+				self.name := self.name.firstToUpperCase();
+			}
+		}
+	}
+}

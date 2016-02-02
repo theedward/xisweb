@@ -115,18 +115,17 @@
 
 [template private writeButton(widgets : Sequence(Class), c : Class)]
 [let name : String = 'button' + c.name.toUpperFirst()]
-	<a href="editis.html"><input type="submit" id=[name/]
+	<button type="button" class="btn btn-default" href="#" id=[name/]
 	[if (c.hasXisAction())]
 	onClick="[c.getXisAction().name.toLowerFirst()/]"
 	[/if]
+	>
 [let value : String = c.getXisWidgetValue(c.getXisButton())]
 	[if (not value.oclIsUndefined())]
-	value="[value/]"
+		[value/]
 	[/if]
-	>
 [/let]
-	</input>
-	</a>
+	</button>
 [/let]
 
 [/template]
