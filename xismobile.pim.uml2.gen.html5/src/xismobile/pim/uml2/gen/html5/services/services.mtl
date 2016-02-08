@@ -102,6 +102,10 @@
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisInteractionSpaceWidgets(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
+[query public getXisFormWidgets(c : Class) : Sequence(Class) =
+	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisFormWidgets(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+
 [query public orderWidgetsByPosition(widgets : Sequence(Class)) : Sequence(Class) =
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'orderWidgetsByPosition(java.util.List)', Sequence{widgets})
 /]

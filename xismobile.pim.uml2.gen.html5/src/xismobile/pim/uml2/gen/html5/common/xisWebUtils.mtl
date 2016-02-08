@@ -651,6 +651,10 @@
 	not c.getXisButton().oclIsUndefined()
 /]
 
+[query public getXisButtonURL(c : Class) : String = 
+	c.getValue(c.getXisButton(), 'url')
+/]
+
 [query public getXisLink(c : Class) : Stereotype =
 	c.getAppliedStereotype('XIS-Mobile::XisLink')
 /]
@@ -811,6 +815,31 @@
 
 [query public isXisDropdown(c : Class) : Boolean =
 	not c.getXisDropdown().oclIsUndefined()
+/]
+
+[query public getXisDropdownItems(c : Class) : OrderedSet(Class) = 
+	c.ownedElement->selectByType(Class)->select(
+		i : Class | i.isXisDropdownItem())
+/]
+
+[query public getXisDropdownHeader(c : Class) : String = 
+	c.getValue(c.getXisDropdown(), 'header')
+/]
+
+[query public getXisDropdownItem(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisDropdownItem')
+/]
+
+[query public isXisDropdownItem(c : Class) : Boolean =
+	not c.getXisDropdownItem().oclIsUndefined()
+/]
+
+[query public getXisDropdownItemLabel(c : Class) : String = 
+	c.getValue(c.getXisDropdownItem(), 'label')
+/]
+
+[query public getXisDropdownItemURL(c : Class) : String = 
+	c.getValue(c.getXisDropdownItem(), 'url')
 /]
 
 [query public getXisRadioButton(c : Class) : Stereotype =

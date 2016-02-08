@@ -11,7 +11,7 @@
 [let widgets : Sequence(Class) = c.getXisInteractionSpaceWidgets()]
 [for (w : Class | widgets) separator('\n')]
 	[if(widgets->size() > 0)]
-	[w.writeWidgetJS(widgets, w) /]
+	[w.writeWidgetJS(w) /]
 	[/if]
 [/for]
 [/let]

@@ -966,6 +966,37 @@ public class Services {
 		return widgets;
 	}
 	
+	
+	//This is no bueno -> Find XisForm -> Get Labels and Inputs
+	public List<Class> getXisFormWidgets(Class c) {
+		List<Class> widgets = new ArrayList<Class>();
+				
+		for (Element el : c.getOwnedElements()) {
+			if (el instanceof Class) {
+				Class w = (Class) el;
+				
+				if (ServiceUtils.isXisVisibilityBoundary(w)) {
+					for (Element j : w.allOwnedElements()) {
+						if (j instanceof Class) {
+							Class child = (Class) j;
+							
+							if (!ServiceUtils.isXisMenu(child)
+							&& !ServiceUtils.isXisMenuItem(child)
+							&& !ServiceUtils.isXisListGroup(child)
+							&& !ServiceUtils.isXisListItem(child)) {
+								widgets.add(child);
+							}
+						}
+					}
+				} else if (!ServiceUtils.isXisMenu(w) && !ServiceUtils.isXisMenuItem(w)
+						&& !ServiceUtils.isXisListGroup(w) && !ServiceUtils.isXisListItem(w)) {
+					widgets.add(w);
+				}
+			}
+		}
+		return widgets;
+	}
+	
 	/**
 	 * Orders the widgets of a screen according to their position.
 	 * 
