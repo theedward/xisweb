@@ -189,6 +189,14 @@ public final class ServiceUtils {
 		return getXisForm(c) != null;
 	}
 	
+	public static Stereotype getXisInput(Class c) {
+		return c.getAppliedStereotype("XIS-Web::XisInput");
+	}
+	
+	public static boolean isXisInput(Class c) {
+		return getXisInput(c) != null;
+	}
+	
 	public static Stereotype getXisMenu(Class c) {
 		return c.getAppliedStereotype("XIS-Mobile::XisMenu");
 	}

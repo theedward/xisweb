@@ -967,7 +967,7 @@ public class Services {
 	}
 	
 	
-	//This is no bueno -> Find XisForm -> Get Labels and Inputs
+	//TO BE TESTED
 	public List<Class> getXisFormWidgets(Class c) {
 		List<Class> widgets = new ArrayList<Class>();
 				
@@ -975,26 +975,52 @@ public class Services {
 			if (el instanceof Class) {
 				Class w = (Class) el;
 				
-				if (ServiceUtils.isXisVisibilityBoundary(w)) {
-					for (Element j : w.allOwnedElements()) {
-						if (j instanceof Class) {
-							Class child = (Class) j;
+				if (ServiceUtils.isXisForm(w)) {
+					for(Element elem : w.getOwnedElements()) {
+						if(elem instanceof Class) {
+							Class child = (Class) elem;
 							
-							if (!ServiceUtils.isXisMenu(child)
-							&& !ServiceUtils.isXisMenuItem(child)
-							&& !ServiceUtils.isXisListGroup(child)
-							&& !ServiceUtils.isXisListItem(child)) {
+							if(ServiceUtils.isXisLabel(child)
+							|| ServiceUtils.isXisInput(child)) {
 								widgets.add(child);
 							}
 						}
 					}
-				} else if (!ServiceUtils.isXisMenu(w) && !ServiceUtils.isXisMenuItem(w)
-						&& !ServiceUtils.isXisListGroup(w) && !ServiceUtils.isXisListItem(w)) {
+				}
+			}
+		}
+		return widgets;
+	}
+	
+	//TO BE TESTED
+	public List<Class> getXisImagesFromImageSlider(Class c) {
+		List<Class> widgets = new ArrayList<Class>();
+		
+		for (Element el : c.getOwnedElements()) {
+			if (el instanceof Class) {
+				Class w = (Class) el;
+				
+				if (ServiceUtils.isXisImage(w)) {
 					widgets.add(w);
 				}
 			}
 		}
 		return widgets;
+	}
+	
+	//TO BE TESTED
+	public Class getFirstXisImageFromImageSlider(Class c) {	
+		for (Element el : c.getOwnedElements()) {
+			if (el instanceof Class) {
+				Class w = (Class) el;
+				
+				if (ServiceUtils.isXisImage(w)) {
+					return w;
+				}
+			}
+		}
+		//This is wrong
+		return c;
 	}
 	
 	/**

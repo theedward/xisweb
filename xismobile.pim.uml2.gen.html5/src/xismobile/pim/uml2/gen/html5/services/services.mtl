@@ -106,6 +106,14 @@
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisFormWidgets(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
+[query public getXisImagesFromImageSlider(c : Class) : Sequence(Class) =
+	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisImagesFromImageSlider(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+
+[query public getFirstXisImageFromImageSlider(c : Class) : Sequence(Class) =
+	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getFirstXisImageFromImageSlider(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+
 [query public orderWidgetsByPosition(widgets : Sequence(Class)) : Sequence(Class) =
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'orderWidgetsByPosition(java.util.List)', Sequence{widgets})
 /]

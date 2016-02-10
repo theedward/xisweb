@@ -667,6 +667,21 @@
 	c.getValue(c.getXisLink(), 'url')
 /]
 
+[comment Should be using these function in the future, instead of the specialized ones /]
+[query public isXisMultimedia(c : Class, type : String) : Boolean =
+	let stereotype : String = 'XIS-Web::'.concat(type) in
+	not c.getAppliedStereotype(stereotype).oclIsUndefined()
+/]
+
+[query public getXisMultimedia(c : Class, type : String) : Stereotype =
+	let stereotype : String = 'XIS-Web::'.concat(type) in
+	c.getAppliedStereotype(stereotype)
+/]
+
+[query public getXisImagePath(c : Class, type : String) : String = 
+	c.getValue(c.getXisMultimedia(type), 'path')
+/]
+
 [query public isXisImage(c : Class) : Boolean =
 	not c.getAppliedStereotype('XIS-Mobile::XisImage').oclIsUndefined()
 /]
@@ -677,6 +692,54 @@
 
 [query public getXisImagePath(c : Class) : String = 
 	c.getValue(c.getXisImage(), 'path')
+/]
+
+[query public isXisAudio(c : Class) : Boolean =
+	not c.getAppliedStereotype('XIS-Web::XisAudio').oclIsUndefined()
+/]
+
+[query public getXisAudio(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisAudio')
+/]
+
+[query public getXisAudioPath(c : Class) : String = 
+	c.getValue(c.getXisAudio(), 'path')
+/]
+
+[query public isXisVideo(c : Class) : Boolean =
+	not c.getAppliedStereotype('XIS-Web::XisVideo').oclIsUndefined()
+/]
+
+[query public getXisVideo(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisVideo')
+/]
+
+[query public getXisVideoPath(c : Class) : String = 
+	c.getValue(c.getXisVideo(), 'path')
+/]
+
+[query public isXisEmbed(c : Class) : Boolean =
+	not c.getAppliedStereotype('XIS-Web::XisEmbed').oclIsUndefined()
+/]
+
+[query public getXisEmbed(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisEmbed')
+/]
+
+[query public getXisEmbedPath(c : Class) : String = 
+	c.getValue(c.getXisEmbed(), 'path')
+/]
+
+[query public isXisIFrame(c : Class) : Boolean =
+	not c.getAppliedStereotype('XIS-Web::XisIFrame').oclIsUndefined()
+/]
+
+[query public getXisIFrame(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisIFrame')
+/]
+
+[query public getXisIFramePath(c : Class) : String = 
+	c.getValue(c.getXisIFrame(), 'path')
 /]
 
 [query public getXisDatePicker(c : Class) : Stereotype =
@@ -848,6 +911,18 @@
 
 [query public isXisRadioButton(c : Class) : Boolean =
 	not c.getXisRadioButton().oclIsUndefined()
+/]
+
+[query public getXisInputCustom(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisInputCustom')
+/]
+
+[query public isXisInputCustom(c : Class) : Boolean =
+	not c.getXisInputCustom().oclIsUndefined()
+/]
+
+[query public getXisInputCustomType(c : Class) : String = 
+	c.getValue(c.getXisInputCustom(), 'type')
 /]
 
 [query public getXisSimpleWidgetEntityAttributeName(c : Class, s : Stereotype) : String =
