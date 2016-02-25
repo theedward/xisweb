@@ -110,7 +110,7 @@
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisImagesFromImageSlider(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
-[query public getFirstXisImageFromImageSlider(c : Class) : Sequence(Class) =
+[query public getFirstXisImageFromImageSlider(c : Class) : Class =
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getFirstXisImageFromImageSlider(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 

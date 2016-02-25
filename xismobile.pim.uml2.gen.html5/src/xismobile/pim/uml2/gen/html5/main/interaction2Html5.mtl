@@ -11,7 +11,7 @@
 [let spaces: OrderedSet(Class) = m.getAllXisInteractionSpaces()]
 	[if (spaces->size() > 0)]
 		[for(c : Class | spaces)]
-			[generateScreen() /]
+			[generateScreen(c) /]
 			[generateScript() /]			
 		[/for]
 	[/if]

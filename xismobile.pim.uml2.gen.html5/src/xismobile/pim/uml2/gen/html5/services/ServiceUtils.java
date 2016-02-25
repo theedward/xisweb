@@ -23,11 +23,11 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisInteractionSpace(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisInteractionSpace");
+		return c.getAppliedStereotype("XIS-Web::XisInteractionSpace");
 	}
 	
 	public static boolean xisInteractionSpaceHasTitle(Class c) {
-		Stereotype space = c.getAppliedStereotype("XIS-Mobile::XisInteractionSpace");
+		Stereotype space = c.getAppliedStereotype("XIS-Web::XisInteractionSpace");
 		if (space != null) {
 			String title = (String) c.getValue(space, "title");
 			return title != null && !title.isEmpty();
@@ -55,7 +55,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisAction(Operation o) {
-		return o.getAppliedStereotype("XIS-Mobile::XisAction");
+		return o.getAppliedStereotype("XIS-Web::XisAction");
 	}
 	
 	public static boolean isCrudAction(Operation o) {
@@ -72,7 +72,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisLabel(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisLabel");
+		return c.getAppliedStereotype("XIS-Web::XisLabel");
 	}
 	
 	public static boolean isXisTextBox(Class c) {
@@ -80,7 +80,7 @@ public final class ServiceUtils {
 	}
 
 	public static Stereotype getXisTextBox(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisTextBox");
+		return c.getAppliedStereotype("XIS-Web::XisTextBox");
 	}
 	
 	public static boolean isXisCheckBox(Class c) {
@@ -88,7 +88,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisCheckBox(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisCheckBox");
+		return c.getAppliedStereotype("XIS-Web::XisCheckBox");
 	}
 	
 	public static boolean isXisImage(Class c) {
@@ -96,7 +96,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisImage(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisImage");
+		return c.getAppliedStereotype("XIS-Web::XisImage");
 	}
 	
 	public static boolean isXisButton(Class c) {
@@ -104,7 +104,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisButton(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisButton");
+		return c.getAppliedStereotype("XIS-Web::XisButton");
 	}
 	
 	public static boolean isXisLink(Class c) {
@@ -112,7 +112,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisLink(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisLink");
+		return c.getAppliedStereotype("XIS-Web::XisLink");
 	}
 	
 	public static boolean isXisDatePicker(Class c) {
@@ -120,7 +120,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisDatePicker(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisDatePicker");
+		return c.getAppliedStereotype("XIS-Web::XisDatePicker");
 	}
 	
 	public static boolean isXisTimePicker(Class c) {
@@ -128,7 +128,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisTimePicker(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisTimePicker");
+		return c.getAppliedStereotype("XIS-Web::XisTimePicker");
 	}
 	
 	public static boolean isXisWebView(Class c) {
@@ -136,15 +136,15 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisWebView(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisWebView");
+		return c.getAppliedStereotype("XIS-Web::XisWebView");
 	}
 	
 	public static boolean isXisMapView(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisMapView") != null;
+		return c.getAppliedStereotype("XIS-Web::XisMapView") != null;
 	}
 	
 	public static Stereotype getXisMapView(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisMapView");
+		return c.getAppliedStereotype("XIS-Web::XisMapView");
 	}
 	
 	public static boolean isXisDropdown(Class c) {
@@ -152,7 +152,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisDropdown(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisDropdown");
+		return c.getAppliedStereotype("XIS-Web::XisDropdown");
 	}
 	
 	public static boolean isXisRadioButton(Class c) {
@@ -160,7 +160,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisRadioButton(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisRadioButton");
+		return c.getAppliedStereotype("XIS-Web::XisRadioButton");
 	}
 	
 	public static String getXisSimpleWidgetEntityAttributeName(Class c, Stereotype s) {
@@ -173,7 +173,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisCompositeWidget(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisCompositeWidget");
+		return c.getAppliedStereotype("XIS-Web::XisCompositeWidget");
 	}
 	
 	public static String getXisCompositeWidgetEntityName(Class c, Stereotype s) {
@@ -182,7 +182,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisForm(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisForm");
+		return c.getAppliedStereotype("XIS-Web::XisForm");
 	}
 	
 	public static boolean isXisForm(Class c) {
@@ -198,7 +198,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisMenu(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisMenu");
+		return c.getAppliedStereotype("XIS-Web::XisMenu");
 	}
 	
 	public static boolean isXisMenu(Class c) {
@@ -206,7 +206,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisMenuItem(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisMenuItem");
+		return c.getAppliedStereotype("XIS-Web::XisMenuItem");
 	}
 	
 	public static boolean isXisMenuItem(Class c) {
@@ -214,7 +214,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getOptionsMenu(Class c) {
-		Stereotype menu = c.getAppliedStereotype("XIS-Mobile::XisMenu");
+		Stereotype menu = c.getAppliedStereotype("XIS-Web::XisMenu");
 		if (menu != null) {
 			EnumerationLiteral type = (EnumerationLiteral) c.getValue(menu, "type");
 			if (type.getName().equals("OptionsMenu")) {
@@ -228,7 +228,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getContextMenu(Class c) {
-		Stereotype menu = c.getAppliedStereotype("XIS-Mobile::XisMenu");
+		Stereotype menu = c.getAppliedStereotype("XIS-Web::XisMenu");
 		if (menu != null) {
 			EnumerationLiteral type = (EnumerationLiteral) c.getValue(menu, "type");
 			if (type.getName().equals("ContextMenu")) {
@@ -242,7 +242,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisIS_MenuAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisIS-MenuAssociation");
+		return a.getAppliedStereotype("XIS-Web::XisIS-MenuAssociation");
 	}
 	
 	public static boolean isXisIS_MenuAssociation(Association a) {
@@ -332,7 +332,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisList(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisList");
+		return c.getAppliedStereotype("XIS-Web::XisList");
 	}
 	
 	public static boolean isXisList(Class c) {
@@ -340,7 +340,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisListGroup(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisListGroup");
+		return c.getAppliedStereotype("XIS-Web::XisListGroup");
 	}
 	
 	public static boolean isXisListGroup(Class c) {
@@ -348,7 +348,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisListItem(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisListItem");
+		return c.getAppliedStereotype("XIS-Web::XisListItem");
 	}
 	
 	public static boolean isXisListItem(Class c) {
@@ -360,7 +360,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisVisibilityBoundary(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisVisibilityBoundary");
+		return c.getAppliedStereotype("XIS-Web::XisVisibilityBoundary");
 	}
 	
 	public static boolean isXisDialog(Class c) {
@@ -368,7 +368,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisDialog(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisDialog");
+		return c.getAppliedStereotype("XIS-Web::XisDialog");
 	}
 	
 	public static boolean isXisIS_DialogAssociation(Association a) {
@@ -376,7 +376,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisIS_DialogAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisIS-DialogAssociation");
+		return a.getAppliedStereotype("XIS-Web::XisIS-DialogAssociation");
 	}
 	
 	public static Stereotype getWidgetStereotype(Class c) {
@@ -474,43 +474,43 @@ public final class ServiceUtils {
 	}
 	
 	public static boolean isXisEntity(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisEntity") != null;
+		return c.getAppliedStereotype("XIS-Web::XisEntity") != null;
 	}
 	
 	public static boolean isXisEntityAttribute(Property p) {
-		return p.getAppliedStereotype("XIS-Mobile::XisEntityAttribute") != null;
+		return p.getAppliedStereotype("XIS-Web::XisEntityAttribute") != null;
 	}
 	
 	public static boolean isXisIS_BEAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisIS-BEAssociation") != null;
+		return a.getAppliedStereotype("XIS-Web::XisIS-BEAssociation") != null;
 	}
 	
 	public static boolean isXisInteractionSpaceAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisInteractionSpaceAssociation") != null;
+		return a.getAppliedStereotype("XIS-Web::XisInteractionSpaceAssociation") != null;
 	}
 
 	public static boolean isXisBusinessEntity(Type t) {
-		return t.getAppliedStereotype("XIS-Mobile::XisBusinessEntity") != null;
+		return t.getAppliedStereotype("XIS-Web::XisBusinessEntity") != null;
 	}
 
 	public static boolean isXisBE_EntityMasterAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisBE-EntityMasterAssociation") != null;
+		return a.getAppliedStereotype("XIS-Web::XisBE-EntityMasterAssociation") != null;
 	}
 
 	public static boolean isXisBE_EntityDetailAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisBE-EntityDetailAssociation") != null;
+		return a.getAppliedStereotype("XIS-Web::XisBE-EntityDetailAssociation") != null;
 	}
 
 	public static boolean isXisBE_EntityReferenceAssociation(Association a) {
-		return a.getAppliedStereotype("XIS-Mobile::XisBE-EntityReferenceAssociation") != null;
+		return a.getAppliedStereotype("XIS-Web::XisBE-EntityReferenceAssociation") != null;
 	}
 	
 	public static boolean isXisEntityInheritance(Generalization g) {
-		return g.getAppliedStereotype("XIS-Mobile::XisEntityInheritance") != null;
+		return g.getAppliedStereotype("XIS-Web::XisEntityInheritance") != null;
 	}
 	
 	public static Stereotype getXisRemoteService(Interface i) {
-		return i.getAppliedStereotype("XIS-Mobile::XisRemoteService");
+		return i.getAppliedStereotype("XIS-Web::XisRemoteService");
 	}
 	
 	public static boolean isXisRemoteService(Interface i) {
@@ -518,7 +518,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisInternalService(Interface i) {
-		return i.getAppliedStereotype("XIS-Mobile::XisInternalService");
+		return i.getAppliedStereotype("XIS-Web::XisInternalService");
 	}
 	
 	public static boolean isXisInternalService(Interface i) {
@@ -526,7 +526,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisInternalProvider(Class c) {
-		return c.getAppliedStereotype("XIS-Mobile::XisInternalProvider");
+		return c.getAppliedStereotype("XIS-Web::XisInternalProvider");
 	}
 	
 	public static boolean isXisInternalProvider(Class c) {
@@ -584,7 +584,7 @@ public final class ServiceUtils {
 	}
 	
 	public static Stereotype getXisServiceMethod(Operation o) {
-		return o.getAppliedStereotype("XIS-Mobile::XisServiceMethod");
+		return o.getAppliedStereotype("XIS-Web::XisServiceMethod");
 	}
 	
 	public static boolean isXisServiceMethod(Operation o) {

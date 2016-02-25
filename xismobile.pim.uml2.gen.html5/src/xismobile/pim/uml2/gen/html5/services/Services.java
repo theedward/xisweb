@@ -949,15 +949,14 @@ public class Services {
 						if (j instanceof Class) {
 							Class child = (Class) j;
 							
-							if (!ServiceUtils.isXisMenu(child)
-							&& !ServiceUtils.isXisMenuItem(child)
+							if (!ServiceUtils.isXisMenuItem(child)
 							&& !ServiceUtils.isXisListGroup(child)
 							&& !ServiceUtils.isXisListItem(child)) {
 								widgets.add(child);
 							}
 						}
 					}
-				} else if (!ServiceUtils.isXisMenu(w) && !ServiceUtils.isXisMenuItem(w)
+				} else if (!ServiceUtils.isXisMenuItem(w)
 						&& !ServiceUtils.isXisListGroup(w) && !ServiceUtils.isXisListItem(w)) {
 					widgets.add(w);
 				}

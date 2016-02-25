@@ -42,6 +42,8 @@
 		[writeMap(c)/]
 	[elseif (c.isXisList())]
 		[writeListView(c)/]
+	[elseif (c.isXisMenu())]
+		[writeMenu(c)/]
 	[elseif (c.isXisDropdown())]
 		[writeDropdown(c)/]
 	[elseif (c.isXisRadioButton())]
@@ -103,14 +105,14 @@
 
 [template private writeCheckBox(c : Class)]
 	[let name : String = 'checkBox' + c.name.toUpperFirst()]
-		<div class="checkbox">	
+		<div>	
 			<input type="checkbox" id=[name/]
 			[comment][if (c.hasXisAction())]
 			onClick="[c.getXisAction().name.toLowerFirst()/]"
 			[/if]
 			[/comment]
 			>
-		[let value : String = c.getXisWidgetValue(c.getXisButton())]
+		[let value : String = c.getXisWidgetValue(c.getXisCheckBox())]
 			[if (not value.oclIsUndefined())]
 				[value/]
 			[/if]
@@ -122,7 +124,7 @@
 
 [template private writeButton(c : Class)]
 	[let name : String = 'button' + c.name.toUpperFirst()]
-		<button type="button" class="btn btn-default" href="[c.getXisButtonURL()/]" id=[name/]
+		<a class="btn btn-default" href="[c.getXisButtonOnTap()/]" id=[name/]
 		[if (c.hasXisAction())]
 			onClick="[c.getXisAction().name.toLowerFirst()/]"
 		[/if]
@@ -132,7 +134,7 @@
 				[value/]
 			[/if]
 		[/let]
-		</button>
+		</a>
 	[/let]
 [/template]
 
@@ -154,7 +156,7 @@
 
 [template private writeImage(c : Class)]
 	[let name : String = 'image' + c.name.toUpperFirst()]
-		<img src="[getXisImagePath(c) /]" class="img-rounded"/>
+		<img src="[getXisImageSrc(c) /]" class="img-rounded"/>
 	[/let]
 [/template]
 
@@ -214,7 +216,21 @@
 	[let name : String = 'list' + c.name.toUpperFirst()]
 		<ul class="list-group" id="[name/]">
 			[for (it : Class | getXisListItems(c))]
-				<li class="list-group-item">[writeWidget(c)/]</li>
+				<li class="list-group-item">
+				[for (cl : Class | it.allOwnedElements()->selectByKind(Class))]
+					[writeWidget(cl)/]
+				[/for]
+				</li>
+			[/for]
+		</ul>
+	[/let]
+[/template]
+
+[template private writeMenu(c : Class)]
+	[let name : String = 'menu' + c.name.toUpperFirst()]
+		<ul class="nav nav-pills">
+			[for (c : Class | c.allOwnedElements()->selectByKind(Class))]
+			<li role="presentation"><a class="btn btn-default" href="[c.getXisButtonOnTap()/]">[c.getXisWidgetValue(c.getXisButton())/]</a></button></li> 
 			[/for]
 		</ul>
 	[/let]
@@ -255,7 +271,7 @@
 
 [template private writeRadioButton(c : Class)]
 [let name : String = 'radioButton' + c.name.toUpperFirst()]
-	<div class="radio">
+	<div>
 		<input id="[name/]" type="radio">
 			[let value: String = c.getXisWidgetValue(c.getXisRadioButton())]
 				[if (not value.oclIsUndefined())]
@@ -272,7 +288,7 @@
 	<form role="form">
 		<div class="form-group">
 		[comment In model2model make some verifications in order for form to be label + input/]
-		[let w : Sequence(Class) = orderWidgetsByPosition(c.getXisFormWidgets())]
+		[let w : Sequence(Class) = getXisFormWidgets(c)]
 			[for (cl : Class | w)]
 				[writeWidget(cl)/]
 			[/for]
@@ -284,7 +300,7 @@
 
 [template private writeAudio(c : Class)]
 	[let name : String = 'audio' + c.name.toUpperFirst()]
-		<audio controls="controls" src="[getXisAudioPath(c)/]">
+		<audio controls="controls" src="[getXisAudioSrc(c)/]">
 		    Your browser does not support the HTML5 Audio element.
 		</audio>
 	[/let]
@@ -292,7 +308,7 @@
 
 [template private writeVideo(c : Class)]
 	[let name : String = 'video' + c.name.toUpperFirst()]
-		<video controls="controls" src="[getXisVideoPath(c)/]">
+		<video controls="controls" src="[getXisVideoSrc(c)/]">
 			Your browser does not support the HTML5 Video element.
 		</video>
 	[/let]
@@ -300,13 +316,13 @@
 
 [template private writeEmbed(c : Class)]
 	[let name : String = 'video' + c.name.toUpperFirst()]
-		<embed src="[getXisEmbedPath(c)/]">
+		<embed src="[getXisEmbedSrc(c)/]">
 	[/let]
 [/template]
 
 [template private writeIFrame(c : Class)]
 	[let name : String = 'iframe' + c.name.toUpperFirst()]
-		<iframe src="[getXisIFramePath(c)/]">
+		<iframe src="[getXisIFrameSrc(c)/]">
 			Your browser does not support the HTML5 IFrame element.
 		</input>
 	[/let]

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISWeb="http:///schemas/XISWeb/_unp2QNVhEeWbx7h7fHdIrA/9" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISWeb/_unp2QNVhEeWbx7h7fHdIrA/9 ../../XIS-Web/model.profile.uml#_unp2QdVhEeWbx7h7fHdIrA">
+  <uml:Model xmi:id="_Km92hNVhEeWbx7h7fHdIrA" name="Ddocs Model">
+    <packageImport xmi:id="_Km92hdVhEeWbx7h7fHdIrA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_h3ogYNVhEeWbx7h7fHdIrA" name="documentListIS">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_9CyBENV3EeWsjLeoN-5-fQ" name="ddocs_logo"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_DUBVoNV4EeWsjLeoN-5-fQ" name="DocumentListMenu">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_GmaTcNV4EeWsjLeoN-5-fQ" name="createDocumentButton"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_NWgHMNV4EeWsjLeoN-5-fQ" name="shareDocuments"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_YsYaUNV4EeWsjLeoN-5-fQ" name="exportDocuments"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_FO56gNVjEeWsjLeoN-5-fQ" name="DocumentsList">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_IR048NVjEeWsjLeoN-5-fQ" name="DocumentItem">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_MEHe0NVjEeWsjLeoN-5-fQ" name="DocumentName"/>
+        </nestedClassifier>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7vYn4NVpEeWsjLeoN-5-fQ" name="documentEditorIS">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_8I7LcNV4EeWsjLeoN-5-fQ" name="ddocs_logo"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_RDEA4NVqEeWsjLeoN-5-fQ" name="DocumentFields">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_VWYQMNVqEeWsjLeoN-5-fQ" name="Name"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_ZFC6UNVqEeWsjLeoN-5-fQ" name="Curator"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_cFJOQNVqEeWsjLeoN-5-fQ" name="DocumentTemplate"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_qvZV0NViEeWsjLeoN-5-fQ" name="saveDocumentButton"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_-HOGINViEeWsjLeoN-5-fQ" name="BackButton"/>
+    </packagedElement>
+    <profileApplication xmi:id="_EdaooNViEeWsjLeoN-5-fQ">
+      <eAnnotations xmi:id="_EeAegNViEeWsjLeoN-5-fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../XIS-Web/model.profile.uml#_unp2QdVhEeWbx7h7fHdIrA"/>
+      </eAnnotations>
+      <appliedProfile href="../../XIS-Web/model.profile.uml#_p7ZwUNSiEeWMgIVLIiCn_g"/>
+    </profileApplication>
+  </uml:Model>
+  <XISWeb:XisInteractionSpace xmi:id="_GMINMNViEeWsjLeoN-5-fQ" base_Class="_h3ogYNVhEeWbx7h7fHdIrA"/>
+  <XISWeb:XisButton xmi:id="_wNlc0NViEeWsjLeoN-5-fQ" value="Save Document" base_Class="_qvZV0NViEeWsjLeoN-5-fQ" onTap="documentlistis.html"/>
+  <XISWeb:XisButton xmi:id="_BPVtoNVjEeWsjLeoN-5-fQ" value="Back" base_Class="_-HOGINViEeWsjLeoN-5-fQ" onTap="documentlistis.html"/>
+  <XISWeb:XisList xmi:id="_G7_HYNVjEeWsjLeoN-5-fQ" base_Class="_FO56gNVjEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisListItem xmi:id="_LF1RoNVjEeWsjLeoN-5-fQ" base_Class="_IR048NVjEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisLabel xmi:id="_OxkjkNVjEeWsjLeoN-5-fQ" value="DummyName" base_Class="_MEHe0NVjEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisForm xmi:id="_Uc8t0NVqEeWsjLeoN-5-fQ" base_Class="_RDEA4NVqEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisLabel xmi:id="_X5klsNVqEeWsjLeoN-5-fQ" base_Class="_VWYQMNVqEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisDropdown xmi:id="_bqTsYNVqEeWsjLeoN-5-fQ" base_Class="_ZFC6UNVqEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisDropdown xmi:id="_ePb7kNVqEeWsjLeoN-5-fQ" base_Class="_cFJOQNVqEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisInteractionSpace xmi:id="_jaiHcNVqEeWsjLeoN-5-fQ" base_Class="_7vYn4NVpEeWsjLeoN-5-fQ"/>
+  <XISWeb:XisImage xmi:id="__OXH0NV3EeWsjLeoN-5-fQ" base_Class="_9CyBENV3EeWsjLeoN-5-fQ" src="../../images/ddocs.png"/>
+  <XISWeb:XisMenu xmi:id="_FQ4q8NV4EeWsjLeoN-5-fQ" base_Class="_DUBVoNV4EeWsjLeoN-5-fQ"/>
+  <XISWeb:XisButton xmi:id="_IrvoQNV4EeWsjLeoN-5-fQ" value="Create" base_Class="_GmaTcNV4EeWsjLeoN-5-fQ" onTap="documenteditoris.html"/>
+  <XISWeb:XisButton xmi:id="_PVfjcNV4EeWsjLeoN-5-fQ" value="Share Documents" base_Class="_NWgHMNV4EeWsjLeoN-5-fQ" onTap="documenteditoris.html"/>
+  <XISWeb:XisButton xmi:id="_bFEI8NV4EeWsjLeoN-5-fQ" value="Export Documents" base_Class="_YsYaUNV4EeWsjLeoN-5-fQ" onTap="documenteditoris.html"/>
+  <XISWeb:XisImage xmi:id="__nEtUNV4EeWsjLeoN-5-fQ" base_Class="_8I7LcNV4EeWsjLeoN-5-fQ" src="../../images/ddocs.png"/>
+</xmi:XMI>
