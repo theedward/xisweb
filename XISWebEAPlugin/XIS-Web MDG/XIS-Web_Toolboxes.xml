@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="C0BA56FF-7" name="XIS-Web_Toolboxes" version="1.0" notes="XIS-Web_Toolboxes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Architectural_View_Elements" alias="Architectural View Elements" notes="Elements for Architectural View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisClientWebApp" type="" description="" unit="" values="" default="XisClientWebApp"/>
+					<Tag name="XIS-Web::XisInternalProvider" type="" description="" unit="" values="" default="XisInternalProvider"/>
+					<Tag name="XIS-Web::XisInternalService" type="" description="" unit="" values="" default="XisInternalService"/>
+					<Tag name="XIS-Web::XisRemoteService" type="" description="" unit="" values="" default="XisRemoteService"/>
+					<Tag name="XIS-Web::XisServer" type="" description="" unit="" values="" default="XisServer"/>
+					<Tag name="XIS-Web::XisServiceMethod" type="" description="" unit="" values="" default="XisServiceMethod"/>
+					<Tag name="XIS-Web::XisWebApp" type="" description="" unit="" values="" default="XisWebApp"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Architectural_View_Relationships" alias="Architectural View Relationships" notes="Relationships for Architectural View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisProvider-ServiceRealization" type="" description="" unit="" values="" default="XisProvider-ServiceRealization"/>
+					<Tag name="XIS-Web::XisWebApp-ServiceAssociation" type="" description="" unit="" values="" default="XisWebApp-ServiceAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Boundary_Elements" alias="Boundary Elements" notes="Boundary Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisVisibilityBoundary" type="" description="" unit="" values="" default="XisVisibilityBoundary"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="BusinessEntity_Elements" alias="BusinessEntity Elements" notes="Elements for BusinessEntities View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisBusinessEntity" type="" description="" unit="" values="" default="XisBusinessEntity"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="BusinessEntity_Relationships" alias="BusinessEntity_Relationships" notes="Relationships for BusinessEntities View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisBE-EntityDetailAssociation" type="" description="" unit="" values="" default="XisBE-EntityDetailAssociation"/>
+					<Tag name="XIS-Web::XisBE-EntityMasterAssociation" type="" description="" unit="" values="" default="XisBE-EntityMasterAssociation"/>
+					<Tag name="XIS-Web::XisBE-EntityReferenceAssociation" type="" description="" unit="" values="" default="XisBE-EntityReferenceAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Composite_Widget_Elements" alias="Composite Widgets Elements" notes="Composite Widget Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisDialog" type="" description="" unit="" values="" default="XisDialog"/>
+					<Tag name="XIS-Web::XisDropdownList" type="" description="" unit="" values="" default="XisDropdownList"/>
+					<Tag name="XIS-Web::XisForm" type="" description="" unit="" values="" default="XisForm"/>
+					<Tag name="XIS-Web::XisImageSlider" type="" description="" unit="" values="" default="XisImageSlider"/>
+					<Tag name="XIS-Web::XisList" type="" description="" unit="" values="" default="XisList"/>
+					<Tag name="XIS-Web::XisListItem" type="" description="" unit="" values="" default="XisListItem"/>
+					<Tag name="XIS-Web::XisMenu" type="" description="" unit="" values="" default="XisMenu"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Domain_Elements" alias="Domain Elements" notes="Elements for Domain View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisEntity" type="" description="" unit="" values="" default="XisEntity"/>
+					<Tag name="XIS-Web::XisEntityAttribute" type="" description="" unit="" values="" default="XisEntityAttribute"/>
+					<Tag name="XIS-Web::XisEnumeration" type="" description="" unit="" values="" default="XisEnumeration"/>
+					<Tag name="XIS-Web::XisEnumerationValue" type="" description="" unit="" values="" default="XisEnumerationValue"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Domain_Relationships" alias="Domain Relationships" notes="Relationships for Domain View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisEntityAssociation" type="" description="" unit="" values="" default="XisEntityAssociation"/>
+					<Tag name="XIS-Web::XisEntityInheritance" type="" description="" unit="" values="" default="XisEntityInheritance"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="InteractionSpace_Elements" alias="InteractionSpace Elements" notes="Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisAction" type="" description="" unit="" values="" default="XisAction"/>
+					<Tag name="XIS-Web::XisGesture" type="" description="" unit="" values="" default="XisGesture"/>
+					<Tag name="XIS-Web::XisInteractionSpace" type="" description="" unit="" values="" default="XisInteractionSpace"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="InteractionSpace_Patterns" alias="InteractionSpace Patterns" notes="Patterns for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-WebT::XisList Pattern(UMLPattern)" type="" description="" unit="" values="" default="XisList Pattern"/>
+					<Tag name="XIS-WebT::XisMenu Pattern(UMLPattern)" type="" description="" unit="" values="" default="XisMenu Pattern"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="InteractionSpace_Relationships" alias="InteractionSpace Relationships" notes="Relationships for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisIS-BEAssociation" type="" description="" unit="" values="" default="XisIS-BEAssociation"/>
+					<Tag name="XIS-Web::XisIS-DialogAssociation" type="" description="" unit="" values="" default="XisIS-DialogAssociation"/>
+					<Tag name="XIS-Web::XisIS-MenuAssociation" type="" description="" unit="" values="" default="XisIS-MenuAssociation"/>
+					<Tag name="XIS-Web::XisWidget-GestureAssociation" type="" description="" unit="" values="" default="XisWidget-GestureAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="NavigationSpace_View_Relationships" alias="NavigationSpace View Relationships" notes="Relationships for NavigationSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisInteractionSpaceAssociation" type="" description="" unit="" values="" default="XisInteractionSpaceAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Simple_Widget_Elements" alias="Simple Widget Elements" notes="Simple Widget Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisAlert" type="" description="" unit="" values="" default="XisAlert"/>
+					<Tag name="XIS-Web::XisAudio" type="" description="" unit="" values="" default="XisAudio"/>
+					<Tag name="XIS-Web::XisButton" type="" description="" unit="" values="" default="XisButton"/>
+					<Tag name="XIS-Web::XisCheckBox" type="" description="" unit="" values="" default="XisCheckBox"/>
+					<Tag name="XIS-Web::XisDatePicker" type="" description="" unit="" values="" default="XisDatePicker"/>
+					<Tag name="XIS-Web::XisDropdownListItem" type="int" description="" unit="" values="" default="XisDropdownListItem"/>
+					<Tag name="XIS-Web::XisEmbed" type="" description="" unit="" values="" default="XisEmbed"/>
+					<Tag name="XIS-Web::XisIFrame" type="" description="" unit="" values="" default="XisIFrame"/>
+					<Tag name="XIS-Web::XisImage" type="" description="" unit="" values="" default="XisImage"/>
+					<Tag name="XIS-Web::XisInput" type="" description="" unit="" values="" default="XisInput"/>
+					<Tag name="XIS-Web::XisLabel" type="" description="" unit="" values="" default="XisLabel"/>
+					<Tag name="XIS-Web::XisLink" type="" description="" unit="" values="" default="XisLink"/>
+					<Tag name="XIS-Web::XisMap" type="" description="" unit="" values="" default="XisMap"/>
+					<Tag name="XIS-Web::XisMapMarker" type="" description="" unit="" values="" default="XisMapMarker"/>
+					<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
+					<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
+					<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
+					<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
+					<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
+					<Tag name="XIS-Web::XisVideo" type="" description="" unit="" values="" default="XisVideo"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="UseCase_Elements" alias="UseCase Elements" notes="Elements for UseCases View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::XisActor" type="" description="" unit="" values="" default="XisActor"/>
+					<Tag name="XIS-Web::XisEntityUseCase" type="" description="" unit="" values="" default="XisEntityUseCase"/>
+					<Tag name="XIS-Web::XisServiceUseCase" type="" description="" unit="" values="" default="XisServiceUseCase"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="UseCase_Relationships" alias="UseCase Relationships" notes="Relationships for UseCases View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="UML::UCExtend" type="" description="" unit="" values="" default="Extend"/>
+					<Tag name="XIS-Web::XisActor-UCAssociation" type="" description="" unit="" values="" default="XisActor-UCAssociation"/>
+					<Tag name="XIS-Web::XisEntityUC-BEAssociation" type="" description="" unit="" values="" default="XisEntityUC-BEAssociation"/>
+					<Tag name="XIS-Web::XisServiceUC-BEAssociation" type="" description="" unit="" values="" default="XisServiceUC-BEAssociation"/>
+					<Tag name="XIS-Web::XisServiceUC-ProviderAssociation" type="" description="" unit="" values="" default="XisServiceUC-ProviderAssociation"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="XIS-Web_Views_Packages" alias="XIS-Web Views Packages" notes="Packages for XIS-Web Views Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage"/>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="XIS-Web::Architectural View" type="" description="" unit="" values="" default="Architectural View"/>
+					<Tag name="XIS-Web::BusinessEntities View" type="" description="" unit="" values="" default="BusinessEntities View"/>
+					<Tag name="XIS-Web::Domain View" type="" description="" unit="" values="" default="Domain View"/>
+					<Tag name="XIS-Web::InteractionSpace View" type="" description="" unit="" values="" default="InteractionSpace View"/>
+					<Tag name="XIS-Web::NavigationSpace View" type="" description="" unit="" values="" default="NavigationSpace View"/>
+					<Tag name="XIS-Web::UseCases View" type="" description="" unit="" values="" default="UseCases View"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

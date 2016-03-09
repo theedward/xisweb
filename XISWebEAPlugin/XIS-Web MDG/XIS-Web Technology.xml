@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<MDG.Technology version="1.0"><Documentation id="1" name="XIS-Web" version="1" notes="-"/><UMLProfiles><UMLProfile profiletype="uml2">
+<MDG.Technology version="1.0"><Documentation id="XIS-Web ID" name="XIS-Web Technology" version="1" notes="XIS-Web Framework..."/><UMLProfiles><UMLProfile profiletype="uml2">
 			<Documentation id="3213C2DC-E" name="XIS-Web" version="1.0" notes="XIS-Web"/>
 			<Content>
 				<Stereotypes>
@@ -51,6 +51,7 @@
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
+					<Stereotype name="XisAbstractList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 					<Stereotype name="XisAction" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Operation">
@@ -82,6 +83,13 @@
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
+					<Stereotype name="XisAlert" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+						<TaggedValues>
+							<Tag name="message" type="String" description="" unit="" values="" default=""/>
+							<Tag name="title" type="String" description="" unit="" values="" default=""/>
+							<Tag name="type" type="enumeration" description="" unit="" values="Success,Info,Warning,Message" default=""/>
+						</TaggedValues>
+					</Stereotype>
 					<Stereotype name="XisArgument" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Parameter">
@@ -98,11 +106,7 @@
 							<Tag name="value" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisAudio" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-						<TaggedValues>
-							<Tag name="path" type="String" description="" unit="" values="" default=""/>
-						</TaggedValues>
-					</Stereotype>
+					<Stereotype name="XisAudio" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 					<Stereotype name="XisBE-EntityDetailAssociation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Association">
@@ -146,39 +150,36 @@
 							<Tag name="name" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 						<TaggedValues>
 							<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisCheckBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-						<TaggedValues>
-							<Tag name="label" type="String" description="" unit="" values="" default=""/>
-						</TaggedValues>
-					</Stereotype>
-					<Stereotype name="XisClientMobileApp" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisProvider" baseStereotypes="XisProvider"/>
+					<Stereotype name="XisCheckBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
+					<Stereotype name="XisClientWebApp" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisProvider" baseStereotypes="XisProvider"/>
 					<Stereotype name="XisCompositeWidget" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" isAbstract="true" generalizes="XisWidget" baseStereotypes="XisWidget">
 						<TaggedValues>
 							<Tag name="entityName" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisDatePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+					<Stereotype name="XisDatePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 					<Stereotype name="XisDialog" notes="" cx="90" cy="70" bgcolor="6008319" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
 						<TaggedValues>
 							<Tag name="description" type="String" description="" unit="" values="" default=""/>
 							<Tag name="title" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisDropdown" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisDropdownList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList">
 						<TaggedValues>
-							<Tag name="label" type="String" description="" unit="" values="" default=""/>
+							<Tag name="header" type="int" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisEmbed" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisDropdownListItem" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 						<TaggedValues>
-							<Tag name="url" type="String" description="" unit="" values="" default=""/>
+							<Tag name="value" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
+					<Stereotype name="XisEmbed" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 					<Stereotype name="XisEntity" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Class">
@@ -273,6 +274,7 @@
 							<Tag name="type" type="enumeration" description="" unit="" values="Tap,DoubleTap,LongTap,Swipe,Pinch,Stretch" default="Tap"/>
 						</TaggedValues>
 					</Stereotype>
+					<Stereotype name="XisIFrame" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 					<Stereotype name="XisIS-BEAssociation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Association">
@@ -297,12 +299,14 @@
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="XisImage" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisImage" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
+					<Stereotype name="XisImageSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSlider" baseStereotypes="XisSlider"/>
+					<Stereotype name="XisInput" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 						<TaggedValues>
-							<Tag name="path" type="String" description="" unit="" values="" default=""/>
+							<Tag name="label" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisInput" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisInputCustom" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 						<TaggedValues>
 							<Tag name="inputType" type="enumeration" description="" unit="" values="Color,Date,Datetime,Datetime-local,Email,Month,Number,Range,Search,Tel,Time,Url,Week" default=""/>
 						</TaggedValues>
@@ -340,24 +344,34 @@
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="XisInternalService" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisService" baseStereotypes="XisService"/>
-					<Stereotype name="XisLabel" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+					<Stereotype name="XisLabel" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+						<TaggedValues>
+							<Tag name="headingDepth" type="int" description="if it's a regular label, should be 0.&#xA;1 to 6 for a heading" unit="" values="" default="0"/>
+							<Tag name="text" type="String" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
 					<Stereotype name="XisLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 						<TaggedValues>
 							<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
-							<Tag name="url" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisList" notes="" cx="90" cy="70" bgcolor="65535" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
+					<Stereotype name="XisList" notes="" cx="90" cy="70" bgcolor="65535" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList">
 						<TaggedValues>
 							<Tag name="orderBy" type="String" description="" unit="" values="" default=""/>
 							<Tag name="searchBy" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisListGroup" notes="" cx="90" cy="70" bgcolor="55295" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 					<Stereotype name="XisListItem" notes="" cx="90" cy="70" bgcolor="10092287" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
 						<TaggedValues>
 							<Tag name="onLongTap" type="String" description="" unit="" values="" default=""/>
 							<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="XisMap" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia">
+						<TaggedValues>
+							<Tag name="latitude" type="double" description="" unit="" values="" default=""/>
+							<Tag name="longitude" type="double" description="" unit="" values="" default=""/>
+							<Tag name="zoom" type="int" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="XisMapMarker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -374,22 +388,27 @@
 							<Tag name="title" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisMapView" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisMenu" notes="" cx="90" cy="70" bgcolor="16763904" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList">
 						<TaggedValues>
-							<Tag name="latitude" type="double" description="" unit="" values="" default=""/>
-							<Tag name="longitude" type="double" description="" unit="" values="" default=""/>
-							<Tag name="zoom" type="int" description="" unit="" values="" default=""/>
-						</TaggedValues>
-					</Stereotype>
-					<Stereotype name="XisMenu" notes="" cx="90" cy="70" bgcolor="16763904" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
-						<TaggedValues>
+							<Tag name="isFixed" type="boolean" description="" unit="" values="true,false" default=""/>
+							<Tag name="isTab" type="boolean" description="" unit="" values="true,false" default=""/>
 							<Tag name="type" type="enumeration" description="" unit="" values="OptionsMenu,ContextMenu" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisMenuGroup" notes="" cx="90" cy="70" bgcolor="16764057" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 					<Stereotype name="XisMenuItem" notes="" cx="90" cy="70" bgcolor="16777164" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 						<TaggedValues>
-							<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
+							<Tag name="title" type="String" description="" unit="" values="" default=""/>
+							<Tag name="url" type="String" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="XisMultimedia" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+						<TaggedValues>
+							<Tag name="src" type="String" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="XisParagraph" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+						<TaggedValues>
+							<Tag name="text" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="XisProvider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
@@ -409,7 +428,7 @@
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="XisRadioButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+					<Stereotype name="XisRadioButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 					<Stereotype name="XisRemoteService" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisService" baseStereotypes="XisService">
 						<TaggedValues>
 							<Tag name="returnType" type="enumeration" description="" unit="" values="XML,JSON" default=""/>
@@ -464,14 +483,14 @@
 							<Tag name="entityAttributeName" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisTextBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList"/>
+					<Stereotype name="XisTextBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 						<TaggedValues>
 							<Tag name="hint" type="String" description="" unit="" values="" default=""/>
-							<Tag name="label" type="String" description="" unit="" values="" default=""/>
 							<Tag name="lines" type="int" description="" unit="" values="" default="1"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisTimePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+					<Stereotype name="XisTimePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 					<Stereotype name="XisUseCase" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 						<AppliesTo>
 							<Apply type="UseCase"/>
@@ -481,11 +500,7 @@
 							<Tag name="name" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisVideo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-						<TaggedValues>
-							<Tag name="path" type="String" description="" unit="" values="" default=""/>
-						</TaggedValues>
-					</Stereotype>
+					<Stereotype name="XisVideo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 					<Stereotype name="XisVisibilityBoundary" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
 						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAAyQeUMMDeZzogEAADQIAAAHABEAc3RyLmRhdFVUDQAHNpCTUjaQk1I2kJNS
 tVXLasJAFD3bFvoPkmwUurBCV8WVFLosttBlSZNopDFKYhal9Iv6Cf25njtxnEnMQ3wweOeO
@@ -552,46 +567,10 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 			</Content>
 		</UMLProfile>
 	</UMLProfiles><DiagramProfile><UMLProfile profiletype="uml2">
-			<Documentation id="A0E9C5A6-2" name="XIS-Web Diagrams" version="1.0" notes="XIS-Web Diagrams"/>
+			<Documentation id="69C409BD-C" name="XIS-Web_Diagrams" version="1.0" alias="XIS-Web Diagrams" notes="XIS-Web Diagrams contain..."/>
 			<Content>
 				<Stereotypes>
-					<Stereotype name="DomainViewModel" alias="Domain View Diagram" notes="A XIS-Mobile's Domain View Diagram represents the relevant classes to the problem domain, their attributes and the relationships among them." cx="156" cy="74" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Diagram_Logical">
-								<Property name="alias" value="Domain View"/>
-								<Property name="diagramID" value="XW_DVM"/>
-								<Property name="toolbox" value="Domain View Diagram"/>
-							</Apply>
-						</AppliesTo>
-					</Stereotype>
-					<Stereotype name="UseCasesViewModel" alias="UseCases View Diagram" notes="A XIS-Mobile's UseCases View Diagram represents the operations a user can perform in the context of a business entity and/or a service." cx="163" cy="73" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Diagram_Use Case">
-								<Property name="alias" value="UseCases View"/>
-								<Property name="diagramID" value="XW_UCVM"/>
-								<Property name="toolbox" value="UseCases View Diagram"/>
-							</Apply>
-						</AppliesTo>
-					</Stereotype>
-					<Stereotype name="NavigationSpaceViewModel" alias="NavigationSpace View Diagram" notes="A XIS-Mobile's NavigationSpace View Diagram represents the navigation flow between the several interaction spaces with which the user interacts." cx="163" cy="73" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Diagram_Logical">
-								<Property name="alias" value="NavigationSpace View"/>
-								<Property name="diagramID" value="XW_NSVM"/>
-								<Property name="toolbox" value="NavigationSpace View Diagram"/>
-							</Apply>
-						</AppliesTo>
-					</Stereotype>
-					<Stereotype name="InteractionSpaceViewModel" alias="InteractionSpace View Diagram" notes="A XIS-Mobile's InteractionSpace View represents each application's screen, known as interaction space, namely the UI layout, the events a certain UI component can trigger and the gestures that can be performed." cx="166" cy="72" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Diagram_Logical">
-								<Property name="alias" value="InteractionSpace View"/>
-								<Property name="diagramID" value="XW_ISVM"/>
-								<Property name="toolbox" value="InteractionSpace View Diagram"/>
-							</Apply>
-						</AppliesTo>
-					</Stereotype>
-					<Stereotype name="ArchitecturalViewModel" alias="Architectural View Diagram" notes="A XIS-Mobile's Architectural View Diagram represents the interactions between the mobile application and other external entities (such as, internal providers, mobile applications or remote servers)." cx="146" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="ArchitecturalViewModel" alias="Architectural View Diagram" notes="A XIS-Web's Architectural View Diagram represents the interactions between the mobile application and other external entities (such as, internal providers, mobile applications or remote servers)." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Diagram_Logical">
 								<Property name="alias" value="Architectural View"/>
@@ -600,21 +579,57 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="XIS-WebViewModel" alias="XIS-Mobile Views Diagram" notes="A XIS-Web Views Diagram represents the several views of a XIS-Web project." cx="136" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="Diagram_Package">
-								<Property name="alias" value="XIS-Web View"/>
-								<Property name="diagramID" value="XW_XMVM"/>
-								<Property name="toolbox" value="XIS-Web Views Diagram"/>
-							</Apply>
-						</AppliesTo>
-					</Stereotype>
-					<Stereotype name="BusinessEntitiesViewModel" alias="BusinessEntities View Diagram" notes="A XIS-Mobile's BusinessEntities View Diagram represents higher-level entities, known as business entities, that provide context to a certain use case and interaction spaces." cx="166" cy="74" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="BusinessEntitiesViewModel" alias="BusinessEntities View Diagram" notes="A XIS-Web's BusinessEntities View Diagram represents higher-level entities, known as business entities, that provide context to a certain use case and interaction spaces." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Diagram_Logical">
 								<Property name="alias" value="BusinessEntities View"/>
 								<Property name="diagramID" value="XW_BEVM"/>
 								<Property name="toolbox" value="BusinessEntities View Diagram"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="DomainViewModel" alias="Domain View Diagram" notes="A XIS-Web's Domain View Diagram represents the relevant classes to the problem domain, their attributes and the relationships among them." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Diagram_Logical">
+								<Property name="alias" value="Domain View"/>
+								<Property name="diagramID" value="XW_DVM"/>
+								<Property name="toolbox" value="Domain View Diagram"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="InteractionSpaceViewModel" alias="InteractionSpace View Diagram" notes="A XIS-Web's InteractionSpace View represents each application's screen, known as interaction space, namely the UI layout, the events a certain UI component can trigger and the gestures that can be performed." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Diagram_Logical">
+								<Property name="alias" value="InteractionSpace View"/>
+								<Property name="diagramID" value="XW_ISVM"/>
+								<Property name="toolbox" value="InteractionSpace View Diagram"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="NavigationSpaceViewModel" alias="NavigationSpace View Diagram" notes="A XIS-Web's NavigationSpace View Diagram represents the navigation flow between the several interaction spaces with which the user interacts." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Diagram_Logical">
+								<Property name="alias" value="NavigationSpace View"/>
+								<Property name="diagramID" value="XW_NSVM"/>
+								<Property name="toolbox" value="NavigationSpace View Diagram"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="UseCasesViewModel" alias="UseCases View Diagram" notes="A XIS-Web's UseCases View Diagram represents the operations a user can perform in the context of a business entity and/or a service." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Diagram_Use Case">
+								<Property name="alias" value="UseCases View"/>
+								<Property name="diagramID" value="XW_UCVM"/>
+								<Property name="toolbox" value="UseCases View Diagram"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="XIS-WebViewModel" alias="XIS-Web Views Diagram" notes="A XIS-Web Views Diagram represents the several views of a XIS-Web project." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Diagram_Package">
+								<Property name="alias" value="XIS-Web View"/>
+								<Property name="diagramID" value="XW_XMVM"/>
+								<Property name="toolbox" value="XIS-Web Views Diagram"/>
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
@@ -721,29 +736,31 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							<Tag name="XIS-Web::XisInteractionSpace" type="" description="" unit="" values="" default="XisInteractionSpace"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Simple_Widget_Elements" alias="Simple Widget Elements" notes="Simple Widget Elements for InteractionSpace View Diagrams" cx="292" cy="270" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Simple_Widget_Elements" alias="Simple Widget Elements" notes="Simple Widget Elements for InteractionSpace View Diagrams" cx="300" cy="322" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
+							<Tag name="XIS-Web::XisAlert" type="" description="" unit="" values="" default="XisAlert"/>
 							<Tag name="XIS-Web::XisAudio" type="" description="" unit="" values="" default="XisAudio"/>
 							<Tag name="XIS-Web::XisButton" type="" description="" unit="" values="" default="XisButton"/>
 							<Tag name="XIS-Web::XisCheckBox" type="" description="" unit="" values="" default="XisCheckBox"/>
 							<Tag name="XIS-Web::XisDatePicker" type="" description="" unit="" values="" default="XisDatePicker"/>
-							<Tag name="XIS-Web::XisDropdown" type="" description="" unit="" values="" default="XisDropdown"/>
+							<Tag name="XIS-Web::XisDropdownListItem" type="int" description="" unit="" values="" default="XisDropdownListItem"/>
 							<Tag name="XIS-Web::XisEmbed" type="" description="" unit="" values="" default="XisEmbed"/>
 							<Tag name="XIS-Web::XisIFrame" type="" description="" unit="" values="" default="XisIFrame"/>
 							<Tag name="XIS-Web::XisImage" type="" description="" unit="" values="" default="XisImage"/>
 							<Tag name="XIS-Web::XisInput" type="" description="" unit="" values="" default="XisInput"/>
 							<Tag name="XIS-Web::XisLabel" type="" description="" unit="" values="" default="XisLabel"/>
 							<Tag name="XIS-Web::XisLink" type="" description="" unit="" values="" default="XisLink"/>
+							<Tag name="XIS-Web::XisMap" type="" description="" unit="" values="" default="XisMap"/>
 							<Tag name="XIS-Web::XisMapMarker" type="" description="" unit="" values="" default="XisMapMarker"/>
-							<Tag name="XIS-Web::XisMapView" type="" description="" unit="" values="" default="XisMapView"/>
 							<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
+							<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
 							<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
 							<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
 							<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
-							<Tag name="XIS-Web::XisVido" type="" description="" unit="" values="" default="XisVideo"/>
+							<Tag name="XIS-Web::XisVideo" type="" description="" unit="" values="" default="XisVideo"/>
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="InteractionSpace_Relationships" alias="InteractionSpace Relationships" notes="Relationships for InteractionSpace View Diagrams" cx="323" cy="85" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -751,24 +768,24 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="XIS-Mobile::XisIS-BEAssociation" type="" description="" unit="" values="" default="XisIS-BEAssociation"/>
-							<Tag name="XIS-Mobile::XisIS-DialogAssociation" type="" description="" unit="" values="" default="XisIS-DialogAssociation"/>
-							<Tag name="XIS-Mobile::XisIS-MenuAssociation" type="" description="" unit="" values="" default="XisIS-MenuAssociation"/>
-							<Tag name="XIS-Mobile::XisWidget-GestureAssociation" type="" description="" unit="" values="" default="XisWidget-GestureAssociation"/>
+							<Tag name="XIS-Web::XisIS-BEAssociation" type="" description="" unit="" values="" default="XisIS-BEAssociation"/>
+							<Tag name="XIS-Web::XisIS-DialogAssociation" type="" description="" unit="" values="" default="XisIS-DialogAssociation"/>
+							<Tag name="XIS-Web::XisIS-MenuAssociation" type="" description="" unit="" values="" default="XisIS-MenuAssociation"/>
+							<Tag name="XIS-Web::XisWidget-GestureAssociation" type="" description="" unit="" values="" default="XisWidget-GestureAssociation"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Composite_Widget_Elements" alias="Composite Widgets Elements" notes="Composite Widget Elements for InteractionSpace View Diagrams" cx="238" cy="124" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Composite_Widget_Elements" alias="Composite Widgets Elements" notes="Composite Widget Elements for InteractionSpace View Diagrams" cx="238" cy="153" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
 							<Tag name="XIS-Web::XisDialog" type="" description="" unit="" values="" default="XisDialog"/>
+							<Tag name="XIS-Web::XisDropdownList" type="" description="" unit="" values="" default="XisDropdownList"/>
 							<Tag name="XIS-Web::XisForm" type="" description="" unit="" values="" default="XisForm"/>
+							<Tag name="XIS-Web::XisImageSlider" type="" description="" unit="" values="" default="XisImageSlider"/>
 							<Tag name="XIS-Web::XisList" type="" description="" unit="" values="" default="XisList"/>
-							<Tag name="XIS-Web::XisListGroup" type="" description="" unit="" values="" default="XisListGroup"/>
 							<Tag name="XIS-Web::XisListItem" type="" description="" unit="" values="" default="XisListItem"/>
 							<Tag name="XIS-Web::XisMenu" type="" description="" unit="" values="" default="XisMenu"/>
-							<Tag name="XIS-Web::XisMenuGroup" type="" description="" unit="" values="" default="XisMenuGroup"/>
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="Boundary_Elements" alias="Boundary Elements" notes="Boundary Elements for InteractionSpace View Diagrams" cx="288" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -839,6 +856,197 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 			</Content>
 		</UMLProfile>
 		<UMLProfile profiletype="uml2">
+			<Documentation id="C0BA56FF-7" name="XIS-Web_Toolboxes" version="1.0" notes="XIS-Web_Toolboxes"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="Architectural_View_Elements" alias="Architectural View Elements" notes="Elements for Architectural View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisClientWebApp" type="" description="" unit="" values="" default="XisClientWebApp"/>
+							<Tag name="XIS-Web::XisInternalProvider" type="" description="" unit="" values="" default="XisInternalProvider"/>
+							<Tag name="XIS-Web::XisInternalService" type="" description="" unit="" values="" default="XisInternalService"/>
+							<Tag name="XIS-Web::XisRemoteService" type="" description="" unit="" values="" default="XisRemoteService"/>
+							<Tag name="XIS-Web::XisServer" type="" description="" unit="" values="" default="XisServer"/>
+							<Tag name="XIS-Web::XisServiceMethod" type="" description="" unit="" values="" default="XisServiceMethod"/>
+							<Tag name="XIS-Web::XisWebApp" type="" description="" unit="" values="" default="XisWebApp"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Architectural_View_Relationships" alias="Architectural View Relationships" notes="Relationships for Architectural View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisProvider-ServiceRealization" type="" description="" unit="" values="" default="XisProvider-ServiceRealization"/>
+							<Tag name="XIS-Web::XisWebApp-ServiceAssociation" type="" description="" unit="" values="" default="XisWebApp-ServiceAssociation"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Boundary_Elements" alias="Boundary Elements" notes="Boundary Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisVisibilityBoundary" type="" description="" unit="" values="" default="XisVisibilityBoundary"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="BusinessEntity_Elements" alias="BusinessEntity Elements" notes="Elements for BusinessEntities View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisBusinessEntity" type="" description="" unit="" values="" default="XisBusinessEntity"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="BusinessEntity_Relationships" alias="BusinessEntity_Relationships" notes="Relationships for BusinessEntities View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisBE-EntityDetailAssociation" type="" description="" unit="" values="" default="XisBE-EntityDetailAssociation"/>
+							<Tag name="XIS-Web::XisBE-EntityMasterAssociation" type="" description="" unit="" values="" default="XisBE-EntityMasterAssociation"/>
+							<Tag name="XIS-Web::XisBE-EntityReferenceAssociation" type="" description="" unit="" values="" default="XisBE-EntityReferenceAssociation"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Composite_Widget_Elements" alias="Composite Widgets Elements" notes="Composite Widget Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisDialog" type="" description="" unit="" values="" default="XisDialog"/>
+							<Tag name="XIS-Web::XisDropdownList" type="" description="" unit="" values="" default="XisDropdownList"/>
+							<Tag name="XIS-Web::XisForm" type="" description="" unit="" values="" default="XisForm"/>
+							<Tag name="XIS-Web::XisImageSlider" type="" description="" unit="" values="" default="XisImageSlider"/>
+							<Tag name="XIS-Web::XisList" type="" description="" unit="" values="" default="XisList"/>
+							<Tag name="XIS-Web::XisListItem" type="" description="" unit="" values="" default="XisListItem"/>
+							<Tag name="XIS-Web::XisMenu" type="" description="" unit="" values="" default="XisMenu"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Domain_Elements" alias="Domain Elements" notes="Elements for Domain View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisEntity" type="" description="" unit="" values="" default="XisEntity"/>
+							<Tag name="XIS-Web::XisEntityAttribute" type="" description="" unit="" values="" default="XisEntityAttribute"/>
+							<Tag name="XIS-Web::XisEnumeration" type="" description="" unit="" values="" default="XisEnumeration"/>
+							<Tag name="XIS-Web::XisEnumerationValue" type="" description="" unit="" values="" default="XisEnumerationValue"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Domain_Relationships" alias="Domain Relationships" notes="Relationships for Domain View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisEntityAssociation" type="" description="" unit="" values="" default="XisEntityAssociation"/>
+							<Tag name="XIS-Web::XisEntityInheritance" type="" description="" unit="" values="" default="XisEntityInheritance"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="InteractionSpace_Elements" alias="InteractionSpace Elements" notes="Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisAction" type="" description="" unit="" values="" default="XisAction"/>
+							<Tag name="XIS-Web::XisGesture" type="" description="" unit="" values="" default="XisGesture"/>
+							<Tag name="XIS-Web::XisInteractionSpace" type="" description="" unit="" values="" default="XisInteractionSpace"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="InteractionSpace_Patterns" alias="InteractionSpace Patterns" notes="Patterns for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-WebT::XisList Pattern(UMLPattern)" type="" description="" unit="" values="" default="XisList Pattern"/>
+							<Tag name="XIS-WebT::XisMenu Pattern(UMLPattern)" type="" description="" unit="" values="" default="XisMenu Pattern"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="InteractionSpace_Relationships" alias="InteractionSpace Relationships" notes="Relationships for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisIS-BEAssociation" type="" description="" unit="" values="" default="XisIS-BEAssociation"/>
+							<Tag name="XIS-Web::XisIS-DialogAssociation" type="" description="" unit="" values="" default="XisIS-DialogAssociation"/>
+							<Tag name="XIS-Web::XisIS-MenuAssociation" type="" description="" unit="" values="" default="XisIS-MenuAssociation"/>
+							<Tag name="XIS-Web::XisWidget-GestureAssociation" type="" description="" unit="" values="" default="XisWidget-GestureAssociation"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="NavigationSpace_View_Relationships" alias="NavigationSpace View Relationships" notes="Relationships for NavigationSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisInteractionSpaceAssociation" type="" description="" unit="" values="" default="XisInteractionSpaceAssociation"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Simple_Widget_Elements" alias="Simple Widget Elements" notes="Simple Widget Elements for InteractionSpace View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisAlert" type="" description="" unit="" values="" default="XisAlert"/>
+							<Tag name="XIS-Web::XisAudio" type="" description="" unit="" values="" default="XisAudio"/>
+							<Tag name="XIS-Web::XisButton" type="" description="" unit="" values="" default="XisButton"/>
+							<Tag name="XIS-Web::XisCheckBox" type="" description="" unit="" values="" default="XisCheckBox"/>
+							<Tag name="XIS-Web::XisDatePicker" type="" description="" unit="" values="" default="XisDatePicker"/>
+							<Tag name="XIS-Web::XisDropdownListItem" type="int" description="" unit="" values="" default="XisDropdownListItem"/>
+							<Tag name="XIS-Web::XisEmbed" type="" description="" unit="" values="" default="XisEmbed"/>
+							<Tag name="XIS-Web::XisIFrame" type="" description="" unit="" values="" default="XisIFrame"/>
+							<Tag name="XIS-Web::XisImage" type="" description="" unit="" values="" default="XisImage"/>
+							<Tag name="XIS-Web::XisInput" type="" description="" unit="" values="" default="XisInput"/>
+							<Tag name="XIS-Web::XisLabel" type="" description="" unit="" values="" default="XisLabel"/>
+							<Tag name="XIS-Web::XisLink" type="" description="" unit="" values="" default="XisLink"/>
+							<Tag name="XIS-Web::XisMap" type="" description="" unit="" values="" default="XisMap"/>
+							<Tag name="XIS-Web::XisMapMarker" type="" description="" unit="" values="" default="XisMapMarker"/>
+							<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
+							<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
+							<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
+							<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
+							<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
+							<Tag name="XIS-Web::XisVideo" type="" description="" unit="" values="" default="XisVideo"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="UseCase_Elements" alias="UseCase Elements" notes="Elements for UseCases View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::XisActor" type="" description="" unit="" values="" default="XisActor"/>
+							<Tag name="XIS-Web::XisEntityUseCase" type="" description="" unit="" values="" default="XisEntityUseCase"/>
+							<Tag name="XIS-Web::XisServiceUseCase" type="" description="" unit="" values="" default="XisServiceUseCase"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="UseCase_Relationships" alias="UseCase Relationships" notes="Relationships for UseCases View Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="UML::UCExtend" type="" description="" unit="" values="" default="Extend"/>
+							<Tag name="XIS-Web::XisActor-UCAssociation" type="" description="" unit="" values="" default="XisActor-UCAssociation"/>
+							<Tag name="XIS-Web::XisEntityUC-BEAssociation" type="" description="" unit="" values="" default="XisEntityUC-BEAssociation"/>
+							<Tag name="XIS-Web::XisServiceUC-BEAssociation" type="" description="" unit="" values="" default="XisServiceUC-BEAssociation"/>
+							<Tag name="XIS-Web::XisServiceUC-ProviderAssociation" type="" description="" unit="" values="" default="XisServiceUC-ProviderAssociation"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="XIS-Web_Views_Packages" alias="XIS-Web Views Packages" notes="Packages for XIS-Web Views Diagrams" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="XIS-Web::Architectural View" type="" description="" unit="" values="" default="Architectural View"/>
+							<Tag name="XIS-Web::BusinessEntities View" type="" description="" unit="" values="" default="BusinessEntities View"/>
+							<Tag name="XIS-Web::Domain View" type="" description="" unit="" values="" default="Domain View"/>
+							<Tag name="XIS-Web::InteractionSpace View" type="" description="" unit="" values="" default="InteractionSpace View"/>
+							<Tag name="XIS-Web::NavigationSpace View" type="" description="" unit="" values="" default="NavigationSpace View"/>
+							<Tag name="XIS-Web::UseCases View" type="" description="" unit="" values="" default="UseCases View"/>
+						</TaggedValues>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+		<UMLProfile profiletype="uml2">
 			<Documentation id="43C3DBE8-1" name="XIS-Web Views Diagram" version="1.0" notes="XIS-Web Views Diagram"/>
 			<Content>
 				<Stereotypes>
@@ -859,4 +1067,4 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 				<TaggedValueTypes/>
 			</Content>
 		</UMLProfile>
-	</UIToolboxes></MDG.Technology>
+	</UIToolboxes><ModelTemplates><Model name="XIS-Web Framework model" description="Packages, Diagrams and Elements for modeling with the XIS-Web Framework." location="C:\Users\João Seixas\workspace\XISWebEAPlugin\bin\Debug\XIS-Web MDG\XIS-Web_Template.xml" default="yes" icon="34" filter="Common"/></ModelTemplates></MDG.Technology>

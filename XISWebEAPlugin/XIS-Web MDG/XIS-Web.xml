@@ -51,6 +51,7 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
+			<Stereotype name="XisAbstractList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 			<Stereotype name="XisAction" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Operation">
@@ -82,6 +83,13 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
+			<Stereotype name="XisAlert" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+				<TaggedValues>
+					<Tag name="message" type="String" description="" unit="" values="" default=""/>
+					<Tag name="title" type="String" description="" unit="" values="" default=""/>
+					<Tag name="type" type="enumeration" description="" unit="" values="Success,Info,Warning,Message" default=""/>
+				</TaggedValues>
+			</Stereotype>
 			<Stereotype name="XisArgument" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Parameter">
@@ -98,16 +106,7 @@
 					<Tag name="value" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisArticle" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-				<TaggedValues>
-					<Tag name="text" type="String" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
-			<Stereotype name="XisAudio" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-				<TaggedValues>
-					<Tag name="path" type="String" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
+			<Stereotype name="XisAudio" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 			<Stereotype name="XisBE-EntityDetailAssociation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Association">
@@ -151,39 +150,36 @@
 					<Tag name="name" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 				<TaggedValues>
 					<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisCheckBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-				<TaggedValues>
-					<Tag name="label" type="String" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
-			<Stereotype name="XisClientMobileApp" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisProvider" baseStereotypes="XisProvider"/>
+			<Stereotype name="XisCheckBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
+			<Stereotype name="XisClientWebApp" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisProvider" baseStereotypes="XisProvider"/>
 			<Stereotype name="XisCompositeWidget" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" isAbstract="true" generalizes="XisWidget" baseStereotypes="XisWidget">
 				<TaggedValues>
 					<Tag name="entityName" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisDatePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+			<Stereotype name="XisDatePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 			<Stereotype name="XisDialog" notes="" cx="90" cy="70" bgcolor="6008319" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
 				<TaggedValues>
 					<Tag name="description" type="String" description="" unit="" values="" default=""/>
 					<Tag name="title" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisDropdown" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisDropdownList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList">
 				<TaggedValues>
-					<Tag name="label" type="String" description="" unit="" values="" default=""/>
+					<Tag name="header" type="int" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisEmbed" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisDropdownListItem" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 				<TaggedValues>
-					<Tag name="url" type="String" description="" unit="" values="" default=""/>
+					<Tag name="value" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
+			<Stereotype name="XisEmbed" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 			<Stereotype name="XisEntity" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
@@ -278,16 +274,7 @@
 					<Tag name="type" type="enumeration" description="" unit="" values="Tap,DoubleTap,LongTap,Swipe,Pinch,Stretch" default="Tap"/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisHeading" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-				<TaggedValues>
-					<Tag name="number" type="int" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
-			<Stereotype name="XisIFrame" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-				<TaggedValues>
-					<Tag name="path" type="" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
+			<Stereotype name="XisIFrame" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 			<Stereotype name="XisIS-BEAssociation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Association">
@@ -312,12 +299,14 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
-			<Stereotype name="XisImage" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisImage" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
+			<Stereotype name="XisImageSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSlider" baseStereotypes="XisSlider"/>
+			<Stereotype name="XisInput" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 				<TaggedValues>
-					<Tag name="path" type="String" description="" unit="" values="" default=""/>
+					<Tag name="label" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisInput" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisInputCustom" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 				<TaggedValues>
 					<Tag name="inputType" type="enumeration" description="" unit="" values="Color,Date,Datetime,Datetime-local,Email,Month,Number,Range,Search,Tel,Time,Url,Week" default=""/>
 				</TaggedValues>
@@ -355,24 +344,34 @@
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="XisInternalService" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisService" baseStereotypes="XisService"/>
-			<Stereotype name="XisLabel" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+			<Stereotype name="XisLabel" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+				<TaggedValues>
+					<Tag name="headingDepth" type="int" description="if it's a regular label, should be 0.&#xA;1 to 6 for a heading" unit="" values="" default="0"/>
+					<Tag name="text" type="String" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
 			<Stereotype name="XisLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 				<TaggedValues>
 					<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
-					<Tag name="url" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisList" notes="" cx="90" cy="70" bgcolor="65535" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
+			<Stereotype name="XisList" notes="" cx="90" cy="70" bgcolor="65535" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList">
 				<TaggedValues>
 					<Tag name="orderBy" type="String" description="" unit="" values="" default=""/>
 					<Tag name="searchBy" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisListGroup" notes="" cx="90" cy="70" bgcolor="55295" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 			<Stereotype name="XisListItem" notes="" cx="90" cy="70" bgcolor="10092287" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
 				<TaggedValues>
 					<Tag name="onLongTap" type="String" description="" unit="" values="" default=""/>
 					<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="XisMap" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia">
+				<TaggedValues>
+					<Tag name="latitude" type="double" description="" unit="" values="" default=""/>
+					<Tag name="longitude" type="double" description="" unit="" values="" default=""/>
+					<Tag name="zoom" type="int" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="XisMapMarker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -389,22 +388,22 @@
 					<Tag name="title" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisMapView" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisMenu" notes="" cx="90" cy="70" bgcolor="16763904" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList">
 				<TaggedValues>
-					<Tag name="latitude" type="double" description="" unit="" values="" default=""/>
-					<Tag name="longitude" type="double" description="" unit="" values="" default=""/>
-					<Tag name="zoom" type="int" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
-			<Stereotype name="XisMenu" notes="" cx="90" cy="70" bgcolor="16763904" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
-				<TaggedValues>
+					<Tag name="isFixed" type="boolean" description="" unit="" values="true,false" default=""/>
+					<Tag name="isTab" type="boolean" description="" unit="" values="true,false" default=""/>
 					<Tag name="type" type="enumeration" description="" unit="" values="OptionsMenu,ContextMenu" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisMenuGroup" notes="" cx="90" cy="70" bgcolor="16764057" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 			<Stereotype name="XisMenuItem" notes="" cx="90" cy="70" bgcolor="16777164" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 				<TaggedValues>
-					<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
+					<Tag name="title" type="String" description="" unit="" values="" default=""/>
+					<Tag name="url" type="String" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="XisMultimedia" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+				<TaggedValues>
+					<Tag name="src" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="XisParagraph" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
@@ -429,7 +428,7 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
-			<Stereotype name="XisRadioButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+			<Stereotype name="XisRadioButton" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 			<Stereotype name="XisRemoteService" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisService" baseStereotypes="XisService">
 				<TaggedValues>
 					<Tag name="returnType" type="enumeration" description="" unit="" values="XML,JSON" default=""/>
@@ -484,14 +483,14 @@
 					<Tag name="entityAttributeName" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisTextBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+			<Stereotype name="XisSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList"/>
+			<Stereotype name="XisTextBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 				<TaggedValues>
 					<Tag name="hint" type="String" description="" unit="" values="" default=""/>
-					<Tag name="label" type="String" description="" unit="" values="" default=""/>
 					<Tag name="lines" type="int" description="" unit="" values="" default="1"/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisTimePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
+			<Stereotype name="XisTimePicker" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 			<Stereotype name="XisUseCase" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 				<AppliesTo>
 					<Apply type="UseCase"/>
@@ -501,11 +500,7 @@
 					<Tag name="name" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="XisVideo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
-				<TaggedValues>
-					<Tag name="path" type="String" description="" unit="" values="" default=""/>
-				</TaggedValues>
-			</Stereotype>
+			<Stereotype name="XisVideo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
 			<Stereotype name="XisVisibilityBoundary" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget">
 				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAAyQeUMMDeZzogEAADQIAAAHABEAc3RyLmRhdFVUDQAHNpCTUjaQk1I2kJNS
 tVXLasJAFD3bFvoPkmwUurBCV8WVFLosttBlSZNopDFKYhal9Iv6Cf25njtxnEnMQ3wweOeO

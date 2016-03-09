@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="69C409BD-C" name="XIS-Web_Diagrams" version="1.0" alias="XIS-Web Diagrams" notes="XIS-Web Diagrams contain..."/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="ArchitecturalViewModel" alias="Architectural View Diagram" notes="A XIS-Web's Architectural View Diagram represents the interactions between the mobile application and other external entities (such as, internal providers, mobile applications or remote servers)." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="Architectural View"/>
+						<Property name="diagramID" value="XW_AVM"/>
+						<Property name="toolbox" value="Architectural View Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="BusinessEntitiesViewModel" alias="BusinessEntities View Diagram" notes="A XIS-Web's BusinessEntities View Diagram represents higher-level entities, known as business entities, that provide context to a certain use case and interaction spaces." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="BusinessEntities View"/>
+						<Property name="diagramID" value="XW_BEVM"/>
+						<Property name="toolbox" value="BusinessEntities View Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="DomainViewModel" alias="Domain View Diagram" notes="A XIS-Web's Domain View Diagram represents the relevant classes to the problem domain, their attributes and the relationships among them." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="Domain View"/>
+						<Property name="diagramID" value="XW_DVM"/>
+						<Property name="toolbox" value="Domain View Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="InteractionSpaceViewModel" alias="InteractionSpace View Diagram" notes="A XIS-Web's InteractionSpace View represents each application's screen, known as interaction space, namely the UI layout, the events a certain UI component can trigger and the gestures that can be performed." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="InteractionSpace View"/>
+						<Property name="diagramID" value="XW_ISVM"/>
+						<Property name="toolbox" value="InteractionSpace View Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="NavigationSpaceViewModel" alias="NavigationSpace View Diagram" notes="A XIS-Web's NavigationSpace View Diagram represents the navigation flow between the several interaction spaces with which the user interacts." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="NavigationSpace View"/>
+						<Property name="diagramID" value="XW_NSVM"/>
+						<Property name="toolbox" value="NavigationSpace View Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="UseCasesViewModel" alias="UseCases View Diagram" notes="A XIS-Web's UseCases View Diagram represents the operations a user can perform in the context of a business entity and/or a service." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Use Case">
+						<Property name="alias" value="UseCases View"/>
+						<Property name="diagramID" value="XW_UCVM"/>
+						<Property name="toolbox" value="UseCases View Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="XIS-WebViewModel" alias="XIS-Web Views Diagram" notes="A XIS-Web Views Diagram represents the several views of a XIS-Web project." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Package">
+						<Property name="alias" value="XIS-Web View"/>
+						<Property name="diagramID" value="XW_XMVM"/>
+						<Property name="toolbox" value="XIS-Web Views Diagram"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>
