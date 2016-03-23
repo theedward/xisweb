@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using XisWebEAPlugin.InteractionSpace;
 using System.Windows.Forms;
+using XISWebEAPlugin.InteractionSpace;
 
 namespace XisWebEAPlugin
 {
@@ -322,6 +323,41 @@ namespace XisWebEAPlugin
                 }
             }
 
+            //I'm Editting here!
+            //Image Creation
+            XisImage img = new XisImage(repository, listIS, listDiagram, "src");
+
+            //Menu Creation
+            #region Create Options Menu
+            Dictionary<ActionType, XisMenuItem> detailModes = new Dictionary<ActionType, XisMenuItem>(3);
+
+            if (ContainsCreateMaster(useCase) || ContainsDeleteMaster(useCase))
+            {
+                XisMenu menu = new XisMenu(repository, listDiagram, listIS, listIS.Element.Name + "Menu", MenuType.OptionsMenu);
+
+                if (ContainsCreateMaster(useCase))
+                {
+                    menu.SetEntityName(master.Element.Name);
+                    string actionName = "create" + master.Element.Name;
+                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
+                        "Create" + master.Element.Name + "Item", actionName);
+                    menuItem.SetValue("Create " + master.Element.Name);
+                    detailModes.Add(ActionType.Create, menuItem);
+                }
+
+                if (ContainsDeleteMaster(useCase))
+                {
+                    menu.SetEntityName(master.Element.Name);
+                    string actionName = "deleteAll" + master.Element.Name + "s";
+                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
+                        "DeleteAll" + master.Element.Name + "Item", actionName);
+                    menuItem.SetValue("Delete all " + master.Element.Name + "s");
+                    XisWebHelper.CreateXisAction(repository, menuItem.Element, actionName, ActionType.DeleteAll);
+                }
+                listIS.Menu = menu;
+            }
+            #endregion
+
             // List Creation
             XisList list = new XisList(repository, listDiagram, listIS, master.Element.Name + "List");
             list.SetEntityName(master.Element.Name);
@@ -379,7 +415,6 @@ namespace XisWebEAPlugin
             }
 
             // Read, Update, Create
-            Dictionary<ActionType, XisMenuItem> detailModes = new Dictionary<ActionType, XisMenuItem>(3);
 
             #region Create Context Menu
             if (ContainsReadMaster(useCase) || ContainsUpdateMaster(useCase) || ContainsDeleteMaster(useCase))
@@ -431,34 +466,6 @@ namespace XisWebEAPlugin
                     AssociateFirstSubSpaces(listDiagram, useCases, listIS, be.ElementID, master.Element.Name);
                 }
             }
-
-            #region Create Options Menu
-            if (ContainsCreateMaster(useCase) || ContainsDeleteMaster(useCase))
-            {
-                XisMenu menu = new XisMenu(repository, listDiagram, listIS, listIS.Element.Name + "Menu", MenuType.OptionsMenu);
-
-                if (ContainsCreateMaster(useCase))
-                {
-                    menu.SetEntityName(master.Element.Name);
-                    string actionName = "create" + master.Element.Name;
-                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
-                        "Create" + master.Element.Name + "Item", actionName);
-                    menuItem.SetValue("Create " + master.Element.Name);
-                    detailModes.Add(ActionType.Create, menuItem);
-                }
-
-                if (ContainsDeleteMaster(useCase))
-                {
-                    menu.SetEntityName(master.Element.Name);
-                    string actionName = "deleteAll" + master.Element.Name + "s";
-                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
-                        "DeleteAll" + master.Element.Name + "Item", actionName);
-                    menuItem.SetValue("Delete all " + master.Element.Name + "s");
-                    XisWebHelper.CreateXisAction(repository, menuItem.Element, actionName, ActionType.DeleteAll);
-                }
-                listIS.Menu = menu;
-            }
-            #endregion
 
             #region Check ServiceUC Extensions
             Dictionary<List<EA.Element>, bool> services = new Dictionary<List<EA.Element>, bool>();
@@ -1695,6 +1702,7 @@ namespace XisWebEAPlugin
             AssociateBEtoIS(serviceDiagram, serviceIS, be);
         }
 
+        #region ComputePositions
         private static void ComputePositions(XisInteractionSpace space, EA.Diagram diagram)
         {
             if (space.Widgets.Count > 0)
@@ -1922,7 +1930,8 @@ namespace XisWebEAPlugin
                     sibling.left, sibling.right, -sibling.bottom + 10, -sibling.bottom + 60 + 30 * widget.Element.Methods.Count,
                     sibling.Sequence);
             }
-        }
+        } 
+        #endregion
 
         private static void CreateXisInteractionSpaceAssociation(string actionName, XisInteractionSpace source, XisInteractionSpace target)
         {
@@ -2097,6 +2106,7 @@ namespace XisWebEAPlugin
             source.Element.Connectors.Refresh();
         }
 
+        #region Getters
         private static List<EA.Attribute> GetFilteredAttributeList(XisEntity entity)
         {
             List<EA.Attribute> lst = new List<EA.Attribute>();
@@ -2175,8 +2185,10 @@ namespace XisWebEAPlugin
                 }
             }
             return null;
-        }
+        } 
+        #endregion
 
+        #region Containers
         private static bool ContainsCreateMaster(EA.Element useCase)
         {
             return Boolean.Parse(GetTaggedValue(useCase.TaggedValues, "CreateMaster").Value);
@@ -2250,7 +2262,8 @@ namespace XisWebEAPlugin
         //        } 
         //    }
         //    return false;
-        //}
+        //} 
+        #endregion
 
         public enum Mode
         {

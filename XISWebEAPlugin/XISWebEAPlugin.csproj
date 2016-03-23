@@ -56,6 +56,7 @@
       <DependentUpon>CodeGenerationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InteractionSpace\XisForm.cs" />
+    <Compile Include="InteractionSpace\XisImage.cs" />
     <Compile Include="InteractionSpace\XisVisibilityBoundary.cs" />
     <Compile Include="InteractionSpace\XisTimePicker.cs" />
     <Compile Include="InteractionSpace\XisLabel.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="InteractionSpace\XisDropdown.cs" />
     <Compile Include="InteractionSpace\XisCompositeWidget.cs" />
     <Compile Include="InteractionSpace\XisInteractionSpace.cs" />
-    <Compile Include="InteractionSpace\XISMobileHelper.cs" />
+    <Compile Include="InteractionSpace\XISWebHelper.cs" />
     <Compile Include="InteractionSpace\XisTextBox.cs" />
     <Compile Include="InteractionSpace\XisWidget.cs" />
     <Compile Include="M2MTransformer.cs" />
@@ -125,6 +126,7 @@
     </Content>
     <Content Include="XIS-Web MDG\XIS-Web Technology.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="XIS-Web MDG\XIS-Web.mts">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

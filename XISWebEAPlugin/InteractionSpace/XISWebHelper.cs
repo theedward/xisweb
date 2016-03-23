@@ -470,6 +470,27 @@ namespace XisWebEAPlugin.InteractionSpace
             return button;
         }
 
+        public static EA.Element CreateXisImage(EA.Element parent, string src)
+        {
+            EA.Element image = parent.Elements.AddNew(src, "Class");
+            image.Stereotype = "XisImage";
+            image.Update();
+
+            foreach (EA.TaggedValue tv in image.TaggedValues)
+            {
+                switch (tv.Name)
+                {
+                    case "src":
+                        tv.Value = src;
+                        break;
+                    default:
+                        break;
+                }
+                tv.Update();
+            }
+            return image;
+        }
+
         public static EA.Element CreateXisDropdown(EA.Element parent, string name, string label)
         {
             EA.Element dropdown = parent.Elements.AddNew(name, "Class");
