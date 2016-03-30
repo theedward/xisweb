@@ -86,14 +86,6 @@
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'addDrawable(java.lang.String, java.lang.String)', Sequence{fileName, resolution})
 /]
 
-[query public addStringResource(key : String, value : String) : OclVoid = 
-	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'addStringResource(java.lang.String, java.lang.String)', Sequence{key, value})
-/]
-
-[query public getStringResources(m : Model) : String =
-	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getStringResources(org.eclipse.uml2.uml.Model)', Sequence{m})
-/]
-
 [query public getParentXisInteractionSpace(c : Class) : Class =
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getParentXisInteractionSpace(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]

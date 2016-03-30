@@ -13,7 +13,6 @@ package xismobile.pim.uml2.gen.html5.main;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.acceleo.common.IAcceleoConstants;
@@ -61,8 +60,6 @@ public class Uml2Html5 extends AbstractAcceleoGenerator {
      */
     public static String targetFolderPath;
     public static String jarPath;
-    public static HashMap<String, String> stringResources;
-    
     private List<String> propertiesFiles = new ArrayList<String>();
 
     /**
@@ -141,7 +138,6 @@ public class Uml2Html5 extends AbstractAcceleoGenerator {
                 File folder = new File(args[2]);
                 jarPath = args[0];
                 targetFolderPath = args[2];
-                stringResources = new HashMap<String, String>();
                 
                 List<String> arguments = new ArrayList<String>();
                 

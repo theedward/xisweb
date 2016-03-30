@@ -19,5 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: OSGi/Minimum-1.2
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: xismobile.pim.uml2.gen.html5.main
+Export-Package: xismobile.pim.uml2.gen.html5.main,
+ xismobile.pim.uml2.gen.html5.services
 

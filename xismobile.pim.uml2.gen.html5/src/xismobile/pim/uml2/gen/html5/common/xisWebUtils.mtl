@@ -667,6 +667,14 @@
 	c.getValue(c.getXisLink(), 'url')
 /]
 
+[query public isXisSitemap(c : Class) : Boolean =
+	not c.getAppliedStereotype('XIS-Web::XisSitemap').oclIsUndefined()
+/]
+
+[query public getXisSitemap(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisSitemap')
+/]
+
 [comment Should be using these function in the future, instead of the specialized ones /]
 [query public isXisMultimedia(c : Class, type : String) : Boolean =
 	let stereotype : String = 'XIS-Web::'.concat(type) in

@@ -323,40 +323,10 @@ namespace XisWebEAPlugin
                 }
             }
 
-            //I'm Editting here!
-            //Image Creation
+            //Image & Sitemap Creation - Define a proper source path!
             XisImage img = new XisImage(repository, listIS, listDiagram, "src");
 
-            //Menu Creation
-            #region Create Options Menu
-            Dictionary<ActionType, XisMenuItem> detailModes = new Dictionary<ActionType, XisMenuItem>(3);
-
-            if (ContainsCreateMaster(useCase) || ContainsDeleteMaster(useCase))
-            {
-                XisMenu menu = new XisMenu(repository, listDiagram, listIS, listIS.Element.Name + "Menu", MenuType.OptionsMenu);
-
-                if (ContainsCreateMaster(useCase))
-                {
-                    menu.SetEntityName(master.Element.Name);
-                    string actionName = "create" + master.Element.Name;
-                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
-                        "Create" + master.Element.Name + "Item", actionName);
-                    menuItem.SetValue("Create " + master.Element.Name);
-                    detailModes.Add(ActionType.Create, menuItem);
-                }
-
-                if (ContainsDeleteMaster(useCase))
-                {
-                    menu.SetEntityName(master.Element.Name);
-                    string actionName = "deleteAll" + master.Element.Name + "s";
-                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
-                        "DeleteAll" + master.Element.Name + "Item", actionName);
-                    menuItem.SetValue("Delete all " + master.Element.Name + "s");
-                    XisWebHelper.CreateXisAction(repository, menuItem.Element, actionName, ActionType.DeleteAll);
-                }
-                listIS.Menu = menu;
-            }
-            #endregion
+            XisSiteMap siteMap = new XisSiteMap(repository, listIS, listDiagram);
 
             // List Creation
             XisList list = new XisList(repository, listDiagram, listIS, master.Element.Name + "List");
@@ -415,7 +385,36 @@ namespace XisWebEAPlugin
             }
 
             // Read, Update, Create
+            //Menu Creation
+            #region Create Options Menu
+            Dictionary<ActionType, XisMenuItem> detailModes = new Dictionary<ActionType, XisMenuItem>(3);
 
+            if (ContainsCreateMaster(useCase) || ContainsDeleteMaster(useCase))
+            {
+                XisMenu menu = new XisMenu(repository, listDiagram, listIS, listIS.Element.Name + "Menu", MenuType.OptionsMenu);
+
+                if (ContainsCreateMaster(useCase))
+                {
+                    menu.SetEntityName(master.Element.Name);
+                    string actionName = "create" + master.Element.Name;
+                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
+                        "Create" + master.Element.Name + "Item", actionName);
+                    menuItem.SetValue("Create " + master.Element.Name);
+                    detailModes.Add(ActionType.Create, menuItem);
+                }
+
+                if (ContainsDeleteMaster(useCase))
+                {
+                    menu.SetEntityName(master.Element.Name);
+                    string actionName = "deleteAll" + master.Element.Name + "s";
+                    XisMenuItem menuItem = new XisMenuItem(repository, listDiagram, menu,
+                        "DeleteAll" + master.Element.Name + "Item", actionName);
+                    menuItem.SetValue("Delete all " + master.Element.Name + "s");
+                    XisWebHelper.CreateXisAction(repository, menuItem.Element, actionName, ActionType.DeleteAll);
+                }
+                listIS.Menu = menu;
+            }
+            #endregion
             #region Create Context Menu
             if (ContainsReadMaster(useCase) || ContainsUpdateMaster(useCase) || ContainsDeleteMaster(useCase))
             {
@@ -1072,6 +1071,11 @@ namespace XisWebEAPlugin
             XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, master.Element.Name + "EditorIS",
                 master.Element.Name + " Editor", false, true);
 
+            //Image & Sitemap Creation - Define a proper source path!
+            XisImage img = new XisImage(repository, detailIS, diagram, "src");
+
+            XisSiteMap siteMap = new XisSiteMap(repository, detailIS, diagram);
+
             #region Process Master attributes
             if (!string.IsNullOrEmpty(master.Filter))
             {
@@ -1372,6 +1376,12 @@ namespace XisWebEAPlugin
             EA.Diagram diagram = XisWebHelper.CreateDiagram(package, entity.Element.Name + "EditorIS Diagram",
                 "XIS-Web_Diagrams::InteractionSpaceViewModel");
             XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "EditorIS", entity.Element.Name + " Editor");
+
+            //Image & Sitemap Creation - Define a proper source path!
+            XisImage img = new XisImage(repository, detailIS, diagram, "src");
+
+            XisSiteMap siteMap = new XisSiteMap(repository, detailIS, diagram);
+
             XisForm form = new XisForm(repository, diagram, detailIS, entity.Element.Name + "Form", entity.Element.Name);
 
             if (!string.IsNullOrEmpty(entity.Filter))
@@ -1424,6 +1434,12 @@ namespace XisWebEAPlugin
             bool isFirstSubScreen = previousIS.IsMainScreen ? true : false;
             XisInteractionSpace managerIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "ManagerIS",
                 "Manage " + entity.Element.Name, false, isFirstSubScreen);
+
+            //Common IS part
+            //Image & Sitemap Creation - Define a proper source path!
+            XisImage img = new XisImage(repository, managerIS, diagram, "src");
+
+            XisSiteMap siteMap = new XisSiteMap(repository, managerIS, diagram);
 
             XisList list = new XisList(repository, diagram, managerIS, entity.Element.Name + "List");
             list.SetEntityName(entity.Element.Name);

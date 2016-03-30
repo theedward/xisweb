@@ -20,7 +20,6 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
@@ -870,36 +869,6 @@ public class Services {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	/**
-	 * Stores the value of a string resource to be included in res/values/strings.xml.
-	 * 
-	 * @param key the name of the string resource
-	 * @param value the value of the string resource
-	 */
-	public void addStringResource(String key, String value) {
-		Uml2Html5.stringResources.put(key, value);
-	}
-	
-	/**
-	 * Retrieves all the string resources to be included in res/values/strings.xml.
-	 * 
-	 * @param m
-	 * @return the string resources in a XML string
-	 */
-	public String getStringResources(Model m) {
-		StringBuilder sb = new StringBuilder();
-		String resource = "<string name=\"%s\">%s</string>\n\t"; 
-		
-		for (String key : Uml2Html5.stringResources.keySet()) {
-			sb.append(String.format(resource, key, Uml2Html5.stringResources.get(key)));
-		}
-		
-		if (sb.length() > 0) {
-			sb = sb.delete(sb.length()-2, sb.length()-1);
-		}
-		return sb.toString();
 	}
 	
 	public Class getParentXisInteractionSpace(Class c) {

@@ -472,7 +472,7 @@ namespace XisWebEAPlugin.InteractionSpace
 
         public static EA.Element CreateXisImage(EA.Element parent, string src)
         {
-            EA.Element image = parent.Elements.AddNew(src, "Class");
+            EA.Element image = parent.Elements.AddNew(parent.Name+"Image", "Class");
             image.Stereotype = "XisImage";
             image.Update();
 
@@ -489,6 +489,27 @@ namespace XisWebEAPlugin.InteractionSpace
                 tv.Update();
             }
             return image;
+        }
+
+        public static EA.Element CreateXisSiteMap(EA.Element parent)
+        {
+            EA.Element siteMap = parent.Elements.AddNew(parent.Name+"SiteMap", "Class");
+            siteMap.Stereotype = "XisSiteMap";
+            siteMap.Update();
+
+            //foreach (EA.TaggedValue tv in siteMap.TaggedValues)
+            //{
+            //    switch (tv.Name)
+            //    {
+            //        case "src":
+            //            tv.Value = src;
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //    tv.Update();
+            //}
+            return siteMap;
         }
 
         public static EA.Element CreateXisDropdown(EA.Element parent, string name, string label)

@@ -38,12 +38,6 @@ namespace XisWebEAPlugin
             }
         }
 
-        private void comboBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            platformType = comboBoxTarget.SelectedItem as String;
-            errorProvider.SetError(comboBoxTarget, string.Empty);
-        }
-
         private void buttonGenerate_Click(object sender, EventArgs e)
         {
             bool valid = true;
@@ -55,16 +49,6 @@ namespace XisWebEAPlugin
             else
             {
                 errorProvider.SetError(textBoxPath, "A Destination folder must be specified!");
-                valid = false;
-            }
-
-            if (!string.IsNullOrEmpty(platformType))
-            {
-                errorProvider.SetError(comboBoxTarget, string.Empty);
-            }
-            else
-            {
-                errorProvider.SetError(comboBoxTarget, "A Target must be specified!");
                 valid = false;
             }
 
@@ -88,7 +72,6 @@ namespace XisWebEAPlugin
             this.ClientSize = new System.Drawing.Size(399, 155);
             progressBar.Visible = true;
             buttonBrowse.Enabled = false;
-            comboBoxTarget.Enabled = false;
             buttonGenerate.Enabled = false;
             buttonGenerate.Text = "Generating...";
         }
@@ -98,7 +81,6 @@ namespace XisWebEAPlugin
             this.ClientSize = new System.Drawing.Size(399, 135);
             progressBar.Visible = false;
             buttonBrowse.Enabled = true;
-            comboBoxTarget.Enabled = true;
             buttonGenerate.Enabled = true;
             buttonGenerate.Text = "Generate!";
         }
@@ -153,39 +135,33 @@ namespace XisWebEAPlugin
             string exePath = "\"" + Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             xmiPath = "\"" + xmiPath + "\"";
 
-            switch (platformType)
-            {
-                case "Android":
-                    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
-                    backgroundWorker.ReportProgress(50, new string[] { "Model parsing done!" });
-                    ExecuteCommand(exePath + "\\AndroidGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\src-gen\"");
-                    backgroundWorker.ReportProgress(100, new string[] { "Android generation done!" });
-                    break;
-                case "Windows Phone":
-                    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
-                    backgroundWorker.ReportProgress(50, new string[] { "Model parsing done!" });
-                    ExecuteCommand(exePath + "\\WindowsPhoneGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\src-gen");
-                    backgroundWorker.ReportProgress(100, new string[] { "Windows Phone generation done!" });
-                    break;
-                case "iOS":
-                    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
-                    backgroundWorker.ReportProgress(50, new string[] { "Model parsing done!" });
-                    ExecuteCommand(exePath + "\\iOSGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\src-gen\"");
-                    backgroundWorker.ReportProgress(100, new string[] { "iOS generation done!" });
-                    break;
-                case "All":
-                    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
-                    backgroundWorker.ReportProgress(25, new string[] { "Model parsing done!" });
-                    ExecuteCommand(exePath + "\\AndroidGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\android\\src-gen\"");
-                    backgroundWorker.ReportProgress(50, new string[] { "Android generation done!" });
-                    ExecuteCommand(exePath + "\\WindowsPhoneGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\windowsphone\\src-gen");
-                    backgroundWorker.ReportProgress(75, new string[] { "Windows Phone generation done!" });
-                    ExecuteCommand(exePath + "\\iOSGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\ios\\src-gen\"");
-                    backgroundWorker.ReportProgress(100, new string[] { "iOS generation done!" });
-                    break;
-                default:
-                    break;
-            }
+            ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
+            backgroundWorker.ReportProgress(50, new string[] { "Model parsing done!" });
+            ExecuteCommand(exePath + "\\Html5Generator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\src-gen\"");
+            backgroundWorker.ReportProgress(100, new string[] { "Site generation done!" });
+
+                //case "Windows Phone":
+                //    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
+                //    backgroundWorker.ReportProgress(50, new string[] { "Model parsing done!" });
+                //    ExecuteCommand(exePath + "\\WindowsPhoneGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\src-gen");
+                //    backgroundWorker.ReportProgress(100, new string[] { "Windows Phone generation done!" });
+                //    break;
+                //case "iOS":
+                //    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
+                //    backgroundWorker.ReportProgress(50, new string[] { "Model parsing done!" });
+                //    ExecuteCommand(exePath + "\\iOSGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\src-gen\"");
+                //    backgroundWorker.ReportProgress(100, new string[] { "iOS generation done!" });
+                //    break;
+                //case "All":
+                //    ExecuteCommand(exePath + "\\XMLParser.jar\" " + exePath + "\" " + xmiPath + " \"" + projectName + "\"");
+                //    backgroundWorker.ReportProgress(25, new string[] { "Model parsing done!" });
+                //    ExecuteCommand(exePath + "\\AndroidGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\android\\src-gen\"");
+                //    backgroundWorker.ReportProgress(50, new string[] { "Android generation done!" });
+                //    ExecuteCommand(exePath + "\\WindowsPhoneGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\windowsphone\\src-gen");
+                //    backgroundWorker.ReportProgress(75, new string[] { "Windows Phone generation done!" });
+                //    ExecuteCommand(exePath + "\\iOSGenerator.jar\" " + exePath + "\" " + umlPath + " \"" + textBoxPath.Text + "\\ios\\src-gen\"");
+                //    backgroundWorker.ReportProgress(100, new string[] { "iOS generation done!" });
+                //    break;
         }
 
         private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)

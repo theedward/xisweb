@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<MDG.Technology version="1.0"><Documentation id="XIS-Web ID" name="XIS-Web Technology" version="1" notes="XIS-Web Framework..."/><UMLProfiles><UMLProfile profiletype="uml2">
+<MDG.Technology version="1.0"><Documentation id="XIS-Web ID" name="XIS-Web Technology" version="2" notes="XIS-Web Framework..."/><UMLProfiles><UMLProfile profiletype="uml2">
 			<Documentation id="3213C2DC-E" name="XIS-Web" version="1.0" notes="XIS-Web"/>
 			<Content>
 				<Stereotypes>
@@ -299,8 +299,8 @@
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="XisImage" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
-					<Stereotype name="XisImageSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSlider" baseStereotypes="XisSlider"/>
+					<Stereotype name="XisImage" notes="" cx="90" cy="70" bgcolor="12623485" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" generalizes="XisMultimedia" baseStereotypes="XisMultimedia"/>
+					<Stereotype name="XisImageSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0"/>
 					<Stereotype name="XisInput" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 						<TaggedValues>
 							<Tag name="label" type="String" description="" unit="" values="" default=""/>
@@ -350,7 +350,7 @@
 							<Tag name="text" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="XisLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
+					<Stereotype name="XisLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<TaggedValues>
 							<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
@@ -483,6 +483,7 @@
 							<Tag name="entityAttributeName" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
+					<Stereotype name="XisSiteMap" notes="" cx="90" cy="70" bgcolor="6717674" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget"/>
 					<Stereotype name="XisSlider" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisAbstractList" baseStereotypes="XisAbstractList"/>
 					<Stereotype name="XisTextBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput">
 						<TaggedValues>
@@ -1067,4 +1068,8 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 				<TaggedValueTypes/>
 			</Content>
 		</UMLProfile>
-	</UIToolboxes><ModelTemplates><Model name="XIS-Web Framework model" description="Packages, Diagrams and Elements for modeling with the XIS-Web Framework." location="%PATH%" default="yes" icon="34" filter="Common"/></ModelTemplates></MDG.Technology>
+	</UIToolboxes>
+  <ModelTemplates>
+    <Model name="XIS-Web Framework model" description="Packages, Diagrams and Elements for modeling with the XIS-Web Framework." location="%PATH%" default="yes" icon="34" filter="Common"/>
+  </ModelTemplates>
+</MDG.Technology>

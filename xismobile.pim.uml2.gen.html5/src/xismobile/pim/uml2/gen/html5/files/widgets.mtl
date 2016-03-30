@@ -11,7 +11,7 @@
 
 [template public writePageTitle(c : Class)]
 	[let name : String = 'header' + c.name.toUpperFirst() + 'Title']
-		<h2 id=[name/]>
+		<h2 id="[name/]">
 		[let value : String = c.getXisWidgetValue(c.getXisLabel())]
 			[if (not value.oclIsUndefined())]
 			[value/]
@@ -34,6 +34,8 @@
 		[writeLink(c)/]
 	[elseif (c.isXisImage())]
 		[writeImage(c)/]
+	[elseif (c.isXisSitemap())]
+		[writeSitemap(c)/]
 	[elseif (c.isXisDatePicker())]
 		[writeDatePicker(c)/]
 	[elseif (c.isXisTimePicker())]
@@ -65,7 +67,7 @@
 
 [template private writeLabel(c : Class)]
 	[let name : String = 'label' + c.name.toUpperFirst()]
-		<span id=[name/] class="label label-default">
+		<span id="[name/]" class="label label-default">
 			[let value : String = c.getXisWidgetValue(c.getXisLabel())]
 				[if (not value.oclIsUndefined())]
 					[value /]
@@ -80,7 +82,7 @@
 [template private writeTextBox(c : Class)]
 	[let name : String = 'textBox' + c.name.toUpperFirst()]
 		[if (c.getXisTextBoxLines() > 1)]
-			<textarea id=[name/] rows=[c.getXisTextBoxLines() /]
+			<textarea id="[name/]" rows=[c.getXisTextBoxLines() /]
 			[if (c.xisTextBoxHasHint())]
 				placeholder="[c.getXisTextBoxHint() /]"
 			[/if]
@@ -92,7 +94,7 @@
 			[/let]
 				</textarea>
 		[else]
-			<input type="text" id=[name/]>
+			<input type="text" id="[name/]">
 			[let value : String = c.getXisWidgetValue(c.getXisTextBox())]
 				[if (not value.oclIsUndefined())]
 					[value/]
@@ -106,7 +108,7 @@
 [template private writeCheckBox(c : Class)]
 	[let name : String = 'checkBox' + c.name.toUpperFirst()]
 		<div>	
-			<input type="checkbox" id=[name/]
+			<input type="checkbox" id="[name/]"
 			[comment][if (c.hasXisAction())]
 			onClick="[c.getXisAction().name.toLowerFirst()/]"
 			[/if]
@@ -124,11 +126,7 @@
 
 [template private writeButton(c : Class)]
 	[let name : String = 'button' + c.name.toUpperFirst()]
-		<a class="btn btn-default" href="[c.getXisButtonOnTap()/]" id=[name/]
-		[if (c.hasXisAction())]
-			onClick="[c.getXisAction().name.toLowerFirst()/]"
-		[/if]
-		>
+		<a class="btn btn-default" href="[c.getXisButtonOnTap()/]" id="[name/]"[if (c.hasXisAction())] onClick="[c.getXisAction().name.toLowerFirst()/]"[/if]>
 		[let value : String = c.getXisWidgetValue(c.getXisButton())]
 			[if (not value.oclIsUndefined())]
 				[value/]
@@ -140,7 +138,7 @@
 
 [template private writeLink(c : Class)]
 	[let name : String = 'link' + c.name.toUpperFirst()]
-		<button type="button" class="btn btn-link" href="[c.getXisLinkURL()/]" id=[name/]
+		<button type="button" class="btn btn-link" href="[c.getXisLinkURL()/]" id="[name/]"
 		[if (c.hasXisAction())]
 			onClick="[c.getXisAction().name.toLowerFirst()/]"
 		[/if]
@@ -152,6 +150,22 @@
 		[/let]
 		</button>
 	[/let]
+[/template]
+
+[template private writeSitemap(c : Class)]
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			[let spaces: OrderedSet(Class) = c.getModel().getAllXisInteractionSpaces()]
+				[if (spaces->size() > 0)]
+					[for(cl : Class | spaces)]
+			<li><a href="[cl.name.concat('.html')/]">[cl.name.toUpperFirst()/]</a></li>
+					[/for]
+				[/if]
+			[/let]
+		</ul>
+	</div>
+</nav>
 [/template]
 
 [template private writeImage(c : Class)]

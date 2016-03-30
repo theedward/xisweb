@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="InteractionSpace\XisForm.cs" />
     <Compile Include="InteractionSpace\XisImage.cs" />
+    <Compile Include="InteractionSpace\XisSiteMap.cs" />
     <Compile Include="InteractionSpace\XisVisibilityBoundary.cs" />
     <Compile Include="InteractionSpace\XisTimePicker.cs" />
     <Compile Include="InteractionSpace\XisLabel.cs" />
