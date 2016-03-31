@@ -66,7 +66,7 @@ namespace XisWebEAPlugin.InteractionSpace
         }
 
         public static EA.Element CreateXisInteractionSpace(EA.Package package, EA.Diagram diagram,
-            string name, string title, bool isMainScreen = false)
+            string name, string title, InteractionSpaceType type,bool isMainScreen = false)
         {
             EA.Element element = package.Elements.AddNew(name, "Class");
             element.Stereotype = "XisInteractionSpace";
@@ -81,6 +81,9 @@ namespace XisWebEAPlugin.InteractionSpace
                         break;
                     case "name":
                         tv.Value = name;
+                        break;
+                    case "type":
+                        tv.Value = type.ToString();
                         break;
                     case "title":
                         tv.Value = title;
@@ -328,6 +331,48 @@ namespace XisWebEAPlugin.InteractionSpace
                         break;
                     case "onLongTap":
                         tv.Value = onLongTap;
+                        break;
+                    default:
+                        break;
+                }
+                tv.Update();
+            }
+            return item;
+        }
+
+        public static EA.Element CreateXisCollapsible(EA.Element parent, string name)
+        {
+            EA.Element list = parent.Elements.AddNew(name, "Class");
+            list.Stereotype = "XisCollapsible";
+            list.Update();
+
+            foreach (EA.TaggedValue tv in list.TaggedValues)
+            {
+                switch (tv.Name)
+                {
+                    case "name":
+                        tv.Value = name;
+                        break;
+                    default:
+                        break;
+                }
+                tv.Update();
+            }
+            return list;
+        }
+
+        public static EA.Element CreateXisCollapsibleItem(EA.Element parent, string name)
+        {
+            EA.Element item = parent.Elements.AddNew(name, "Class");
+            item.Stereotype = "XisCollapsibleItem";
+            item.Update();
+
+            foreach (EA.TaggedValue tv in item.TaggedValues)
+            {
+                switch (tv.Name)
+                {
+                    case "name":
+                        tv.Value = name;
                         break;
                     default:
                         break;
@@ -675,6 +720,17 @@ namespace XisWebEAPlugin.InteractionSpace
     {
         OptionsMenu,
         ContextMenu
+    }
+
+    enum InteractionSpaceType
+    {
+        HomeInteractionSpace,
+        MasterEntityList,
+        MasterEntityEditor,
+        DetailEntityEditor,
+        ReferenceEntityEditor,
+        ServiceInteractionSpace,
+        CustomInteractionSpace
     }
 
     enum GestureType

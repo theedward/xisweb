@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using XISWebEAPlugin.InteractionSpace;
 
 namespace XisWebEAPlugin.InteractionSpace
 {
@@ -11,7 +12,7 @@ namespace XisWebEAPlugin.InteractionSpace
         public List<XisListItem> Items { get; set; }
 
         public XisList(EA.Repository repository, EA.Diagram diagram,
-            XisInteractionSpace parent, string name, string searchBy = null, string orderBy = null)
+            XisWidget parent, string name, string searchBy = null, string orderBy = null)
             : base(repository, parent)
         {
             Element = XisWebHelper.CreateXisList(parent.Element, name, searchBy, orderBy);

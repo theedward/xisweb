@@ -55,6 +55,8 @@
     <Compile Include="CodeGenerationForm.Designer.cs">
       <DependentUpon>CodeGenerationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InteractionSpace\XisCollapsible.cs" />
+    <Compile Include="InteractionSpace\XisCollapsibleItem.cs" />
     <Compile Include="InteractionSpace\XisForm.cs" />
     <Compile Include="InteractionSpace\XisImage.cs" />
     <Compile Include="InteractionSpace\XisSiteMap.cs" />

@@ -51,7 +51,7 @@
 							</Apply>
 						</AppliesTo>
 					</Stereotype>
-					<Stereotype name="XisAbstractList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
+					<Stereotype name="XisAbstractList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" isAbstract="true" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 					<Stereotype name="XisAction" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Operation">
@@ -157,6 +157,8 @@
 					</Stereotype>
 					<Stereotype name="XisCheckBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 					<Stereotype name="XisClientWebApp" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisProvider" baseStereotypes="XisProvider"/>
+					<Stereotype name="XisCollapsible" notes="" cx="90" cy="70" bgcolor="6008319" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
+					<Stereotype name="XisCollapsibleItem" notes="" cx="90" cy="70" bgcolor="2124031" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 					<Stereotype name="XisCompositeWidget" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" isAbstract="true" generalizes="XisWidget" baseStereotypes="XisWidget">
 						<TaggedValues>
 							<Tag name="entityName" type="String" description="" unit="" values="" default=""/>
@@ -324,6 +326,7 @@
 							<Tag name="posX" type="double" description="" unit="" values="" default=""/>
 							<Tag name="posY" type="double" description="" unit="" values="" default=""/>
 							<Tag name="title" type="String" description="" unit="" values="" default=""/>
+							<Tag name="type" type="InteractionSpaceType" description="" unit="" values="" default=""/>
 							<Tag name="width" type="double" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
@@ -397,8 +400,8 @@
 					</Stereotype>
 					<Stereotype name="XisMenuItem" notes="" cx="90" cy="70" bgcolor="16777164" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 						<TaggedValues>
+							<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
 							<Tag name="title" type="String" description="" unit="" values="" default=""/>
-							<Tag name="url" type="String" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="XisMultimedia" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
@@ -759,6 +762,7 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
 							<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
 							<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
+							<Tag name="XIS-Web::XisSiteMap" type="" description="" unit="" values="" default="XisSiteMap"/>
 							<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
 							<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
 							<Tag name="XIS-Web::XisVideo" type="" description="" unit="" values="" default="XisVideo"/>
@@ -775,11 +779,13 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							<Tag name="XIS-Web::XisWidget-GestureAssociation" type="" description="" unit="" values="" default="XisWidget-GestureAssociation"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Composite_Widget_Elements" alias="Composite Widgets Elements" notes="Composite Widget Elements for InteractionSpace View Diagrams" cx="238" cy="153" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Composite_Widget_Elements" alias="Composite Widgets Elements" notes="Composite Widget Elements for InteractionSpace View Diagrams" cx="280" cy="153" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
+							<Tag name="XIS-Web::XisCollapsible" type="" description="" unit="" values="" default="XisCollapsible"/>
+							<Tag name="XIS-Web::XisCollapsibleItem" type="" description="" unit="" values="" default="XisCollapsibleItem"/>
 							<Tag name="XIS-Web::XisDialog" type="" description="" unit="" values="" default="XisDialog"/>
 							<Tag name="XIS-Web::XisDropdownList" type="" description="" unit="" values="" default="XisDropdownList"/>
 							<Tag name="XIS-Web::XisForm" type="" description="" unit="" values="" default="XisForm"/>
@@ -914,6 +920,8 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							<Apply type="ToolboxPage"/>
 						</AppliesTo>
 						<TaggedValues>
+							<Tag name="XIS-Web::XisCollapsible" type="" description="" unit="" values="" default="XisCollapsible"/>
+							<Tag name="XIS-Web::XisCollapsibleItem" type="" description="" unit="" values="" default="XisCollapsibleItem"/>
 							<Tag name="XIS-Web::XisDialog" type="" description="" unit="" values="" default="XisDialog"/>
 							<Tag name="XIS-Web::XisDropdownList" type="" description="" unit="" values="" default="XisDropdownList"/>
 							<Tag name="XIS-Web::XisForm" type="" description="" unit="" values="" default="XisForm"/>
@@ -1003,6 +1011,7 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 							<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
 							<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
 							<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
+							<Tag name="XIS-Web::XisSiteMap" type="" description="" unit="" values="" default="XisSiteMap"/>
 							<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
 							<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
 							<Tag name="XIS-Web::XisVideo" type="" description="" unit="" values="" default="XisVideo"/>
@@ -1068,8 +1077,4 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 				<TaggedValueTypes/>
 			</Content>
 		</UMLProfile>
-	</UIToolboxes>
-  <ModelTemplates>
-    <Model name="XIS-Web Framework model" description="Packages, Diagrams and Elements for modeling with the XIS-Web Framework." location="%PATH%" default="yes" icon="34" filter="Common"/>
-  </ModelTemplates>
-</MDG.Technology>
+	</UIToolboxes></MDG.Technology>

@@ -28,7 +28,7 @@ namespace XisWebEAPlugin
             {
                 homeDiagram = XisWebHelper.CreateDiagram(interactionPackage, "HomeIS Diagram",
                     "XIS-Web_Diagrams::InteractionSpaceViewModel");
-                homeIS = new XisInteractionSpace(repository, interactionPackage, homeDiagram, "HomeIS", "Home", true);
+                homeIS = new XisInteractionSpace(repository, interactionPackage, homeDiagram, "Home","HomeIS", InteractionSpaceType.HomeInteractionSpace, true);
             }
 
             foreach (EA.Element useCase in useCases)
@@ -310,12 +310,12 @@ namespace XisWebEAPlugin
             if (isStartingUC && patternType != null)
             {
                 listIS = new XisInteractionSpace(repository, package, listDiagram,
-                    master.Element.Name + "ListIS", "Manage " + master.Element.Name + "s");
+                    master.Element.Name + "ListIS", "Manage " + master.Element.Name + "s", InteractionSpaceType.MasterEntityList);
             }
             else
             {
                 listIS = new XisInteractionSpace(repository, package, listDiagram,
-                    master.Element.Name + "ListIS", "Manage " + master.Element.Name + "s", isStartingUC, !isStartingUC);
+                    master.Element.Name + "ListIS", "Manage " + master.Element.Name + "s", InteractionSpaceType.MasterEntityList, isStartingUC, !isStartingUC);
 
                 if (isStartingUC && patternType == null)
                 {
@@ -666,12 +666,12 @@ namespace XisWebEAPlugin
             if (isStartingUC && patternType != null)
             {
                 detailIS = new XisInteractionSpace(repository, package, detailDiagram,
-                    master.Element.Name + "EditorIS", master.Element.Name + " Editor");
+                    master.Element.Name + "EditorIS", master.Element.Name + " Editor", InteractionSpaceType.MasterEntityEditor);
             }
             else
             {
                 detailIS = new XisInteractionSpace(repository, package, detailDiagram,
-                    master.Element.Name + "EditorIS", master.Element.Name + " Editor", isStartingUC, !isStartingUC);
+                    master.Element.Name + "EditorIS", master.Element.Name + " Editor", InteractionSpaceType.MasterEntityEditor, isStartingUC, !isStartingUC);
 
                 if (isStartingUC && patternType == null)
                 {
@@ -705,12 +705,13 @@ namespace XisWebEAPlugin
                 if (d.Cardinality.Contains("*"))
                 {
                     // Needs Manager screen
-                    string actionName = "goTo" + d.Element.Name + "ManagerIS";
-                    XisButton btn = new XisButton(repository, detailIS, detailDiagram, d.Element.Name + "ManagerButton", actionName);
-                    btn.SetValue("Manage " + d.Element.Name);
-                    XisInteractionSpace managerIS = CreateDetailOrRefManagerIS(package, d, detailIS, useCase, true, be);
-                    XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, managerIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(actionName, detailIS, managerIS);
+                    //string actionName = "goTo" + d.Element.Name + "ManagerIS";
+                    //XisButton btn = new XisButton(repository, detailIS, detailDiagram, d.Element.Name + "ManagerButton", actionName);
+                    //btn.SetValue("Manage " + d.Element.Name);
+                    //XisInteractionSpace managerIS = 
+                    //XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, managerIS.Element.Name);
+                    //CreateXisInteractionSpaceAssociation(actionName, detailIS, managerIS);
+                    XisCollapsible collapsible = CreateDetailOrRefManagerCollapsible(package, detailDiagram, d, detailIS, useCase, true, be, d.Element.Name + "Collapsible");
                 }
                 else
                 {
@@ -810,12 +811,12 @@ namespace XisWebEAPlugin
                 if (r.Cardinality.Contains("*"))
                 {
                     // Needs Manager screen
-                    string actionName = "goTo" + r.Element.Name + "ManagerIS";
-                    XisButton btn = new XisButton(repository, detailIS, detailDiagram, r.Element.Name + "ManagerButton", actionName);
-                    btn.SetValue("Manage " + r.Element.Name);
-                    XisInteractionSpace viewIS = CreateDetailOrRefManagerIS(package, r, detailIS, useCase, false, be);
-                    XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, viewIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(actionName, detailIS, viewIS);
+                    //string actionName = "goTo" + r.Element.Name + "ManagerIS";
+                    //XisButton btn = new XisButton(repository, detailIS, detailDiagram, r.Element.Name + "ManagerButton", actionName);
+                    //btn.SetValue("Manage " + r.Element.Name);
+                    //XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, viewIS.Element.Name);
+                    //CreateXisInteractionSpaceAssociation(actionName, detailIS, viewIS);
+                    XisCollapsible collapsible = CreateDetailOrRefManagerCollapsible(package, detailDiagram, r, detailIS, useCase, false, be, r.Element.Name + "Collapsible");
                 }
                 else
                 {
@@ -1069,7 +1070,7 @@ namespace XisWebEAPlugin
             EA.Diagram diagram = XisWebHelper.CreateDiagram(package, master.Element.Name + "EditorIS Diagram",
                 "XIS-Web_Diagrams::InteractionSpaceViewModel");
             XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, master.Element.Name + "EditorIS",
-                master.Element.Name + " Editor", false, true);
+                master.Element.Name + " Editor", InteractionSpaceType.MasterEntityEditor, false, true);
 
             //Image & Sitemap Creation - Define a proper source path!
             XisImage img = new XisImage(repository, detailIS, diagram, "src");
@@ -1102,12 +1103,12 @@ namespace XisWebEAPlugin
                 if (d.Cardinality.Contains("*"))
                 {
                     // Needs Manager screen
-                    string actionName = "goTo" + d.Element.Name + "ManagerIS";
-                    XisButton btn = new XisButton(repository, detailIS, diagram, d.Element.Name + "ManagerButton", actionName);
-                    btn.SetValue("Manage " + d.Element.Name);
-                    XisInteractionSpace managerIS = CreateDetailOrRefManagerIS(package, d, detailIS, useCase, true, be);
-                    XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, managerIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(actionName, detailIS, managerIS);
+                    //string actionName = "goTo" + d.Element.Name + "ManagerIS";
+                    //XisButton btn = new XisButton(repository, detailIS, diagram, d.Element.Name + "ManagerButton", actionName);
+                    //btn.SetValue("Manage " + d.Element.Name);
+                    //XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, managerIS.Element.Name);
+                    //CreateXisInteractionSpaceAssociation(actionName, detailIS, managerIS);
+                    XisCollapsible collapsible = CreateDetailOrRefManagerCollapsible(package, diagram, d, detailIS, useCase, true, be, d.Element.Name + "Collapsible");
                 }
                 else
                 {
@@ -1206,13 +1207,13 @@ namespace XisWebEAPlugin
             {
                 if (r.Cardinality.Contains("*"))
                 {
-                    // Needs Manager screen
-                    string actionName = "goTo" + r.Element.Name + "ManagerIS";
-                    XisButton btn = new XisButton(repository, detailIS, diagram, r.Element.Name + "ManagerButton", actionName);
-                    btn.SetValue("Manage " + r.Element.Name);
-                    XisInteractionSpace viewIS = CreateDetailOrRefManagerIS(package, r, detailIS, useCase, false, be);
-                    XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, viewIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(actionName, detailIS, viewIS);
+                    //// Needs Manager screen
+                    //string actionName = "goTo" + r.Element.Name + "ManagerIS";
+                    //XisButton btn = new XisButton(repository, detailIS, diagram, r.Element.Name + "ManagerButton", actionName);
+                    //btn.SetValue("Manage " + r.Element.Name);
+                    //XisWebHelper.CreateXisAction(repository, btn.Element, actionName, ActionType.Navigate, viewIS.Element.Name);
+                    //CreateXisInteractionSpaceAssociation(actionName, detailIS, viewIS);
+                    XisCollapsible collapsible = CreateDetailOrRefManagerCollapsible(package, diagram, r, detailIS, useCase, false, be, r.Element.Name);
                 }
                 else
                 {
@@ -1375,7 +1376,7 @@ namespace XisWebEAPlugin
         {
             EA.Diagram diagram = XisWebHelper.CreateDiagram(package, entity.Element.Name + "EditorIS Diagram",
                 "XIS-Web_Diagrams::InteractionSpaceViewModel");
-            XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "EditorIS", entity.Element.Name + " Editor");
+            XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "EditorIS", entity.Element.Name + " Editor", InteractionSpaceType.DetailEntityEditor);
 
             //Image & Sitemap Creation - Define a proper source path!
             XisImage img = new XisImage(repository, detailIS, diagram, "src");
@@ -1426,22 +1427,15 @@ namespace XisWebEAPlugin
             return detailIS;
         }
 
-        public static XisInteractionSpace CreateDetailOrRefManagerIS(EA.Package package, XisEntity entity,
-            XisInteractionSpace previousIS, EA.Element useCase, bool isDetail, EA.Element be)
+        public static XisCollapsible CreateDetailOrRefManagerCollapsible(EA.Package package, EA.Diagram diagram, XisEntity entity,
+            XisInteractionSpace parentIS, EA.Element useCase, bool isDetail, EA.Element be, string name, string searchBy = null, string orderBy = null)
         {
-            EA.Diagram diagram = XisWebHelper.CreateDiagram(package, entity.Element.Name + "ManagerIS Diagram",
-                "XIS-Web_Diagrams::InteractionSpaceViewModel");
-            bool isFirstSubScreen = previousIS.IsMainScreen ? true : false;
-            XisInteractionSpace managerIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "ManagerIS",
-                "Manage " + entity.Element.Name, false, isFirstSubScreen);
+            XisCollapsible collapsible = new XisCollapsible(repository, diagram, parentIS, entity.Element.Name + "Collapsible");
+            collapsible.SetEntityName(entity.Element.Name);
 
-            //Common IS part
-            //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, managerIS, diagram, "src");
+            XisCollapsibleItem collapsibleItem = new XisCollapsibleItem(repository, diagram, collapsible, collapsible.Element.Name + "Item");
 
-            XisSiteMap siteMap = new XisSiteMap(repository, managerIS, diagram);
-
-            XisList list = new XisList(repository, diagram, managerIS, entity.Element.Name + "List");
+            XisList list = new XisList(repository, diagram, collapsibleItem, entity.Element.Name + "List");
             list.SetEntityName(entity.Element.Name);
 
             XisListItem item = new XisListItem(repository, diagram, list, list.Element.Name + "Item");
@@ -1514,12 +1508,12 @@ namespace XisWebEAPlugin
                     contextItem.SetValue("Delete " + entity.Element.Name);
                     XisWebHelper.CreateXisAction(repository, contextItem.Element, actionName, ActionType.Delete);
                 }
-                managerIS.ContextMenu = context;
+                collapsible.ContextMenu = context;
             }
             #endregion
 
             #region Create Options Menu
-            XisMenu menu = new XisMenu(repository, diagram, managerIS, managerIS.Element.Name + "Menu", MenuType.OptionsMenu);
+            XisMenu menu = new XisMenu(repository, diagram, collapsibleItem, collapsibleItem.Element.Name + "Menu", MenuType.OptionsMenu);
 
             if ((isDetail && (ContainsCreateDetail(useCase) || ContainsDeleteDetail(useCase)))
                 || (!isDetail && (ContainsCreateReference(useCase) || ContainsDeleteReference(useCase))))
@@ -1543,49 +1537,48 @@ namespace XisWebEAPlugin
                 XisWebHelper.CreateXisAction(repository, menuItem.Element, actionName, ActionType.DeleteAll);
             }
 
-            string actionBack = "back" + entity.Element.Name;
+            string actionClose = "close" + entity.Element.Name;
             XisMenuItem backMenuItem = new XisMenuItem(repository, diagram, menu,
-                "Back" + entity.Element.Name + "Item", actionBack);
-            backMenuItem.SetValue("Back");
-            XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionBack, ActionType.Cancel);
-            CreateXisInteractionSpaceAssociation(actionBack, managerIS, previousIS);
+                "Close" + entity.Element.Name + "Item", actionClose);
+            backMenuItem.SetValue("Close");
+            XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionClose, ActionType.Cancel);
 
-            managerIS.Menu = menu;
+            collapsible.Menu = menu;
             #endregion
 
             if (detailModes.Count > 0 || !string.IsNullOrEmpty(item.GetOnTapAction()))
             {
-                XisInteractionSpace detailIS = CreateDetailOrRefEditorIS(package, entity, managerIS, useCase, isDetail, be);
+                XisInteractionSpace detailIS = CreateDetailOrRefEditorIS(package, entity, parentIS, useCase, isDetail, be);
                 foreach (ActionType key in detailModes.Keys)
                 {
                     XisMenuItem mItem = detailModes[key];
                     XisWebHelper.CreateXisAction(repository, mItem.Element, mItem.GetOnTapAction(),
                         key, detailIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(mItem.GetOnTapAction(), managerIS, detailIS);
+                    CreateXisInteractionSpaceAssociation(mItem.GetOnTapAction(), parentIS, detailIS);
                 }
 
                 if (!string.IsNullOrEmpty(item.GetOnTapAction()))
                 {
                     XisWebHelper.CreateXisAction(repository, item.Element, item.GetOnTapAction(),
                         ActionType.Update, detailIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(item.GetOnTapAction(), managerIS, detailIS);
+                    CreateXisInteractionSpaceAssociation(item.GetOnTapAction(), parentIS, detailIS);
                 }
             }
 
-            ComputePositions(managerIS, diagram);
+            ComputePositions(collapsible, diagram, parentIS.GetDiagramObject(diagram), null);
 
-            if (managerIS.ContextMenu != null)
+            if (collapsible.ContextMenu != null)
             {
-                EA.DiagramObject obj = managerIS.GetDiagramObject(diagram);
+                EA.DiagramObject obj = collapsible.GetDiagramObject(diagram);
                 int center = (obj.top + obj.bottom) / -2;
-                managerIS.ContextMenu.SetPosition(diagram, obj.right + 50, obj.right + 330, -obj.top, -obj.top + 70);
-                ComputePositions(managerIS.ContextMenu, diagram);
+                collapsible.ContextMenu.SetPosition(diagram, obj.right + 50, obj.right + 330, -obj.top, -obj.top + 70);
+                ComputePositions(collapsible.ContextMenu, diagram);
 
                 // Create XisIS-MenuAssociation
                 EA.DiagramObject sourceObj = item.GetDiagramObject(diagram);
                 EA.Connector c = item.Element.Connectors.AddNew("", "Association");
                 c.ClientID = item.Element.ElementID;
-                c.SupplierID = managerIS.ContextMenu.Element.ElementID;
+                c.SupplierID = collapsible.ContextMenu.Element.ElementID;
                 c.Direction = "Source -> Destination";
                 c.Stereotype = "XisIS-MenuAssociation";
                 c.Update();
@@ -1593,10 +1586,7 @@ namespace XisWebEAPlugin
                 item.Element.Connectors.Refresh();
             }
 
-            // Associate BE
-            AssociateBEtoIS(diagram, managerIS, be);
-
-            return managerIS;
+            return collapsible;
         }
 
         public static void ProcessServiceUseCase(EA.Package package, XisEntity master,
@@ -1611,12 +1601,12 @@ namespace XisWebEAPlugin
             if (isStartingUC && patternType != null)
             {
                 serviceIS = new XisInteractionSpace(repository, package, serviceDiagram,
-                    serviceISName, useCase.Name);
+                    serviceISName, useCase.Name, InteractionSpaceType.ServiceInteractionSpace);
             }
             else
             {
                 serviceIS = new XisInteractionSpace(repository, package, serviceDiagram,
-                    serviceISName, useCase.Name, isStartingUC, !isStartingUC);
+                    serviceISName, useCase.Name, InteractionSpaceType.ServiceInteractionSpace,isStartingUC, !isStartingUC);
 
                 if (isStartingUC && patternType == null)
                 {

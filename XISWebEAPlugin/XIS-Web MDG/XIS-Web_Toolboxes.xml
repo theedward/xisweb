@@ -57,6 +57,8 @@
 					<Apply type="ToolboxPage"/>
 				</AppliesTo>
 				<TaggedValues>
+					<Tag name="XIS-Web::XisCollapsible" type="" description="" unit="" values="" default="XisCollapsible"/>
+					<Tag name="XIS-Web::XisCollapsibleItem" type="" description="" unit="" values="" default="XisCollapsibleItem"/>
 					<Tag name="XIS-Web::XisDialog" type="" description="" unit="" values="" default="XisDialog"/>
 					<Tag name="XIS-Web::XisDropdownList" type="" description="" unit="" values="" default="XisDropdownList"/>
 					<Tag name="XIS-Web::XisForm" type="" description="" unit="" values="" default="XisForm"/>
@@ -146,6 +148,7 @@
 					<Tag name="XIS-Web::XisMenuItem" type="" description="" unit="" values="" default="XisMenuItem"/>
 					<Tag name="XIS-Web::XisParagraph" type="" description="" unit="" values="" default="XisParagraph"/>
 					<Tag name="XIS-Web::XisRadioButton" type="" description="" unit="" values="" default="XisRadioButton"/>
+					<Tag name="XIS-Web::XisSiteMap" type="" description="" unit="" values="" default="XisSiteMap"/>
 					<Tag name="XIS-Web::XisTextBox" type="" description="" unit="" values="" default="XisTextBox"/>
 					<Tag name="XIS-Web::XisTimePicker" type="" description="" unit="" values="" default="XisTimePicker"/>
 					<Tag name="XIS-Web::XisVideo" type="" description="" unit="" values="" default="XisVideo"/>

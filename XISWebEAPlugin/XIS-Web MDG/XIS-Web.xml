@@ -51,7 +51,7 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
-			<Stereotype name="XisAbstractList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
+			<Stereotype name="XisAbstractList" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" isAbstract="true" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 			<Stereotype name="XisAction" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Operation">
@@ -157,6 +157,8 @@
 			</Stereotype>
 			<Stereotype name="XisCheckBox" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisInput" baseStereotypes="XisInput"/>
 			<Stereotype name="XisClientWebApp" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisProvider" baseStereotypes="XisProvider"/>
+			<Stereotype name="XisCollapsible" notes="" cx="90" cy="70" bgcolor="6008319" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
+			<Stereotype name="XisCollapsibleItem" notes="" cx="90" cy="70" bgcolor="2124031" fontcolor="0" bordercolor="0" borderwidth="1" hideicon="0" generalizes="XisCompositeWidget" baseStereotypes="XisCompositeWidget"/>
 			<Stereotype name="XisCompositeWidget" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" isAbstract="true" generalizes="XisWidget" baseStereotypes="XisWidget">
 				<TaggedValues>
 					<Tag name="entityName" type="String" description="" unit="" values="" default=""/>
@@ -324,6 +326,7 @@
 					<Tag name="posX" type="double" description="" unit="" values="" default=""/>
 					<Tag name="posY" type="double" description="" unit="" values="" default=""/>
 					<Tag name="title" type="String" description="" unit="" values="" default=""/>
+					<Tag name="type" type="InteractionSpaceType" description="" unit="" values="" default=""/>
 					<Tag name="width" type="double" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
@@ -397,8 +400,8 @@
 			</Stereotype>
 			<Stereotype name="XisMenuItem" notes="" cx="90" cy="70" bgcolor="16777164" fontcolor="-1" bordercolor="-1" borderwidth="1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
 				<TaggedValues>
+					<Tag name="onTap" type="String" description="" unit="" values="" default=""/>
 					<Tag name="title" type="String" description="" unit="" values="" default=""/>
-					<Tag name="url" type="String" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="XisMultimedia" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="XisSimpleWidget" baseStereotypes="XisSimpleWidget">
