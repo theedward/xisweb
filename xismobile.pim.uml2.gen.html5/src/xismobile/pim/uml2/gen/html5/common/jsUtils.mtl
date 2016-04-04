@@ -76,7 +76,7 @@ function hideDeleteAllButtonFor[c.getXisInteractionSpace().name.toUpperFirst()/]
 }
 [/template]
 
-[template public fillContentForIS(c: Class)]
+[template public fillContentForIS(c : Class)]
 [let entityAttributes : Set(Property) = c.getXisEntityAttributes()]
 //When page is in edit mode, fill contents, else hide Delete button
 function fillContentFor[c.getXisInteractionSpace().name.toUpperFirst()/]() {
@@ -91,7 +91,7 @@ function fillContentFor[c.getXisInteractionSpace().name.toUpperFirst()/]() {
 		[/for]
 	}else
 	{
-		$('#[c.getXisInteractionSpace().name.toLower()/]_btn_delete').hide();
+		$('#[c.getXisInteractionSpace().name.toLower()/]_[c.name.toLower()/]_btn_delete').hide();
 	}
 }
 [/let]
@@ -130,7 +130,7 @@ function renderItem(row, ol) {
 [c.getModel().name.toLower()/].createTable[c.name.toUpperFirst()/] = function(){
 	var database = [c.getModel().name.toLower()/].db;	
 	database.transaction(function (tx) {
-		tx.executeSql("CREATE TABLE IF NOT EXISTS [c.name.toLower()/] ([c.getXisEntityAttributes().name.toLower()->sep(', ')/]),[ '[' /][']'/]");
+		tx.executeSql("CREATE TABLE IF NOT EXISTS [c.name.toLower()/] (id INTEGER PRIMARY KEY AUTOINCREMENT, [c.getXisEntityAttributes().name.toLower()->sep(', ')/]),[ '[' /][']'/]");
 	});
 }
 [/template]
@@ -142,7 +142,7 @@ function renderItem(row, ol) {
 [template public insertEntityIntoTable(c : Class)]
 //Inserts or Updates (if exists) the Todo in the db. Passing values as parameters
 [comment Must see if this is correct, the arguments /]
-[c.getModel().name.toLower()/].addItemTo[c.name.toUpperFirst()/] = function([c.getXisEntityAttributes().name.toLower()->sep(', ')/]){
+[c.getModel().name.toLower()/].addItemTo[c.name.toUpperFirst()/] = function(){
 	var database = [c.getModel().name.toLower()/].db;
 	var id = $.QueryString[ '[' /]"id"[']'/];
 	
@@ -185,7 +185,7 @@ function renderItem(row, ol) {
 [template public deleteItemFromTable(c : Class)]
 //Delete Entry from database given the id
 [c.getModel().name.toLower()/].deleteItemFrom[c.name.toUpperFirst()/] = function(id) {
-  	var database = [name.toLower()/].db;
+  	var database = [c.getModel().name.toLower()/].db;
   	database.transaction(function(tx){
    	 tx.executeSql("DELETE FROM [c.name.toLower()/] WHERE ID=?", [ '[' /]id[']'/],
    	 [c.getModel().name.toLower()/].onSuccess,

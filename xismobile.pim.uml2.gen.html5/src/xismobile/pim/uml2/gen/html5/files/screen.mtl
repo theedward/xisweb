@@ -36,7 +36,10 @@
 				[initTable(cl)/]
 				[c.getModel().name.toLower()/].getAllItemsFrom[cl.name.toUpperFirst()/](loadTodoItems);
 				[/for]
-				
+				[if(not(c.isMasterEntityListIS()))]
+				fillContent();
+				[/if]
+
 			}
 		}init();
 		</script>
@@ -48,7 +51,7 @@
 				<div id="header">
 					[for (w : Class | widgets) separator('\n')]
 						[if((widgets->size() > 0) and (w.isXisSitemap() or w.isXisImage()))]
-							[writeWidget(w) /]
+							[writeWidget(w, c) /]
 						[/if]
 					[/for]
 				</div>

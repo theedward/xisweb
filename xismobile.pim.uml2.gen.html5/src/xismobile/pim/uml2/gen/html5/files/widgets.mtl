@@ -21,7 +21,7 @@
 	[/let]
 [/template]
 
-[template public writeWidget(c : Class) post (trim())]
+[template public writeWidget(c : Class, interactionSpace : Class) post (trim())]
 	[if (c.isXisLabel())]
 		[writeLabel(c)/]
 	[elseif (c.isXisTextBox())]
@@ -45,7 +45,7 @@
 	[elseif (c.isXisList())]
 		[writeListView(c)/]
 	[elseif (c.isXisMenu())]
-		[writeMenu(c)/]
+		[writeMenu(c, interactionSpace)/]
 	[elseif (c.isXisDropdown())]
 		[writeDropdown(c)/]
 	[elseif (c.isXisRadioButton())]
@@ -240,11 +240,11 @@
 	[/let]
 [/template]
 
-[template private writeMenu(c : Class)]
-	[let name : String = 'menu' + c.name.toUpperFirst()]
+[template private writeMenu(widget : Class, interactionSpace : Class)]
+	[let name : String = interactionSpace.name.toLower() + '_' + widget.getXisCompositeWidgetEntityName(widget.getXisMenu()) + '_btn_' + widget.name.toLower()]
 		<ul class="nav nav-pills">
-			[for (c : Class | c.allOwnedElements()->selectByKind(Class))]
-			<li role="presentation"><a class="btn btn-default" href="[c.getXisButtonOnTap()/]">[c.getXisWidgetValue(c.getXisButton())/]</a></button></li> 
+			[for (c : Class | widget.allOwnedElements()->selectByKind(Class))]
+			<li role="presentation"><a class="btn btn-default" href="[c.getXisButtonOnTap()/]" id="[name/]" [if (c.hasXisAction())] onClick="[c.getXisAction().name.toLowerFirst()/]"[/if]>[c.getXisWidgetValue(c.getXisButton())/]</a></button></li> 
 			[/for]
 		</ul>
 	[/let]

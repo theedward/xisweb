@@ -117,6 +117,48 @@
 	not c.getXisInteractionSpace().oclIsUndefined()
 /]
 
+[query public isHomeIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'HomeInteractionSpace'
+/]
+
+[query public isMasterEntityListIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'MasterEntityList'
+/]
+
+[query public isMasterEntityEditorIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'MasterEntityEditor'
+/]
+
+[query public isDetailEntityEditorIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'DetailEntityEditor'
+/]
+
+[query public isReferenceEntityEditorIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'ReferenceEntityEditor'
+/]
+
+[query public isServiceInteractionSpaceIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'ServiceInteractionSpace'
+/]
+
+[query public isCustomInteractionSpaceIS(c : Class) : Boolean =
+	c.getEnumValue(c.getValue(
+		c.getXisInteractionSpace(), 'type')
+	) = 'CustomInteractionSpace'
+/]
+
 [query public getAllXisInteractionSpaces(m : Model) : OrderedSet(Class) =
 	m.allOwnedElements()->selectByType(Class)->select(
 		c : Class | c.isXisInteractionSpace())

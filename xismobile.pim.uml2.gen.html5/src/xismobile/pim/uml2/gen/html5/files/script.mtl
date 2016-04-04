@@ -16,5 +16,64 @@
 [/for]
 [/let]
 
+[if(c.isMasterEntityEditorIS())]
+[for(cl : Class | c.getMasterEntities())]
+[deleteItem(cl)/]
+[saveItem(cl)/]
+[/for]
+
+[for(cl : Class | c.getDetailEntities())]
+[deleteItem(cl)/]
+[saveItem(cl)/]
+[/for]
+
+[for(cl : Class | c.getReferenceEntities())]
+[deleteItem(cl)/]
+[saveItem(cl)/]
+[/for]
+
+function fillContent(){
+	var id = $.QueryString['['/]"id"[']'/];
+	if(id > 0){
+	
+	}else
+	{
+		$('#documenteditoris_btn_delete').hide();
+	}
+}
+
+[/if]
+
+[if(c.isMasterEntityListIS())]
+//If there are no Items hide the DeleteAll button
+function hideDeleteAllButton(rs) {
+	if(rs.rows.length == 0){
+		$('#documentlistis_btn_deleteall').hide();
+	}
+}
+
+//Iterate through the set and call the function that knows how to print the Item on each element
+function loadListItems(tx, rs) {
+  var items = document.getElementById("documentlistis_ol_document");
+  for (var i=0; i < rs.rows.length; i++) {
+    renderItem(rs.rows.item(i), items);
+  }
+}
+	
+
+[/if]
+
 [/file]
+[/template]
+
+[template public deleteItem(c : Class)]
+function delete[c.name.toUpperFirst()/](){
+[c.getModel().name/].deleteItemFrom[c.name.toUpperFirst()/]();
+}
+[/template]
+
+[template public saveItem(c : Class)]
+function save[c.name.toUpperFirst()/](){
+[c.getModel().name/].addItemTo[c.name.toUpperFirst()/]();
+}
 [/template]
