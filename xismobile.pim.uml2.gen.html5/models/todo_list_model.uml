@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISWeb="http:///schemas/XISWeb/_C0TysPv3EeWhDONV5HFNPQ/14" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISWeb/_C0TysPv3EeWhDONV5HFNPQ/14 ../../XIS-Web/model.profile.uml#_C0djsPv3EeWhDONV5HFNPQ">
+  <uml:Model xmi:id="_Km92hNVhEeWbx7h7fHdIrA" name="Todo_List_Model">
+    <packageImport xmi:id="_Km92hdVhEeWbx7h7fHdIrA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_h3ogYNVhEeWbx7h7fHdIrA" name="TaskListIS">
+      <ownedAttribute xmi:id="_EcSaQPWuEeWnIbgNFECb8Q" name="documentBE" type="_2YiLoPWtEeWnIbgNFECb8Q" association="_EcUPcPWuEeWnIbgNFECb8Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EcSaQfWuEeWnIbgNFECb8Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EcSaQvWuEeWnIbgNFECb8Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DDyDAPwAEeWhDONV5HFNPQ" name="taskEditorIS" type="_nm3FwPv9EeWhDONV5HFNPQ" association="_DD4wsPwAEeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DD0fQPwAEeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DD0fQfwAEeWhDONV5HFNPQ" value="1"/>
+      </ownedAttribute>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_9CyBENV3EeWsjLeoN-5-fQ" name="TaskListIS::TaskListISImage"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_DUBVoNV4EeWsjLeoN-5-fQ" name="DocumentListMenu">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_GmaTcNV4EeWsjLeoN-5-fQ" name="createDocumentButton"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_NWgHMNV4EeWsjLeoN-5-fQ" name="shareDocuments"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_YsYaUNV4EeWsjLeoN-5-fQ" name="exportDocuments"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_OgLe0PZjEeWnIbgNFECb8Q" name="TaskListIS::TaskListISSiteMap"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_hDdbQPveEeWbT9771p-XRw" name="TaskListIS::TaskList">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_GQ4UIPvfEeWbT9771p-XRw" name="TaskListIS::TaskList::TaskListItem">
+          <ownedOperation xmi:id="_Pe3tsPvfEeWbT9771p-XRw" name="editTask"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_ShWAMPvfEeWbT9771p-XRw" name="TaskListIS::TaskList::TaskListItem::dateLbl"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_UhhIMPvfEeWbT9771p-XRw" name="TaskListIS::TaskListItem::descriptionLbl"/>
+        </nestedClassifier>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_iTuT0PvfEeWbT9771p-XRw" name="TaskListIS::TaskListISMenu">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_pfIxoPvfEeWbT9771p-XRw" name="TaskListIS::TaskListISMenu::CreateTaskItem">
+          <ownedOperation xmi:id="_wxHxgPvfEeWbT9771p-XRw" name="createTask"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_1DT_cPvfEeWbT9771p-XRw" name="TaskListIS::TaskListISMenu::DeleteAllTaskItem">
+          <ownedOperation xmi:id="__jO68PvfEeWbT9771p-XRw" name="deleteAllTask"/>
+        </nestedClassifier>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7vYn4NVpEeWsjLeoN-5-fQ" name="documentEditorIS">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_8I7LcNV4EeWsjLeoN-5-fQ" name="ddocs_logo"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_qvZV0NViEeWsjLeoN-5-fQ" name="saveDocumentButton"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_-HOGINViEeWsjLeoN-5-fQ" name="BackButton"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_fWmgAPZ8EeWzycvtV1cUYg" name="Sitemap"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2YiLoPWtEeWnIbgNFECb8Q" name="TaskBE">
+      <ownedAttribute xmi:id="_9C1gcPWtEeWnIbgNFECb8Q" name="documentListIS" type="_h3ogYNVhEeWbx7h7fHdIrA" association="_9C6Y8PWtEeWnIbgNFECb8Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9C1gcfWtEeWnIbgNFECb8Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9C1gcvWtEeWnIbgNFECb8Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_MXNCYPWuEeWnIbgNFECb8Q" name="class1" type="_K0kK8PWuEeWnIbgNFECb8Q" association="_MXNpcPWuEeWnIbgNFECb8Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MXNCYfWuEeWnIbgNFECb8Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MXNCYvWuEeWnIbgNFECb8Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tZbTkPv4EeWhDONV5HFNPQ" name="note" type="_oxe4EPv4EeWhDONV5HFNPQ" association="_tZbTk_v4EeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tZbTkfv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tZbTkvv4EeWhDONV5HFNPQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_25AMYPv4EeWhDONV5HFNPQ" name="category" type="_1CqV0Pv4EeWhDONV5HFNPQ" association="_25AMY_v4EeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_25AMYfv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_25AMYvv4EeWhDONV5HFNPQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9C6Y8PWtEeWnIbgNFECb8Q" name="documentBE_documentListIS_1" memberEnd="_9C6Y8fWtEeWnIbgNFECb8Q _9C1gcPWtEeWnIbgNFECb8Q">
+      <ownedEnd xmi:id="_9C6Y8fWtEeWnIbgNFECb8Q" name="documentBE" type="_2YiLoPWtEeWnIbgNFECb8Q" association="_9C6Y8PWtEeWnIbgNFECb8Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9C6Y8vWtEeWnIbgNFECb8Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9C6Y8_WtEeWnIbgNFECb8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EcUPcPWuEeWnIbgNFECb8Q" name="documentListIS_documentBE_1" memberEnd="_EcUPcfWuEeWnIbgNFECb8Q _EcSaQPWuEeWnIbgNFECb8Q">
+      <ownedEnd xmi:id="_EcUPcfWuEeWnIbgNFECb8Q" name="documentListIS" type="_h3ogYNVhEeWbx7h7fHdIrA" association="_EcUPcPWuEeWnIbgNFECb8Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EcUPcvWuEeWnIbgNFECb8Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EcUPc_WuEeWnIbgNFECb8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_K0kK8PWuEeWnIbgNFECb8Q" name="Task">
+      <ownedAttribute xmi:id="_L-hqEPv4EeWhDONV5HFNPQ" name="date" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M6IWsPv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M6IWsfv4EeWhDONV5HFNPQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_M6IWsvv4EeWhDONV5HFNPQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_bE-EwPv4EeWhDONV5HFNPQ" name="description" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dPjtAPv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dPteAPv4EeWhDONV5HFNPQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_dPteAfv4EeWhDONV5HFNPQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_e7cnEPv4EeWhDONV5HFNPQ" name="name" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hAN7MPv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hAN7Mfv4EeWhDONV5HFNPQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_hAN7Mvv4EeWhDONV5HFNPQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MXNpcPWuEeWnIbgNFECb8Q" name="documentBE_class1_1" memberEnd="_MXNpcfWuEeWnIbgNFECb8Q _MXNCYPWuEeWnIbgNFECb8Q">
+      <ownedEnd xmi:id="_MXNpcfWuEeWnIbgNFECb8Q" name="documentBE" type="_2YiLoPWtEeWnIbgNFECb8Q" association="_MXNpcPWuEeWnIbgNFECb8Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MXNpcvWuEeWnIbgNFECb8Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MXNpc_WuEeWnIbgNFECb8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oxe4EPv4EeWhDONV5HFNPQ" name="Note">
+      <ownedAttribute xmi:id="_xuJ4IPv4EeWhDONV5HFNPQ" name="text" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zqb-oPv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zqb-ofv4EeWhDONV5HFNPQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_zqb-ovv4EeWhDONV5HFNPQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tZbTk_v4EeWhDONV5HFNPQ" name="taskBE_note_1" memberEnd="_tZbTlPv4EeWhDONV5HFNPQ _tZbTkPv4EeWhDONV5HFNPQ">
+      <ownedEnd xmi:id="_tZbTlPv4EeWhDONV5HFNPQ" name="taskBE" type="_2YiLoPWtEeWnIbgNFECb8Q" association="_tZbTk_v4EeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tZbTlfv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tZbTlvv4EeWhDONV5HFNPQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1CqV0Pv4EeWhDONV5HFNPQ" name="Category">
+      <ownedAttribute xmi:id="_P5VdUPv5EeWhDONV5HFNPQ" name="name" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RjlYoPv5EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RjlYofv5EeWhDONV5HFNPQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_RjlYovv5EeWhDONV5HFNPQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_25AMY_v4EeWhDONV5HFNPQ" name="taskBE_category_1" memberEnd="_25AMZPv4EeWhDONV5HFNPQ _25AMYPv4EeWhDONV5HFNPQ">
+      <ownedEnd xmi:id="_25AMZPv4EeWhDONV5HFNPQ" name="taskBE" type="_2YiLoPWtEeWnIbgNFECb8Q" association="_25AMY_v4EeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_25AMZfv4EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_25AMZvv4EeWhDONV5HFNPQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_nm3FwPv9EeWhDONV5HFNPQ" name="TaskEditorIS">
+      <ownedAttribute xmi:id="_7UHooPv_EeWhDONV5HFNPQ" name="taskBE" type="_2YiLoPWtEeWnIbgNFECb8Q" association="_7UeN8Pv_EeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7UHoofv_EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7UHoovv_EeWhDONV5HFNPQ" value="1"/>
+      </ownedAttribute>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_9TgYYPv9EeWhDONV5HFNPQ" name="TaskEditorISImage"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_VrtSUPv-EeWhDONV5HFNPQ" name="TaskEditorISSiteMap"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_agt5cPv-EeWhDONV5HFNPQ" name="TaskForm">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_fb6oIPv-EeWhDONV5HFNPQ" name="TaskDateDatePicker"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_r38D8Pv-EeWhDONV5HFNPQ" name="TaskDescriptionTxtBox"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_-rcmQPv-EeWhDONV5HFNPQ" name="TaskNameTxtBox"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_K-LjMPv_EeWhDONV5HFNPQ" name="TaskEditorISMenu">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_aYswcPv_EeWhDONV5HFNPQ" name="SaveTaskMenuItem">
+          <ownedOperation xmi:id="_kGjV0Pv_EeWhDONV5HFNPQ" name="saveTask"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_pJfrQPv_EeWhDONV5HFNPQ" name="CancelTask">
+          <ownedOperation xmi:id="_yeV6wPv_EeWhDONV5HFNPQ" name="cancelTask"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_CsG8UP6REeWwMYipk2jLQA" name="DeleteTask">
+          <ownedOperation xmi:id="_T2wDYP6REeWwMYipk2jLQA" name="deleteTask"/>
+        </nestedClassifier>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="__pfFIPypEeWiV82kmxd-uw" name="NoteCollapsible">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_C0dzYPyqEeWiV82kmxd-uw" name="NoteCollapsibleItem">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_NXcp8PyqEeWiV82kmxd-uw" name="NoteCollapsibleItemList">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_RE5MEPyqEeWiV82kmxd-uw" name="NoteCollapsibleItemListItem">
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_q2jzUPyqEeWiV82kmxd-uw" name="NoteCollapsibleItemListItemLabel"/>
+            </nestedClassifier>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_vHT10Py1EeWiV82kmxd-uw" name="NoteCollapsibleItemMenu">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_yVIcsPy1EeWiV82kmxd-uw" name="NoteCollapsibleItemCreateNoteItem"/>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_01m1YPy1EeWiV82kmxd-uw" name="NoteCollapsibleItemDeleteAllItem"/>
+          </nestedClassifier>
+        </nestedClassifier>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_7UeN8Pv_EeWhDONV5HFNPQ" name="taskEditorIS_taskBE_1" memberEnd="_7UeN8fv_EeWhDONV5HFNPQ _7UHooPv_EeWhDONV5HFNPQ">
+      <ownedEnd xmi:id="_7UeN8fv_EeWhDONV5HFNPQ" name="taskEditorIS" type="_nm3FwPv9EeWhDONV5HFNPQ" association="_7UeN8Pv_EeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7UeN8vv_EeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7UnX4Pv_EeWhDONV5HFNPQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_DD4wsPwAEeWhDONV5HFNPQ" name="taskListIS_taskEditorIS_1" memberEnd="_DD4wsfwAEeWhDONV5HFNPQ _DDyDAPwAEeWhDONV5HFNPQ">
+      <ownedEnd xmi:id="_DD4wsfwAEeWhDONV5HFNPQ" name="taskListIS" type="_h3ogYNVhEeWbx7h7fHdIrA" association="_DD4wsPwAEeWhDONV5HFNPQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DD4wsvwAEeWhDONV5HFNPQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DD4ws_wAEeWhDONV5HFNPQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:id="_knGu4PvjEeWbT9771p-XRw">
+      <eAnnotations xmi:id="_kn_fsPvjEeWbT9771p-XRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../XIS-Web/model.profile.uml#_C0djsPv3EeWhDONV5HFNPQ"/>
+      </eAnnotations>
+      <appliedProfile href="../../XIS-Web/model.profile.uml#_p7ZwUNSiEeWMgIVLIiCn_g"/>
+    </profileApplication>
+  </uml:Model>
+  <XISWeb:XisInteractionSpace xmi:id="_l7S6oPvjEeWbT9771p-XRw" isMainScreen="true" name="TaskListIS" title="Manage Tasks" base_Class="_h3ogYNVhEeWbx7h7fHdIrA" type="MasterEntityList"/>
+  <XISWeb:XisImage xmi:id="_pz8iAPv1EeWhDONV5HFNPQ" base_Class="_9CyBENV3EeWsjLeoN-5-fQ" src="../../images/default.png"/>
+  <XISWeb:XisSitemap xmi:id="_6Uwo8Pv1EeWhDONV5HFNPQ" base_Class="_OgLe0PZjEeWnIbgNFECb8Q"/>
+  <XISWeb:XisList xmi:id="_8GnBEPv1EeWhDONV5HFNPQ" name="TaskList" base_Class="_hDdbQPveEeWbT9771p-XRw" entityName="Task"/>
+  <XISWeb:XisListItem xmi:id="_IJxQ8Pv2EeWhDONV5HFNPQ" name="TaskListItem" base_Class="_GQ4UIPvfEeWbT9771p-XRw" onTap="editTask"/>
+  <XISWeb:XisLabel xmi:id="_PeRZUPv2EeWhDONV5HFNPQ" name="dateLbl" base_Class="_ShWAMPvfEeWbT9771p-XRw" entityAttributeName="Task.date"/>
+  <XISWeb:XisLabel xmi:id="_Q271YPv2EeWhDONV5HFNPQ" name="descriptionLbl" base_Class="_UhhIMPvfEeWbT9771p-XRw" entityAttributeName="Task.description"/>
+  <XISWeb:XisAction xmi:id="_eARqMPv2EeWhDONV5HFNPQ" base_Operation="_Pe3tsPvfEeWbT9771p-XRw" navigation="TaskEditorIS" type="Update"/>
+  <XISWeb:XisMenu xmi:id="_LU9lIPv3EeWhDONV5HFNPQ" name="TaskListISMenu" base_Class="_iTuT0PvfEeWbT9771p-XRw" entityName="Task"/>
+  <XISWeb:XisMenuItem xmi:id="_YVzlQPv3EeWhDONV5HFNPQ" name="CreateTaskItem" value="Create Task" base_Class="_pfIxoPvfEeWbT9771p-XRw" onTap="createTask"/>
+  <XISWeb:XisMenuItem xmi:id="_ix_QQPv3EeWhDONV5HFNPQ" name="DeleteAllTaskItem" value="Delete all Tasks" base_Class="_1DT_cPvfEeWbT9771p-XRw" onTap="deleteAllTasks"/>
+  <XISWeb:XisAction xmi:id="_wCyX8Pv3EeWhDONV5HFNPQ" base_Operation="__jO68PvfEeWbT9771p-XRw" type="DeleteAll"/>
+  <XISWeb:XisAction xmi:id="_w7HHEPv3EeWhDONV5HFNPQ" base_Operation="_wxHxgPvfEeWbT9771p-XRw" navigation="TaskEditorIS" type="Create"/>
+  <XISWeb:XisBusinessEntity xmi:id="_zPPF0Pv3EeWhDONV5HFNPQ" name="TaskBe" base_Class="_2YiLoPWtEeWnIbgNFECb8Q"/>
+  <XISWeb:XisISBEAssociation xmi:id="_1xzwQPv3EeWhDONV5HFNPQ" base_Association="_EcUPcPWuEeWnIbgNFECb8Q"/>
+  <XISWeb:XisEntity xmi:id="_-kV84Pv3EeWhDONV5HFNPQ" name="Task" base_Class="_K0kK8PWuEeWnIbgNFECb8Q"/>
+  <XISWeb:XisEntityAttribute xmi:id="_X8QAUPv4EeWhDONV5HFNPQ" base_Property="_L-hqEPv4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisEntityAttribute xmi:id="_eJ-G0Pv4EeWhDONV5HFNPQ" base_Property="_bE-EwPv4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisEntityAttribute xmi:id="_h0OLAPv4EeWhDONV5HFNPQ" base_Property="_e7cnEPv4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisBEEntityMasterAssociation xmi:id="_meHHQPv4EeWhDONV5HFNPQ" base_Association="_MXNpcPWuEeWnIbgNFECb8Q"/>
+  <XISWeb:XisEntity xmi:id="_q9Z9EPv4EeWhDONV5HFNPQ" base_Class="_oxe4EPv4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisBEEntityDetailAssociation xmi:id="_wYwygPv4EeWhDONV5HFNPQ" base_Association="_tZbTk_v4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisBEEntityReferenceAssociation xmi:id="_4awTAPv4EeWhDONV5HFNPQ" base_Association="_25AMY_v4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisEntity xmi:id="_6Gp0IPv4EeWhDONV5HFNPQ" base_Class="_1CqV0Pv4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisEntityAttribute xmi:id="_SlAZYPv5EeWhDONV5HFNPQ" base_Property="_P5VdUPv5EeWhDONV5HFNPQ"/>
+  <XISWeb:XisEntityAttribute xmi:id="_z0zJoPv6EeWhDONV5HFNPQ" base_Property="_xuJ4IPv4EeWhDONV5HFNPQ"/>
+  <XISWeb:XisInteractionSpace xmi:id="_0_hwAPv9EeWhDONV5HFNPQ" name="TaskEditorIS" title="Task Editor" base_Class="_nm3FwPv9EeWhDONV5HFNPQ" type="MasterEntityEditor"/>
+  <XISWeb:XisImage xmi:id="_AWmV8Pv-EeWhDONV5HFNPQ" base_Class="_9TgYYPv9EeWhDONV5HFNPQ" src="../../images/default.png"/>
+  <XISWeb:XisSitemap xmi:id="_ZKfGUPv-EeWhDONV5HFNPQ" base_Class="_VrtSUPv-EeWhDONV5HFNPQ"/>
+  <XISWeb:XisForm xmi:id="_c94fcPv-EeWhDONV5HFNPQ" base_Class="_agt5cPv-EeWhDONV5HFNPQ" entityName="Task"/>
+  <XISWeb:XisDatePicker xmi:id="_hoTnMPv-EeWhDONV5HFNPQ" name="TaskDateDatePicker" base_Class="_fb6oIPv-EeWhDONV5HFNPQ" entityAttributeName="Task.date"/>
+  <XISWeb:XisTextBox xmi:id="_ubTYkPv-EeWhDONV5HFNPQ" name="TaskDescriptionTxtBox" base_Class="_r38D8Pv-EeWhDONV5HFNPQ" entityAttributeName="Task.description" label="description" hint="description"/>
+  <XISWeb:XisTextBox xmi:id="_A9aB0Pv_EeWhDONV5HFNPQ" name="TaskNameTxtBox" base_Class="_-rcmQPv-EeWhDONV5HFNPQ" entityAttributeName="Task.name" label="name" hint="name"/>
+  <XISWeb:XisMenu xmi:id="_QmVegPv_EeWhDONV5HFNPQ" name="TaskEditorISMenu" base_Class="_K-LjMPv_EeWhDONV5HFNPQ" entityName="Task"/>
+  <XISWeb:XisMenuItem xmi:id="_dBVmoPv_EeWhDONV5HFNPQ" name="SaveTask" value="Save Task" base_Class="_aYswcPv_EeWhDONV5HFNPQ" onTap="saveTask"/>
+  <XISWeb:XisAction xmi:id="_lTqpMPv_EeWhDONV5HFNPQ" base_Operation="_kGjV0Pv_EeWhDONV5HFNPQ" navigation="TaskListIS"/>
+  <XISWeb:XisMenuItem xmi:id="_q2lfMPv_EeWhDONV5HFNPQ" name="CancelTask" value="Go Back" base_Class="_pJfrQPv_EeWhDONV5HFNPQ" title="" onTap="cancelTask"/>
+  <XISWeb:XisAction xmi:id="_z4rKwPv_EeWhDONV5HFNPQ" base_Operation="_yeV6wPv_EeWhDONV5HFNPQ" navigation="TaskListIS" type="Cancel"/>
+  <XISWeb:XisISBEAssociation xmi:id="_9fXYMPv_EeWhDONV5HFNPQ" base_Association="_7UeN8Pv_EeWhDONV5HFNPQ"/>
+  <XISWeb:XisCollapsible xmi:id="_CFqMoPyqEeWiV82kmxd-uw" name="NoteCollapsible" base_Class="__pfFIPypEeWiV82kmxd-uw" entityName="Note"/>
+  <XISWeb:XisCollapsibleItem xmi:id="_vVUdoPyqEeWiV82kmxd-uw" name="NoteCollapsibleItem" base_Class="_C0dzYPyqEeWiV82kmxd-uw"/>
+  <XISWeb:XisList xmi:id="_xp7kkPyqEeWiV82kmxd-uw" name="NoteList" base_Class="_NXcp8PyqEeWiV82kmxd-uw" entityName="Note"/>
+  <XISWeb:XisListItem xmi:id="__o0hUPyqEeWiV82kmxd-uw" name="NoteListItem" base_Class="_RE5MEPyqEeWiV82kmxd-uw" onTap="viewNote"/>
+  <XISWeb:XisLabel xmi:id="_A6C4oPyrEeWiV82kmxd-uw" name="txtLbl" base_Class="_q2jzUPyqEeWiV82kmxd-uw"/>
+  <XISWeb:XisMenu xmi:id="_p0YHIPy2EeWiV82kmxd-uw" base_Class="_vHT10Py1EeWiV82kmxd-uw" entityName="Note"/>
+  <XISWeb:XisMenuItem xmi:id="_rO9OwPy2EeWiV82kmxd-uw" name="CreateNoteItem" value="Create Note" base_Class="_yVIcsPy1EeWiV82kmxd-uw" onTap="createNote"/>
+  <XISWeb:XisMenuItem xmi:id="_tMsGwPy2EeWiV82kmxd-uw" name="DeleteAllItem" value="Delete All Notes" base_Class="_01m1YPy1EeWiV82kmxd-uw" onTap="deleteAll"/>
+  <XISWeb:XisMenuItem xmi:id="_Se11QP6REeWwMYipk2jLQA" name="DeleteTask" value="Delete Task" base_Class="_CsG8UP6REeWwMYipk2jLQA" onTap="deleteTask"/>
+  <XISWeb:XisAction xmi:id="_VHVhgP6REeWwMYipk2jLQA" base_Operation="_T2wDYP6REeWwMYipk2jLQA" type="Delete"/>
+</xmi:XMI>

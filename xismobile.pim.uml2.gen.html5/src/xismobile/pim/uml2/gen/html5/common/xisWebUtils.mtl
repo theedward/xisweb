@@ -291,7 +291,7 @@
 	then false
 	else items->select(i : Class | i.hasXisAction() and
 		(let op : Operation = i.getXisAction() in op.isCreateAction() or op.isReadAction()
-		or op.isUpdateAction() or op.isDeleteteAction() or op.isOKAction()))->size() > 0
+		or op.isUpdateAction() or op.isDeleteAction() or op.isOKAction()))->size() > 0
 	endif
 /]
 
@@ -368,6 +368,19 @@
 [query public isXisForm(c : Class) : Boolean =
 	not c.getXisForm().oclIsUndefined()
 /]
+
+[query public getXisCollapsible(c : Class) : Stereotype =
+	c.getAppliedStereotype('XIS-Web::XisCollapsible')
+/]
+
+[query public isXisCollapsible(c : Class) : Boolean =
+	not c.getXisCollapsible().oclIsUndefined()
+/]
+
+[query public getXisCollapsibleEntityName(c : Class) : String = 
+	c.getValue(c.getXisCollapsible(), 'entityName')
+/]
+
 
 [query public isTab(c : Class) : Boolean =
 	getEnumValue(c.getValue(
@@ -447,13 +460,13 @@
 	) = 'Update'
 /]
 
-[query public isDeleteteAction(o : Operation) : Boolean = 
+[query public isDeleteAction(o : Operation) : Boolean = 
 	getEnumValue(o.getValue(
 		o.getXisAction(), 'type')
 	) = 'Delete'
 /]
 
-[query public isDeleteteAllAction(o : Operation) : Boolean = 
+[query public isDeleteAllAction(o : Operation) : Boolean = 
 	getEnumValue(o.getValue(
 		o.getXisAction(), 'type')
 	) = 'DeleteAll'
@@ -461,7 +474,7 @@
 
 [query public isCrudAction(o : Operation) : Boolean =
 	o.isCreateAction() or o.isReadAction() or o.isUpdateAction() 
-	or o.isDeleteteAction() or o.isDeleteteAllAction()
+	or o.isDeleteAction() or o.isDeleteAllAction()
 /]
 
 [query public isOpenBrowserAction(o : Operation) : Boolean = 
@@ -631,6 +644,10 @@
 [query public getXisMenuItems(c : Class) : OrderedSet(Class) = 
 	c.allOwnedElements()->selectByType(Class)->select(
 		i : Class | i.isXisMenuItem())
+/]
+
+[query public getXisMenuItemOnTap(c : Class) : String = 
+	c.getValue(c.getXisMenuItem(), 'onTap')
 /]
 
 [query public getXisWidget(c : Class) : Stereotype =

@@ -189,6 +189,14 @@ public final class ServiceUtils {
 		return getXisForm(c) != null;
 	}
 	
+	public static Stereotype getXisCollapsibleItem(Class c) {
+		return c.getAppliedStereotype("XIS-Web::XisCollapsibleItem");
+	}
+	
+	public static boolean isXisCollapsibleItem(Class c) {
+		return getXisCollapsibleItem(c) != null;
+	}
+	
 	public static Stereotype getXisInput(Class c) {
 		return c.getAppliedStereotype("XIS-Web::XisInput");
 	}

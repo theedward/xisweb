@@ -21,7 +21,7 @@
 	[/let]
 [/template]
 
-[template public writeWidget(c : Class, interactionSpace : Class) post (trim())]
+[template public writeWidget(c : Class) post (trim())]
 	[if (c.isXisLabel())]
 		[writeLabel(c)/]
 	[elseif (c.isXisTextBox())]
@@ -45,22 +45,20 @@
 	[elseif (c.isXisList())]
 		[writeListView(c)/]
 	[elseif (c.isXisMenu())]
-		[writeMenu(c, interactionSpace)/]
+		[writeMenu(c)/]
 	[elseif (c.isXisDropdown())]
 		[writeDropdown(c)/]
 	[elseif (c.isXisRadioButton())]
 		[writeRadioButton(c)/]
 	[elseif (c.isXisForm())]
 		[writeForm(c)/]
+	[elseif (c.isXisCollapsible())]
+		[writeCollapsible(c)/]
 	[/if]
 [/template]
 
 [template public writeWidgetJS(c : Class) post (trim())]
-	[if (c.isXisDatePicker())]
-		[writeDatePickerJquery(c) /]
-	[elseif (c.isXisTimePicker())]
-		[writeTimePickerJquery(c) /]
-	[elseif (c.isXisMapView())]
+	[if (c.isXisMapView())]
 		[writeMapJS(c) /]
 	[/if]
 [/template]
@@ -80,7 +78,8 @@
 [/template]
 	
 [template private writeTextBox(c : Class)]
-	[let name : String = 'textBox' + c.name.toUpperFirst()]
+	[let name : String = c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisSimpleWidgetEntityAttributeName(c.getXisTextBox()).substitute('.','_').toLower()]
+		<span class="label label-default">[c.getValue(c.getXisTextBox(), 'label').toString().toUpperFirst()/]</span>
 		[if (c.getXisTextBoxLines() > 1)]
 			<textarea id="[name/]" rows=[c.getXisTextBoxLines() /]
 			[if (c.xisTextBoxHasHint())]
@@ -174,37 +173,19 @@
 	[/let]
 [/template]
 
-[comment This function is worthless without writeDatePickerJQuery/]
 [template private writeDatePicker(c : Class)]
-	[let name : String = 'datepicker' + c.name.toUpperFirst()]
-		<p>Date: <input type="text" id="[name/]" onclick="return datePickerOnFocus()"></input> </p>
+	[let name : String = c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisSimpleWidgetEntityAttributeName(c.getXisDatePicker()).substitute('.','_').toLower()]
+		<span class="label label-default">Date</span><input id="[name/]" type="date">
 	[/let]
 [/template]
 
-[comment This function should be called when writting the JS File equivalent to the datepicker .html File/]
-[template private writeDatePickerJquery(c : Class)]
-	[let name : String = 'datepicker' + c.name.toUpperFirst()]
-	    function datePickerOnFocus() {
-	    	$("#[name/]").datepicker();
-		}
-	[/let]
-[/template]
-
-[comment This function is worthless without writeTimePickerJQuery/]
 [template private writeTimePicker(c : Class)]
 	[let name : String = 'timePicker' + c.name.toUpperFirst()]
-		[comment TODO/]
+		<span class="label label-default">Time</span><input type="time" id="[name/]">
 	[/let]
 [/template]
 
-[comment This function should be called when writting the JS File equivalent to the timepicker .html File/]
-[template private writeTimePickerJquery(c : Class)]
-	[let name : String = 'timepicker' + c.name.toUpperFirst()]
-		[comment TODO/]
-	[/let]
-[/template]
-
-[comment This function is worthless without writeTimePickerJS/]
+[comment This function is worthless without writeMapPickerJS/]
 [template private writeMap(c : Class)]
 	[let name : String = 'map' + c.name.toUpperFirst()]
 		<div id="[name/]" style="width:500px;height:380px;"></div>
@@ -227,27 +208,37 @@
 [/template]
 
 [template private writeListView(c : Class)]
-	[let name : String = 'list' + c.name.toUpperFirst()]
-		<ul class="list-group" id="[name/]">
-			[for (it : Class | getXisListItems(c))]
-				<li class="list-group-item">
-				[for (cl : Class | it.allOwnedElements()->selectByKind(Class))]
-					[writeWidget(cl)/]
-				[/for]
-				</li>
-			[/for]
-		</ul>
+	[let name : String = c.getParentXisInteractionSpace().name.toLower() + '_ol_' + c.getXisCompositeWidgetEntityName(c.getXisList()).toLower()]
+		<div class = "panel panel-default">
+		   <div class = "panel-heading">
+		      <h3 class = "panel-title">
+		         <i class="fa fa-bars"></i> [c.getXisCompositeWidgetEntityName(c.getXisList()).toUpperFirst()/] List
+		      </h3>
+		   </div>
+		   <div class = "panel-body">
+		      <ul class="list-group" id="[name/]">
+			</ul>
+		   </div>
+		</div>
 	[/let]
 [/template]
 
-[template private writeMenu(widget : Class, interactionSpace : Class)]
-	[let name : String = interactionSpace.name.toLower() + '_' + widget.getXisCompositeWidgetEntityName(widget.getXisMenu()) + '_btn_' + widget.name.toLower()]
+[template private writeMenu(c : Class)]
+	<div class="panel panel-primary">
+      <div class="panel-heading"><i class="fa fa-cogs"></i> [c.getXisCompositeWidgetEntityName(c.getXisMenu()).toUpperFirst()/] Actions</div>
 		<ul class="nav nav-pills">
-			[for (c : Class | widget.allOwnedElements()->selectByKind(Class))]
-			<li role="presentation"><a class="btn btn-default" href="[c.getXisButtonOnTap()/]" id="[name/]" [if (c.hasXisAction())] onClick="[c.getXisAction().name.toLowerFirst()/]"[/if]>[c.getXisWidgetValue(c.getXisButton())/]</a></button></li> 
+			[for (cl : Class | c.getXisMenuItems())]
+			[if(cl.getXisAction().isOKAction())]
+			<li role="presentation"><a class="btn btn-default" id="[c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisCompositeWidgetEntityName(c.getXisMenu()).toLower() + '_' + cl.getXisAction().name.toLower()/]_btn" onClick="[cl.getXisMenuItemOnTap()/]()">[cl.getXisWidgetValue(cl.getXisMenuItem())/]</a></button></li>
+			[elseif(cl.getXisAction().isDeleteAllAction() or cl.getXisAction().isDeleteAction())]
+			<li role="presentation"><a class="btn btn-danger" id="[c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisCompositeWidgetEntityName(c.getXisMenu()).toLower() + '_' + cl.getXisAction().name.toLower()/]_btn" onClick="[cl.getXisMenuItemOnTap()/]()">[cl.getXisWidgetValue(cl.getXisMenuItem())/]</a></button></li>
+			[else]
+			<li role="presentation"><a class="btn btn-default" href="[cl.getXisAction().getNavigation().toLowerFirst()/].html" id="[c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisCompositeWidgetEntityName(c.getXisMenu()).toLower() + '_' + cl.getXisAction().name.toLower()/]_btn">[cl.getXisWidgetValue(cl.getXisMenuItem())/]</a></button></li>
+			[/if]
 			[/for]
 		</ul>
-	[/let]
+	</div>
+	<br />
 [/template]
 
 [template private writeDropdown(c : Class)]
@@ -299,16 +290,52 @@
 
 [template private writeForm(c : Class)]
 [let name : String = 'form' + c.name.toUpperFirst()]
-	<form role="form">
-		<div class="form-group">
-		[comment In model2model make some verifications in order for form to be label + input/]
-		[let w : Sequence(Class) = getXisFormWidgets(c)]
-			[for (cl : Class | w)]
+	<div class = "panel panel-default">
+	   <div class = "panel-heading">
+	      <h3 class = "panel-title">
+	         <i class="fa fa-pencil-square-o"></i> [c.getXisCompositeWidgetEntityName(c.getXisForm()).toUpperFirst()/] Fields
+	      </h3>
+	   </div>
+	   <div class = "panel-body">
+	      <form role="form">
+			[for (cl : Class | c.getXisFormWidgets())]
+				<div class="form-group">
 				[writeWidget(cl)/]
+				</div>
 			[/for]
-		[/let]
+		</form>
+	   </div>
+	</div>
+[/let]
+[/template]
+
+[template private writeCollapsible(c : Class)]
+[let name : String = 'collapsible' + c.name.toUpperFirst()]
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1"><i class="fa fa-caret-square-o-down"></i> [c.getXisCollapsibleEntityName()/] Management</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+	  [for (cl : Class | c.getXisCollapsibleWidgets())]
+	  	[if(not cl.isXisMenu())]
+		<div class="panel-body">
+			[writeWidget(cl)/]
 		</div>
-	</form>
+		[/if]
+	  [/for]
+      <div class="panel-footer">
+	  [for (cl : Class | c.getXisCollapsibleWidgets())]
+	  	[if(cl.isXisMenu())]
+			[writeWidget(cl)/]
+		[/if]
+	  [/for]
+	  </div>
+    </div>
+  </div>
+</div>
 [/let]
 [/template]
 

@@ -324,7 +324,7 @@ namespace XisWebEAPlugin
             }
 
             //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, listIS, listDiagram, "src");
+            XisImage img = new XisImage(repository, listIS, listDiagram, "../../images/default.png");
 
             XisSiteMap siteMap = new XisSiteMap(repository, listIS, listDiagram);
 
@@ -440,7 +440,8 @@ namespace XisWebEAPlugin
                     detailModes.Add(ActionType.Update, contextItem);
                 }
 
-                if (ContainsDeleteMaster(useCase))
+                //This action is passing to the Editor page
+                /*if (ContainsDeleteMaster(useCase))
                 {
                     context.SetEntityName(master.Element.Name);
                     string actionName = "delete" + master.Element.Name;
@@ -448,7 +449,7 @@ namespace XisWebEAPlugin
                         "Delete" + master.Element.Name + "Item", actionName);
                     contextItem.SetValue("Delete " + master.Element.Name);
                     XisWebHelper.CreateXisAction(repository, contextItem.Element, actionName, ActionType.Delete);
-                }
+                }*/
                 listIS.ContextMenu = context;
             }
             #endregion
@@ -620,7 +621,7 @@ namespace XisWebEAPlugin
                 string actionBack = "backTo" + homeIS.Element.Name;
                 XisMenuItem backMenuItem = new XisMenuItem(repository, listDiagram, listIS.Menu,
                     "BackTo" + homeIS.Element.Name + "Item", actionBack);
-                backMenuItem.SetValue("Back");
+                backMenuItem.SetValue("Go Back");
                 XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionBack, ActionType.Cancel);
                 CreateXisInteractionSpaceAssociation(actionBack, listIS, homeIS);
             }
@@ -1043,7 +1044,7 @@ namespace XisWebEAPlugin
                 string actionBack = "backTo" + homeIS.Element.Name;
                 XisMenuItem backMenuItem = new XisMenuItem(repository, detailDiagram, detailIS.Menu,
                     "BackTo" + homeIS.Element.Name + "Item", actionBack);
-                backMenuItem.SetValue("Back");
+                backMenuItem.SetValue("Go Back");
                 XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionBack, ActionType.Cancel);
                 CreateXisInteractionSpaceAssociation(actionBack, detailIS, homeIS);
             }
@@ -1073,7 +1074,7 @@ namespace XisWebEAPlugin
                 master.Element.Name + " Editor", InteractionSpaceType.MasterEntityEditor, false, true);
 
             //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, detailIS, diagram, "src");
+            XisImage img = new XisImage(repository, detailIS, diagram, "../../images/default.png");
 
             XisSiteMap siteMap = new XisSiteMap(repository, detailIS, diagram);
 
@@ -1328,6 +1329,18 @@ namespace XisWebEAPlugin
                 CreateXisInteractionSpaceAssociation(actionName, detailIS, previousIS);
             }
 
+            if (ContainsDeleteMaster(useCase))
+            {
+                XisWidget parent = menu;
+
+                menu.SetEntityName(master.Element.Name);
+                string actionName = "delete" + master.Element.Name;
+                XisMenuItem contextItem = new XisMenuItem(repository, diagram, parent,
+                    "Delete" + master.Element.Name + "Item", actionName);
+                contextItem.SetValue("Delete " + master.Element.Name);
+                XisWebHelper.CreateXisAction(repository, contextItem.Element, actionName, ActionType.Delete);
+            }
+
             #region Check ServiceUC Extensions
             if (services.Count > 0)
             {
@@ -1359,7 +1372,7 @@ namespace XisWebEAPlugin
 
             string cancelAction = "cancel" + master.Element.Name;
             XisMenuItem cancelItem = new XisMenuItem(repository, diagram, menu, "Cancel" + master.Element.Name, cancelAction);
-            cancelItem.SetValue("Cancel " + master.Element.Name);
+            cancelItem.SetValue("Go Back"/*+ master.Element.Name*/);
             XisWebHelper.CreateXisAction(repository, cancelItem.Element, cancelAction, ActionType.Cancel, previousIS.Element.Name);
             CreateXisInteractionSpaceAssociation(cancelAction, detailIS, previousIS);
 
@@ -1379,7 +1392,7 @@ namespace XisWebEAPlugin
             XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "EditorIS", entity.Element.Name + " Editor", InteractionSpaceType.DetailEntityEditor);
 
             //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, detailIS, diagram, "src");
+            XisImage img = new XisImage(repository, detailIS, diagram, "../../images/default.png");
 
             XisSiteMap siteMap = new XisSiteMap(repository, detailIS, diagram);
 
@@ -1416,7 +1429,7 @@ namespace XisWebEAPlugin
 
             string cancelAction = "cancel" + entity.Element.Name;
             XisMenuItem cancelItem = new XisMenuItem(repository, diagram, menu, "Cancel" + entity.Element.Name, cancelAction);
-            cancelItem.SetValue("Cancel " + entity.Element.Name);
+            cancelItem.SetValue("Go Back "/* + entity.Element.Name*/);
             XisWebHelper.CreateXisAction(repository, cancelItem.Element, cancelAction, ActionType.Cancel);
             CreateXisInteractionSpaceAssociation("cancel" + entity.Element.Name, detailIS, previousIS);
 
@@ -1537,11 +1550,12 @@ namespace XisWebEAPlugin
                 XisWebHelper.CreateXisAction(repository, menuItem.Element, actionName, ActionType.DeleteAll);
             }
 
-            string actionClose = "close" + entity.Element.Name;
+            //No need for Close action in Collapsible since the panel closes itself
+            /*string actionClose = "close" + entity.Element.Name;
             XisMenuItem backMenuItem = new XisMenuItem(repository, diagram, menu,
                 "Close" + entity.Element.Name + "Item", actionClose);
             backMenuItem.SetValue("Close");
-            XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionClose, ActionType.Cancel);
+            XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionClose, ActionType.Cancel);*/
 
             collapsible.Menu = menu;
             #endregion
@@ -1697,7 +1711,7 @@ namespace XisWebEAPlugin
                 string actionBack = "backTo" + homeIS.Element.Name;
                 XisMenuItem backMenuItem = new XisMenuItem(repository, serviceDiagram, serviceIS.Menu,
                     "BackTo" + homeIS.Element.Name + "Item", actionBack);
-                backMenuItem.SetValue("Back");
+                backMenuItem.SetValue("Go Back");
                 XisWebHelper.CreateXisAction(repository, backMenuItem.Element, actionBack, ActionType.Cancel);
                 CreateXisInteractionSpaceAssociation(actionBack, serviceIS, homeIS);
             }

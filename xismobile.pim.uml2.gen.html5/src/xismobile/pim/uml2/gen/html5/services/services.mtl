@@ -98,6 +98,10 @@
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisFormWidgets(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
+[query public getXisCollapsibleWidgets(c : Class) : Sequence(Class) =
+	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisCollapsibleWidgets(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+
 [query public getXisImagesFromImageSlider(c : Class) : Sequence(Class) =
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'getXisImagesFromImageSlider(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]

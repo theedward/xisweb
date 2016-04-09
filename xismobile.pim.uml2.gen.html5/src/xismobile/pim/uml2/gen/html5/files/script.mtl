@@ -1,79 +1,59 @@
 [comment encoding = UTF-8 /]
 [module script('http://www.eclipse.org/uml2/4.0.0/UML')]
-
+[import xismobile::pim::uml2::gen::html5::common::jsUtils /]
 [import xismobile::pim::uml2::gen::html5::common::utils /]
 [import xismobile::pim::uml2::gen::html5::common::xisWebUtils /]
 [import xismobile::pim::uml2::gen::html5::files::widgets /]
 [import xismobile::pim::uml2::gen::html5::services::services /]
-
 [template public generateScript(c : Class)]
 [file ('src/js/'.concat(c.name.toLower()).concat('.js'), false, 'UTF-8')]
-[let widgets : Sequence(Class) = c.getXisInteractionSpaceWidgets()]
-[for (w : Class | widgets) separator('\n')]
-	[if(widgets->size() > 0)]
+[for (w : Class | c.getXisInteractionSpaceWidgets())]
 	[w.writeWidgetJS(w) /]
-	[/if]
 [/for]
-[/let]
+
+[if(c.isMasterEntityListIS())]
+[for(cl : Class | c.getMasterEntities())]
+[deleteAllItems(cl, c)/]
+[renderItemForIS(cl, c)/]
+[loadListItemsForIS(cl, c)/]
+[hideDeleteAllButtonsForIS(cl, c)/]
+[/for]
+[/if]
 
 [if(c.isMasterEntityEditorIS())]
 [for(cl : Class | c.getMasterEntities())]
 [deleteItem(cl)/]
-[saveItem(cl)/]
+[saveItem(cl, c)/]
+[fillContentForEntityInIS(cl, c)/]
 [/for]
+[for(cl : Class | c.getDetailEntities())]
+[deleteAllItems(cl, c)/]
+[renderItemForIS(cl, c)/]
+[loadListItemsForIS(cl, c)/]
+[hideDeleteAllButtonsForIS(cl, c)/]
+[/for]
+[for(cl : Class | c.getReferenceEntities())]
+[deleteAllItems(cl, c)/]
+[renderItemForIS(cl, c)/]
+[loadListItemsForIS(cl, c)/]
+[hideDeleteAllButtonsForIS(cl, c)/]
+[/for]
+[/if]
 
+[if(c.isDetailEntityEditorIS())]
 [for(cl : Class | c.getDetailEntities())]
 [deleteItem(cl)/]
-[saveItem(cl)/]
+[saveItem(cl, c)/]
+[fillContentForEntityInIS(cl, c)/]
 [/for]
+[/if]
 
+[if(c.isReferenceEntityEditorIS())]
 [for(cl : Class | c.getReferenceEntities())]
 [deleteItem(cl)/]
-[saveItem(cl)/]
+[saveItem(cl, c)/]
+[fillContentForEntityInIS(cl, c)/]
 [/for]
-
-function fillContent(){
-	var id = $.QueryString['['/]"id"[']'/];
-	if(id > 0){
-	
-	}else
-	{
-		$('#documenteditoris_btn_delete').hide();
-	}
-}
-
 [/if]
-
-[if(c.isMasterEntityListIS())]
-//If there are no Items hide the DeleteAll button
-function hideDeleteAllButton(rs) {
-	if(rs.rows.length == 0){
-		$('#documentlistis_btn_deleteall').hide();
-	}
-}
-
-//Iterate through the set and call the function that knows how to print the Item on each element
-function loadListItems(tx, rs) {
-  var items = document.getElementById("documentlistis_ol_document");
-  for (var i=0; i < rs.rows.length; i++) {
-    renderItem(rs.rows.item(i), items);
-  }
-}
-	
-
-[/if]
-
 [/file]
-[/template]
-
-[template public deleteItem(c : Class)]
-function delete[c.name.toUpperFirst()/](){
-[c.getModel().name/].deleteItemFrom[c.name.toUpperFirst()/]();
-}
-[/template]
-
-[template public saveItem(c : Class)]
-function save[c.name.toUpperFirst()/](){
-[c.getModel().name/].addItemTo[c.name.toUpperFirst()/]();
-}
 [/template]
