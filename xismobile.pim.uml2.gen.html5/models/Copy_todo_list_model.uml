@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISWeb="http:///schemas/XISWeb/_aIPtsAChEeafedY1jUNsBQ/16" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISWeb/_aIPtsAChEeafedY1jUNsBQ/16 ../../XIS-Web/model.profile.uml#_aIZesAChEeafedY1jUNsBQ">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISWeb="http:///schemas/XISWeb/_C0TysPv3EeWhDONV5HFNPQ/14" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISWeb/_C0TysPv3EeWhDONV5HFNPQ/14 ../../XIS-Web/model.profile.uml#_C0djsPv3EeWhDONV5HFNPQ">
   <uml:Model xmi:id="_Km92hNVhEeWbx7h7fHdIrA" name="Todo_List_Model">
     <packageImport xmi:id="_Km92hdVhEeWbx7h7fHdIrA">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -67,10 +67,11 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_EcUPcPWuEeWnIbgNFECb8Q" name="documentListIS_documentBE_1" memberEnd="_EcUPcfWuEeWnIbgNFECb8Q _EcSaQPWuEeWnIbgNFECb8Q">
-      <ownedEnd xmi:id="_EcUPcfWuEeWnIbgNFECb8Q" name="documentListIS" type="_h3ogYNVhEeWbx7h7fHdIrA" association="_EcUPcPWuEeWnIbgNFECb8Q">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EcUPcvWuEeWnIbgNFECb8Q" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EcUPc_WuEeWnIbgNFECb8Q" value="1"/>
-      </ownedEnd>
+      <memberEnd xmi:idref="_EcUPcfWuEeWnIbgNFECb8Q"/>
+	  <memberEnd xmi:idref="_EcSaQPWuEeWnIbgNFECb8Q"/>
+		<ownedEnd aggregation="none" association="_EcUPcPWuEeWnIbgNFECb8Q" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="_EcUPcfWuEeWnIbgNFECb8Q" xmi:type="uml:Property">
+			<type xmi:idref="_h3ogYNVhEeWbx7h7fHdIrA"/>
+	 	</ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_K0kK8PWuEeWnIbgNFECb8Q" name="Task">
       <ownedAttribute xmi:id="_L-hqEPv4EeWhDONV5HFNPQ" name="date" visibility="public" isUnique="false">
@@ -187,14 +188,14 @@
     </packagedElement>
     <profileApplication xmi:id="_knGu4PvjEeWbT9771p-XRw">
       <eAnnotations xmi:id="_kn_fsPvjEeWbT9771p-XRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../../XIS-Web/model.profile.uml#_aIZesAChEeafedY1jUNsBQ"/>
+        <references xmi:type="ecore:EPackage" href="../../XIS-Web/model.profile.uml#_C0djsPv3EeWhDONV5HFNPQ"/>
       </eAnnotations>
       <appliedProfile href="../../XIS-Web/model.profile.uml#_p7ZwUNSiEeWMgIVLIiCn_g"/>
     </profileApplication>
   </uml:Model>
   <XISWeb:XisInteractionSpace xmi:id="_l7S6oPvjEeWbT9771p-XRw" isMainScreen="true" name="TaskListIS" title="Manage Tasks" base_Class="_h3ogYNVhEeWbx7h7fHdIrA" type="MasterEntityList"/>
   <XISWeb:XisImage xmi:id="_pz8iAPv1EeWhDONV5HFNPQ" base_Class="_9CyBENV3EeWsjLeoN-5-fQ" src="../../images/default.png"/>
-  <XISWeb:XisSiteMap xmi:id="_6Uwo8Pv1EeWhDONV5HFNPQ" base_Class="_OgLe0PZjEeWnIbgNFECb8Q"/>
+  <XISWeb:XisSitemap xmi:id="_6Uwo8Pv1EeWhDONV5HFNPQ" base_Class="_OgLe0PZjEeWnIbgNFECb8Q"/>
   <XISWeb:XisList xmi:id="_8GnBEPv1EeWhDONV5HFNPQ" name="TaskList" base_Class="_hDdbQPveEeWbT9771p-XRw" entityName="Task"/>
   <XISWeb:XisListItem xmi:id="_IJxQ8Pv2EeWhDONV5HFNPQ" name="TaskListItem" base_Class="_GQ4UIPvfEeWbT9771p-XRw" onTap="editTask"/>
   <XISWeb:XisLabel xmi:id="_PeRZUPv2EeWhDONV5HFNPQ" name="dateLbl" base_Class="_ShWAMPvfEeWbT9771p-XRw" entityAttributeName="Task.date"/>
@@ -220,7 +221,7 @@
   <XISWeb:XisEntityAttribute xmi:id="_z0zJoPv6EeWhDONV5HFNPQ" base_Property="_xuJ4IPv4EeWhDONV5HFNPQ"/>
   <XISWeb:XisInteractionSpace xmi:id="_0_hwAPv9EeWhDONV5HFNPQ" name="TaskEditorIS" title="Task Editor" base_Class="_nm3FwPv9EeWhDONV5HFNPQ" type="MasterEntityEditor"/>
   <XISWeb:XisImage xmi:id="_AWmV8Pv-EeWhDONV5HFNPQ" base_Class="_9TgYYPv9EeWhDONV5HFNPQ" src="../../images/default.png"/>
-  <XISWeb:XisSiteMap xmi:id="_ZKfGUPv-EeWhDONV5HFNPQ" base_Class="_VrtSUPv-EeWhDONV5HFNPQ"/>
+  <XISWeb:XisSitemap xmi:id="_ZKfGUPv-EeWhDONV5HFNPQ" base_Class="_VrtSUPv-EeWhDONV5HFNPQ"/>
   <XISWeb:XisForm xmi:id="_c94fcPv-EeWhDONV5HFNPQ" base_Class="_agt5cPv-EeWhDONV5HFNPQ" entityName="Task"/>
   <XISWeb:XisDatePicker xmi:id="_hoTnMPv-EeWhDONV5HFNPQ" name="TaskDateDatePicker" base_Class="_fb6oIPv-EeWhDONV5HFNPQ" entityAttributeName="Task.date"/>
   <XISWeb:XisTextBox xmi:id="_ubTYkPv-EeWhDONV5HFNPQ" name="TaskDescriptionTxtBox" base_Class="_r38D8Pv-EeWhDONV5HFNPQ" entityAttributeName="Task.description" label="description" hint="description"/>

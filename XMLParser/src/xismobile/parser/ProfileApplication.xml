@@ -1,0 +1,6 @@
+<profileApplication xmi:id="_knGu4PvjEeWbT9771p-XRw">
+   <eAnnotations xmi:id="_kn_fsPvjEeWbT9771p-XRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+     <references xmi:type="ecore:EPackage" href="model.profile.uml#_z1qzkP_wEeWfedY1jUNsBQ"/>
+   </eAnnotations>
+   <appliedProfile href="model.profile.uml#_p7ZwUNSiEeWMgIVLIiCn_g"/>
+</profileApplication>

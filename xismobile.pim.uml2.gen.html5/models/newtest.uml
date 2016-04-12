@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:XIS-Web="http:///schemas/XISWeb/_z1OHoP_wEeWfedY1jUNsBQ/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.1" xsi:schemaLocation="http:///schemas/XISWeb/_z1OHoP_wEeWfedY1jUNsBQ/15 file:/C:\Users\João%20Seixas\Desktop\XIS-Web/model.profile.uml#_z1qzkP_wEeWfedY1jUNsBQ">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model name="Model" visibility="public" xmi:type="uml:Model">
+		<packagedElement name="Model" visibility="public" xmi:id="EAPK_84914069_7B2A_4678_8974_2CE1D88001E1" xmi:type="uml:Package">
+			<packagedElement name="XIS-Web Framework" visibility="public" xmi:id="EAPK_6CB58B53_A8C1_49db_8A86_A3902F3D4C8E" xmi:type="uml:Package">
+				<packagedElement name="Architectural Model" visibility="public" xmi:id="EAPK_82997B3C_BA06_47fe_8B04_1CA404127E73" xmi:type="uml:Package">
+					<packagedElement name="To-DoListApp" visibility="public" xmi:id="EAID_81D769C1_1ED4_4e2d_94A4_D841CC17983F" xmi:type="uml:Class">
+						<ownedAttribute aggregation="none" association="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst86659F_7D4F_43b3_A75D_9853D43D2D2A" xmi:type="uml:Property">
+							<type xmi:idref="EAID_CDD6D4B7_5111_4066_9404_5BC8F525F861"/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst86659F_7D4F_43b3_A75D_9853D43D2D2A"/>
+						<memberEnd xmi:idref="EAID_src86659F_7D4F_43b3_A75D_9853D43D2D2A"/>
+						<ownedEnd aggregation="none" association="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src86659F_7D4F_43b3_A75D_9853D43D2D2A" xmi:type="uml:Property">
+							<type xmi:idref="EAID_81D769C1_1ED4_4e2d_94A4_D841CC17983F"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="To_DoServer" visibility="public" xmi:id="EAID_4D776934_2DF1_4240_B69B_9705D6251392" xmi:type="uml:Class">
+						<ownedOperation concurrency="sequential" name="syncTask" visibility="public" xmi:id="EAID_13CF3C90_1573_4c9a_88BC_2CEC718C66E0">
+							<ownedParameter direction="return" name="return" type="EAJava_void" xmi:id="EAID_RT000000_1573_4c9a_88BC_2CEC718C66E0"/>
+						</ownedOperation>
+					</packagedElement>
+					<packagedElement client="EAID_4D776934_2DF1_4240_B69B_9705D6251392" supplier="EAID_CDD6D4B7_5111_4066_9404_5BC8F525F861" visibility="public" xmi:id="EAID_4EB523DB_83ED_47d0_8EF6_A66208F5D0D0" xmi:type="uml:Realization"/>
+					<packagedElement visibility="public" xmi:id="EAID_5A12EDB0_F7D1_47c1_9225_03266351DAD1" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst12EDB0_F7D1_47c1_9225_03266351DAD1"/>
+						<memberEnd xmi:idref="EAID_src12EDB0_F7D1_47c1_9225_03266351DAD1"/>
+						<ownedEnd aggregation="none" association="EAID_5A12EDB0_F7D1_47c1_9225_03266351DAD1" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src12EDB0_F7D1_47c1_9225_03266351DAD1" xmi:type="uml:Property">
+							<type xmi:idref="EAID_436757A2_F982_4293_9875_D25C6250AEA6"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement isAbstract="true" name="To_DoService" visibility="public" xmi:id="EAID_CDD6D4B7_5111_4066_9404_5BC8F525F861" xmi:type="uml:Interface">
+						<ownedOperation concurrency="sequential" name="syncTask" visibility="public" xmi:id="EAID_0DF50124_A671_4844_9FDC_1F6B9BE9A79B">
+							<ownedParameter direction="return" name="return" type="EAJava_void" xmi:id="EAID_RT000000_A671_4844_9FDC_1F6B9BE9A79B"/>
+						</ownedOperation>
+					</packagedElement>
+				</packagedElement>
+				<packagedElement name="Business Entities Model" visibility="public" xmi:id="EAPK_1541E411_8FBA_4dad_B1EC_CB5726D915CF" xmi:type="uml:Package">
+					<packagedElement name="TaskBE" visibility="public" xmi:id="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6" xmi:type="uml:Class">
+						<ownedAttribute aggregation="none" association="EAID_02A03BA4_5E1C_4120_9FCB_7ADDD4DC55C3" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstA03BA4_5E1C_4120_9FCB_7ADDD4DC55C3" xmi:type="uml:Property">
+							<type xmi:idref="EAID_B8BF493A_40B1_4a52_99E8_A9E73D60B4CB"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_61150BFE_E123_4868_927C_FC1F733AC325" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst150BFE_E123_4868_927C_FC1F733AC325" xmi:type="uml:Property">
+							<type xmi:idref="EAID_7428194B_1F81_4a72_824F_7EA30DA75A6C"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_7F4FADC4_6CBC_4af0_985E_1F1B55D937C6" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst4FADC4_6CBC_4af0_985E_1F1B55D937C6" xmi:type="uml:Property">
+							<type xmi:idref="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5"/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_02A03BA4_5E1C_4120_9FCB_7ADDD4DC55C3" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstA03BA4_5E1C_4120_9FCB_7ADDD4DC55C3"/>
+						<memberEnd xmi:idref="EAID_srcA03BA4_5E1C_4120_9FCB_7ADDD4DC55C3"/>
+						<ownedEnd aggregation="none" association="EAID_02A03BA4_5E1C_4120_9FCB_7ADDD4DC55C3" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcA03BA4_5E1C_4120_9FCB_7ADDD4DC55C3" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_61150BFE_E123_4868_927C_FC1F733AC325" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst150BFE_E123_4868_927C_FC1F733AC325"/>
+						<memberEnd xmi:idref="EAID_src150BFE_E123_4868_927C_FC1F733AC325"/>
+						<ownedEnd aggregation="none" association="EAID_61150BFE_E123_4868_927C_FC1F733AC325" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src150BFE_E123_4868_927C_FC1F733AC325" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_7F4FADC4_6CBC_4af0_985E_1F1B55D937C6" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst4FADC4_6CBC_4af0_985E_1F1B55D937C6"/>
+						<memberEnd xmi:idref="EAID_src4FADC4_6CBC_4af0_985E_1F1B55D937C6"/>
+						<ownedEnd aggregation="none" association="EAID_7F4FADC4_6CBC_4af0_985E_1F1B55D937C6" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src4FADC4_6CBC_4af0_985E_1F1B55D937C6" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_231D21F6_3EBA_4928_A2CA_3AAEDB29E0AF" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst1D21F6_3EBA_4928_A2CA_3AAEDB29E0AF"/>
+						<memberEnd xmi:idref="EAID_src1D21F6_3EBA_4928_A2CA_3AAEDB29E0AF"/>
+						<ownedEnd aggregation="none" association="EAID_231D21F6_3EBA_4928_A2CA_3AAEDB29E0AF" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src1D21F6_3EBA_4928_A2CA_3AAEDB29E0AF" xmi:type="uml:Property">
+							<type xmi:idref="EAID_436757A2_F982_4293_9875_D25C6250AEA6"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_4842E82D_6C1A_4fd9_94E2_1876023F4A1F" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst42E82D_6C1A_4fd9_94E2_1876023F4A1F"/>
+						<memberEnd xmi:idref="EAID_src42E82D_6C1A_4fd9_94E2_1876023F4A1F"/>
+						<ownedEnd aggregation="none" association="EAID_4842E82D_6C1A_4fd9_94E2_1876023F4A1F" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src42E82D_6C1A_4fd9_94E2_1876023F4A1F" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_49A6FABA_DFAC_49c0_A4FA_011CA687616B" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstA6FABA_DFAC_49c0_A4FA_011CA687616B"/>
+						<memberEnd xmi:idref="EAID_srcA6FABA_DFAC_49c0_A4FA_011CA687616B"/>
+						<ownedEnd aggregation="none" association="EAID_49A6FABA_DFAC_49c0_A4FA_011CA687616B" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcA6FABA_DFAC_49c0_A4FA_011CA687616B" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_AF1E21A4_5491_4dd3_84AF_527899CE08E7" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst1E21A4_5491_4dd3_84AF_527899CE08E7"/>
+						<memberEnd xmi:idref="EAID_src1E21A4_5491_4dd3_84AF_527899CE08E7"/>
+						<ownedEnd aggregation="none" association="EAID_AF1E21A4_5491_4dd3_84AF_527899CE08E7" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src1E21A4_5491_4dd3_84AF_527899CE08E7" xmi:type="uml:Property">
+							<type xmi:idref="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_F118CB83_8115_4c06_882E_D68825D4F541" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst18CB83_8115_4c06_882E_D68825D4F541"/>
+						<memberEnd xmi:idref="EAID_src18CB83_8115_4c06_882E_D68825D4F541"/>
+						<ownedEnd aggregation="none" association="EAID_F118CB83_8115_4c06_882E_D68825D4F541" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src18CB83_8115_4c06_882E_D68825D4F541" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+				</packagedElement>
+				<packagedElement name="Domain Model" visibility="public" xmi:id="EAPK_2476815C_B80B_4a6b_8A7B_CC21ED81A8C2" xmi:type="uml:Package">
+					<packagedElement name="Category" visibility="public" xmi:id="EAID_7428194B_1F81_4a72_824F_7EA30DA75A6C" xmi:type="uml:Class">
+						<ownedAttribute isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" name="name" visibility="public" xmi:id="EAID_3CC81548_751E_4898_BAF8_BBC41C396F76" xmi:type="uml:Property">
+							<lowerValue value="1" xmi:id="EAID_LI000001_751E_4898_BAF8_BBC41C396F76" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000002_751E_4898_BAF8_BBC41C396F76" xmi:type="uml:LiteralInteger"/>
+							<type xmi:idref="EAJava_String"/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_15B59C12_2468_429a_9B4F_28A4F84E7177" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstB59C12_2468_429a_9B4F_28A4F84E7177"/>
+						<memberEnd xmi:idref="EAID_srcB59C12_2468_429a_9B4F_28A4F84E7177"/>
+						<ownedEnd aggregation="none" association="EAID_15B59C12_2468_429a_9B4F_28A4F84E7177" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcB59C12_2468_429a_9B4F_28A4F84E7177" xmi:type="uml:Property">
+							<type xmi:idref="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5"/>
+							<lowerValue value="0" xmi:id="EAID_LI000003__2468_429a_9B4F_28A4F84E7177" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="-1" xmi:id="EAID_LI000004__2468_429a_9B4F_28A4F84E7177" xmi:type="uml:LiteralUnlimitedNatural"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="Note" visibility="public" xmi:id="EAID_B8BF493A_40B1_4a52_99E8_A9E73D60B4CB" xmi:type="uml:Class">
+						<ownedAttribute isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" name="text" visibility="public" xmi:id="EAID_24E7F61E_2358_413d_AFC0_803BE1AB4264" xmi:type="uml:Property">
+							<lowerValue value="1" xmi:id="EAID_LI000005_2358_413d_AFC0_803BE1AB4264" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000006_2358_413d_AFC0_803BE1AB4264" xmi:type="uml:LiteralInteger"/>
+							<type xmi:idref="EAJava_String"/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_EED9341F_DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstD9341F_DD1B_4719_8CB6_6F6A888A4D05"/>
+						<memberEnd xmi:idref="EAID_srcD9341F_DD1B_4719_8CB6_6F6A888A4D05"/>
+						<ownedEnd aggregation="none" association="EAID_EED9341F_DD1B_4719_8CB6_6F6A888A4D05" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcD9341F_DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:Property">
+							<type xmi:idref="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5"/>
+							<lowerValue value="1" xmi:id="EAID_LI000007__DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000008__DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:LiteralInteger"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="Task" visibility="public" xmi:id="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5" xmi:type="uml:Class">
+						<ownedAttribute isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" name="date" visibility="public" xmi:id="EAID_E784960C_30AD_4a62_98BB_60B18BBF85F3" xmi:type="uml:Property">
+							<lowerValue value="1" xmi:id="EAID_LI000009_30AD_4a62_98BB_60B18BBF85F3" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000010_30AD_4a62_98BB_60B18BBF85F3" xmi:type="uml:LiteralInteger"/>
+							<type xmi:idref="EAJava_Date"/>
+						</ownedAttribute>
+						<ownedAttribute isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" name="description" visibility="public" xmi:id="EAID_C5F24A7F_AA13_489a_9AC6_585A28ADC26E" xmi:type="uml:Property">
+							<lowerValue value="1" xmi:id="EAID_LI000011_AA13_489a_9AC6_585A28ADC26E" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000012_AA13_489a_9AC6_585A28ADC26E" xmi:type="uml:LiteralInteger"/>
+							<type xmi:idref="EAJava_String"/>
+						</ownedAttribute>
+						<ownedAttribute isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" name="name" visibility="public" xmi:id="EAID_A4C9FCD7_44AA_47b5_9F54_985E196CCD8E" xmi:type="uml:Property">
+							<lowerValue value="1" xmi:id="EAID_LI000013_44AA_47b5_9F54_985E196CCD8E" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000014_44AA_47b5_9F54_985E196CCD8E" xmi:type="uml:LiteralInteger"/>
+							<type xmi:idref="EAJava_String"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_15B59C12_2468_429a_9B4F_28A4F84E7177" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstB59C12_2468_429a_9B4F_28A4F84E7177" xmi:type="uml:Property">
+							<type xmi:idref="EAID_7428194B_1F81_4a72_824F_7EA30DA75A6C"/>
+							<lowerValue value="1" xmi:id="EAID_LI000015__2468_429a_9B4F_28A4F84E7177" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="1" xmi:id="EAID_LI000016__2468_429a_9B4F_28A4F84E7177" xmi:type="uml:LiteralInteger"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="composite" association="EAID_EED9341F_DD1B_4719_8CB6_6F6A888A4D05" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstD9341F_DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:Property">
+							<type xmi:idref="EAID_B8BF493A_40B1_4a52_99E8_A9E73D60B4CB"/>
+							<lowerValue value="0" xmi:id="EAID_LI000017__DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:LiteralInteger"/>
+							<upperValue value="-1" xmi:id="EAID_LI000018__DD1B_4719_8CB6_6F6A888A4D05" xmi:type="uml:LiteralUnlimitedNatural"/>
+						</ownedAttribute>
+					</packagedElement>
+				</packagedElement>
+				<packagedElement name="UseCases Model" visibility="public" xmi:id="EAPK_3EF7E93A_EDAA_4b60_B7BE_ECFEFE0E74EF" xmi:type="uml:Package">
+					<packagedElement name="User" visibility="public" xmi:id="EAID_4471BCBB_8110_455b_B64D_24E1874E4877" xmi:type="uml:Actor">
+						<ownedAttribute aggregation="none" association="EAID_83275A7D_5578_4015_A9F2_EAACF661CC32" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst275A7D_5578_4015_A9F2_EAACF661CC32" xmi:type="uml:Property">
+							<type xmi:idref="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC"/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_83275A7D_5578_4015_A9F2_EAACF661CC32" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst275A7D_5578_4015_A9F2_EAACF661CC32"/>
+						<memberEnd xmi:idref="EAID_src275A7D_5578_4015_A9F2_EAACF661CC32"/>
+						<ownedEnd aggregation="none" association="EAID_83275A7D_5578_4015_A9F2_EAACF661CC32" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src275A7D_5578_4015_A9F2_EAACF661CC32" xmi:type="uml:Property">
+							<type xmi:idref="EAID_4471BCBB_8110_455b_B64D_24E1874E4877"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="Manage Tasks" visibility="public" xmi:id="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC" xmi:type="uml:UseCase">
+						<ownedAttribute aggregation="none" association="EAID_AF1E21A4_5491_4dd3_84AF_527899CE08E7" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst1E21A4_5491_4dd3_84AF_527899CE08E7" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement name="Sync Tasks" visibility="public" xmi:id="EAID_436757A2_F982_4293_9875_D25C6250AEA6" xmi:type="uml:UseCase">
+						<ownedAttribute aggregation="none" association="EAID_231D21F6_3EBA_4928_A2CA_3AAEDB29E0AF" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst1D21F6_3EBA_4928_A2CA_3AAEDB29E0AF" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_5A12EDB0_F7D1_47c1_9225_03266351DAD1" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst12EDB0_F7D1_47c1_9225_03266351DAD1" xmi:type="uml:Property">
+							<type xmi:idref="EAID_4D776934_2DF1_4240_B69B_9705D6251392"/>
+						</ownedAttribute>
+						<extend extendedCase="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC" visibility="public" xmi:id="EAID_E0C2E3A8_FCF9_4960_988B_D5B8E688FF07" xmi:type="uml:Extend"/>
+					</packagedElement>
+				</packagedElement>
+				<packagedElement name="InteractionSpace Model" visibility="public" xmi:id="EAPK_C63A1800_1FEB_417d_9624_67667778AD6B" xmi:type="uml:Package">
+					<packagedElement name="NoteEditorIS" visibility="public" xmi:id="EAID_65D57754_EA08_451a_A043_63D0D975AC71" xmi:type="uml:Class">
+						<ownedAttribute aggregation="none" association="EAID_19BC4F9D_4DC5_4555_A490_B3F642A9464E" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstBC4F9D_4DC5_4555_A490_B3F642A9464E" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_49A6FABA_DFAC_49c0_A4FA_011CA687616B" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstA6FABA_DFAC_49c0_A4FA_011CA687616B" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_D6C9AB4A_D3D7_45e6_9996_9A1A6E37FE6B" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstC9AB4A_D3D7_45e6_9996_9A1A6E37FE6B" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedAttribute>
+						<nestedClassifier name="NoteEditorISImage" visibility="public" xmi:id="EAID_F063A592_F04A_4bf0_8832_656A7954695E" xmi:type="uml:Class"/>
+						<nestedClassifier name="NoteEditorISSiteMap" visibility="public" xmi:id="EAID_CE45F117_1637_4013_AB7B_C37FE1E05337" xmi:type="uml:Class"/>
+						<nestedClassifier name="NoteForm" visibility="public" xmi:id="EAID_97A945A5_0279_4442_9CA3_186EE71B2666" xmi:type="uml:Class">
+							<nestedClassifier name="NoteTextTxtBox" visibility="public" xmi:id="EAID_97320F9B_680A_42f4_BB76_12EDB717A488" xmi:type="uml:Class"/>
+						</nestedClassifier>
+						<nestedClassifier name="NoteMenu" visibility="public" xmi:id="EAID_9FDE4DCA_FEF0_4fd7_9CFC_95D75CACA46A" xmi:type="uml:Class">
+							<nestedClassifier name="CancelNote" visibility="public" xmi:id="EAID_995D63EF_24C7_4483_BB6C_99FD5533B138" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="cancelNote" visibility="public" xmi:id="EAID_F0585699_5696_4f6b_8CB2_01A902062312"/>
+							</nestedClassifier>
+							<nestedClassifier name="SaveNote" visibility="public" xmi:id="EAID_900FAC9F_952F_49ac_8614_524A01D807A6" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="saveNote" visibility="public" xmi:id="EAID_A14B041F_5F3B_4984_B2A3_8ABF95C1BC41"/>
+							</nestedClassifier>
+						</nestedClassifier>
+					</packagedElement>
+					<packagedElement name="cancelNote" visibility="public" xmi:id="EAID_19BC4F9D_4DC5_4555_A490_B3F642A9464E" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstBC4F9D_4DC5_4555_A490_B3F642A9464E"/>
+						<memberEnd xmi:idref="EAID_srcBC4F9D_4DC5_4555_A490_B3F642A9464E"/>
+						<ownedEnd aggregation="none" association="EAID_19BC4F9D_4DC5_4555_A490_B3F642A9464E" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcBC4F9D_4DC5_4555_A490_B3F642A9464E" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="saveNote" visibility="public" xmi:id="EAID_D6C9AB4A_D3D7_45e6_9996_9A1A6E37FE6B" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstC9AB4A_D3D7_45e6_9996_9A1A6E37FE6B"/>
+						<memberEnd xmi:idref="EAID_srcC9AB4A_D3D7_45e6_9996_9A1A6E37FE6B"/>
+						<ownedEnd aggregation="none" association="EAID_D6C9AB4A_D3D7_45e6_9996_9A1A6E37FE6B" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcC9AB4A_D3D7_45e6_9996_9A1A6E37FE6B" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="createNote" visibility="public" xmi:id="EAID_5E088F7D_20D9_4288_A1D0_316550A984ED" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst088F7D_20D9_4288_A1D0_316550A984ED"/>
+						<memberEnd xmi:idref="EAID_src088F7D_20D9_4288_A1D0_316550A984ED"/>
+						<ownedEnd aggregation="none" association="EAID_5E088F7D_20D9_4288_A1D0_316550A984ED" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src088F7D_20D9_4288_A1D0_316550A984ED" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="editNote" visibility="public" xmi:id="EAID_8E135977_965F_48da_AF74_7FD52FA617AC" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst135977_965F_48da_AF74_7FD52FA617AC"/>
+						<memberEnd xmi:idref="EAID_src135977_965F_48da_AF74_7FD52FA617AC"/>
+						<ownedEnd aggregation="none" association="EAID_8E135977_965F_48da_AF74_7FD52FA617AC" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src135977_965F_48da_AF74_7FD52FA617AC" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="viewNote" visibility="public" xmi:id="EAID_C800293D_D155_4116_BD0E_52D11E5EC93C" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst00293D_D155_4116_BD0E_52D11E5EC93C"/>
+						<memberEnd xmi:idref="EAID_src00293D_D155_4116_BD0E_52D11E5EC93C"/>
+						<ownedEnd aggregation="none" association="EAID_C800293D_D155_4116_BD0E_52D11E5EC93C" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src00293D_D155_4116_BD0E_52D11E5EC93C" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="viewNote" visibility="public" xmi:id="EAID_DC9BD79A_923D_4d23_8B41_C7A6A52B6BB5" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst9BD79A_923D_4d23_8B41_C7A6A52B6BB5"/>
+						<memberEnd xmi:idref="EAID_src9BD79A_923D_4d23_8B41_C7A6A52B6BB5"/>
+						<ownedEnd aggregation="none" association="EAID_DC9BD79A_923D_4d23_8B41_C7A6A52B6BB5" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src9BD79A_923D_4d23_8B41_C7A6A52B6BB5" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="NoteListContextMenu" visibility="public" xmi:id="EAID_870EDF1F_FF2E_4065_BC8E_393E6390468A" xmi:type="uml:Class">
+						<nestedClassifier name="DeleteNoteItem" visibility="public" xmi:id="EAID_C73A55F2_0294_47fb_BAF0_90243C321BF8" xmi:type="uml:Class">
+							<ownedOperation concurrency="sequential" name="deleteNote" visibility="public" xmi:id="EAID_D0367AA3_56A4_4ad1_99AB_3968478764D1"/>
+						</nestedClassifier>
+						<nestedClassifier name="EditNoteItem" visibility="public" xmi:id="EAID_CA2A052D_5FC0_4085_84E0_02BAC74D83A0" xmi:type="uml:Class">
+							<ownedOperation concurrency="sequential" name="editNote" visibility="public" xmi:id="EAID_55606A9A_7E80_49c6_B54B_D3039CE1D7DD"/>
+						</nestedClassifier>
+						<nestedClassifier name="ViewNoteItem" visibility="public" xmi:id="EAID_D4FADD7C_2886_4559_90E8_D97AFB95C290" xmi:type="uml:Class">
+							<ownedOperation concurrency="sequential" name="viewNote" visibility="public" xmi:id="EAID_A0AFBCAB_3633_4c97_95F1_DB1F608ED17B"/>
+						</nestedClassifier>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_94640613_6C6C_4b86_9D7D_46EF6B8768A7" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst640613_6C6C_4b86_9D7D_46EF6B8768A7"/>
+						<memberEnd xmi:idref="EAID_src640613_6C6C_4b86_9D7D_46EF6B8768A7"/>
+						<ownedEnd aggregation="none" association="EAID_94640613_6C6C_4b86_9D7D_46EF6B8768A7" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src640613_6C6C_4b86_9D7D_46EF6B8768A7" xmi:type="uml:Property">
+							<type xmi:idref="EAID_4E638117_CF73_4c05_88FB_68A964DF7E28"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="TaskEditorIS" visibility="public" xmi:id="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2" xmi:type="uml:Class">
+						<ownedAttribute aggregation="none" association="EAID_5E088F7D_20D9_4288_A1D0_316550A984ED" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst088F7D_20D9_4288_A1D0_316550A984ED" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_6A8A6883_778E_4796_A3D0_5FB37775D7A7" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst8A6883_778E_4796_A3D0_5FB37775D7A7" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_6E0D4B4E_3C84_4aaa_B412_D63EDF589761" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst0D4B4E_3C84_4aaa_B412_D63EDF589761" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_8E135977_965F_48da_AF74_7FD52FA617AC" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst135977_965F_48da_AF74_7FD52FA617AC" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_C800293D_D155_4116_BD0E_52D11E5EC93C" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst00293D_D155_4116_BD0E_52D11E5EC93C" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_DC9BD79A_923D_4d23_8B41_C7A6A52B6BB5" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst9BD79A_923D_4d23_8B41_C7A6A52B6BB5" xmi:type="uml:Property">
+							<type xmi:idref="EAID_65D57754_EA08_451a_A043_63D0D975AC71"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_F118CB83_8115_4c06_882E_D68825D4F541" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst18CB83_8115_4c06_882E_D68825D4F541" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedAttribute>
+						<nestedClassifier name="CategoryForm" visibility="public" xmi:id="EAID_41A5C5B2_BD18_43e5_959B_07A3067481F1" xmi:type="uml:Class">
+							<nestedClassifier name="CategoryNameTxtBox" visibility="public" xmi:id="EAID_06F7B54B_E905_4de9_93C9_6A5BAD2691AD" xmi:type="uml:Class"/>
+							<nestedClassifier name="SaveCategoryBoundary" visibility="public" xmi:id="EAID_88938BE0_E8E1_4fbf_8A11_DE7C6469453F" xmi:type="uml:Class">
+								<nestedClassifier name="CategorySaveButton" visibility="public" xmi:id="EAID_3EBC1EEE_9F52_4f82_9608_5FB909844DA0" xmi:type="uml:Class">
+									<ownedOperation concurrency="sequential" name="saveCategory" visibility="public" xmi:id="EAID_1FB5755F_7770_4940_BFCA_42AB2D139CEF"/>
+								</nestedClassifier>
+							</nestedClassifier>
+						</nestedClassifier>
+						<nestedClassifier name="NoteCollapsible" visibility="public" xmi:id="EAID_C3B3D3B7_0977_4be2_B863_3207D802AC52" xmi:type="uml:Class">
+							<nestedClassifier name="NoteCollapsibleItem" visibility="public" xmi:id="EAID_CAFBAB4F_FE20_4967_A0E1_510431F84F2C" xmi:type="uml:Class">
+								<nestedClassifier name="NoteCollapsibleItemMenu" visibility="public" xmi:id="EAID_AEC93DF9_0A76_4226_BAB4_87C9B021B538" xmi:type="uml:Class">
+									<nestedClassifier name="CreateNoteItem" visibility="public" xmi:id="EAID_67782A3F_307A_42c1_AAD9_E041CF9D4C45" xmi:type="uml:Class">
+										<ownedOperation concurrency="sequential" name="createNote" visibility="public" xmi:id="EAID_C7CF5563_675A_4e76_9BBB_FDF1EF87BEF4"/>
+									</nestedClassifier>
+									<nestedClassifier name="DeleteAllNoteItem" visibility="public" xmi:id="EAID_2B00D17E_C09E_4d0a_987A_5577BA645A94" xmi:type="uml:Class">
+										<ownedOperation concurrency="sequential" name="deleteAllNotes" visibility="public" xmi:id="EAID_45882AFE_2222_43b4_A107_F39CC55D23C4"/>
+									</nestedClassifier>
+								</nestedClassifier>
+								<nestedClassifier name="NoteList" visibility="public" xmi:id="EAID_95E395D5_2F96_4151_90BB_652330E874C7" xmi:type="uml:Class">
+									<nestedClassifier name="NoteListItem" visibility="public" xmi:id="EAID_4E638117_CF73_4c05_88FB_68A964DF7E28" xmi:type="uml:Class">
+										<ownedOperation concurrency="sequential" name="viewNote" visibility="public" xmi:id="EAID_5AABDE4F_E502_45e2_BF3E_C99245B899C3"/>
+										<ownedAttribute aggregation="none" association="EAID_94640613_6C6C_4b86_9D7D_46EF6B8768A7" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst640613_6C6C_4b86_9D7D_46EF6B8768A7" xmi:type="uml:Property">
+											<type xmi:idref="EAID_870EDF1F_FF2E_4065_BC8E_393E6390468A"/>
+										</ownedAttribute>
+										<nestedClassifier name="textLbl" visibility="public" xmi:id="EAID_83894000_9F18_4dbb_BAAC_C080BFF7FCDE" xmi:type="uml:Class"/>
+									</nestedClassifier>
+								</nestedClassifier>
+							</nestedClassifier>
+						</nestedClassifier>
+						<nestedClassifier name="TaskEditorISImage" visibility="public" xmi:id="EAID_F4179AF2_776C_42c0_B850_D30CD27B4209" xmi:type="uml:Class"/>
+						<nestedClassifier name="TaskEditorISMenu" visibility="public" xmi:id="EAID_5E81E564_7113_4d67_9BCC_4D1B35972700" xmi:type="uml:Class">
+							<nestedClassifier name="CancelTask" visibility="public" xmi:id="EAID_7179A27D_663E_4e2b_8320_3357011B3385" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="cancelTask" visibility="public" xmi:id="EAID_68712D74_5718_43e7_93EA_3BA4D6D84619"/>
+							</nestedClassifier>
+							<nestedClassifier name="DeleteTaskItem" visibility="public" xmi:id="EAID_4F168786_625B_4717_BF52_E7E055526051" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="deleteTask" visibility="public" xmi:id="EAID_CC3EA6A5_2911_4b8c_8730_214A485E31CA"/>
+							</nestedClassifier>
+							<nestedClassifier name="SaveTaskBoundary" visibility="public" xmi:id="EAID_7A90C8F9_ADB0_4ff7_A974_F3FE34BB9BB2" xmi:type="uml:Class">
+								<nestedClassifier name="SaveTask" visibility="public" xmi:id="EAID_A85700C2_B1C3_4d13_A64A_2D36415301AA" xmi:type="uml:Class">
+									<ownedOperation concurrency="sequential" name="saveTask" visibility="public" xmi:id="EAID_A0ABC204_101D_47c1_92FE_4FD7302F96D1"/>
+								</nestedClassifier>
+							</nestedClassifier>
+							<nestedClassifier name="syncTask" visibility="public" xmi:id="EAID_B07C1B49_B301_4164_8E79_ECE5AED6A836" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="To_DoService.syncTask" visibility="public" xmi:id="EAID_AC159A8C_1980_4aca_B132_0396618CACF7"/>
+							</nestedClassifier>
+						</nestedClassifier>
+						<nestedClassifier name="TaskEditorISSiteMap" visibility="public" xmi:id="EAID_F78874F0_5D5A_4232_A08A_361FA66FA090" xmi:type="uml:Class"/>
+						<nestedClassifier name="TaskForm" visibility="public" xmi:id="EAID_91401DA7_0443_4cb1_AC6A_A1F62147FEA2" xmi:type="uml:Class">
+							<nestedClassifier name="TaskDateDatePicker" visibility="public" xmi:id="EAID_FA71C03E_834C_4779_B3C3_0E359E53E621" xmi:type="uml:Class"/>
+							<nestedClassifier name="TaskDescriptionTxtBox" visibility="public" xmi:id="EAID_BED46CF1_EBDC_44a9_A210_80A2C9A8942D" xmi:type="uml:Class"/>
+							<nestedClassifier name="TaskNameTxtBox" visibility="public" xmi:id="EAID_A2CB19D6_0EB7_4d68_A600_8EC6070420E0" xmi:type="uml:Class"/>
+						</nestedClassifier>
+					</packagedElement>
+					<packagedElement name="cancelTask" visibility="public" xmi:id="EAID_6A8A6883_778E_4796_A3D0_5FB37775D7A7" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst8A6883_778E_4796_A3D0_5FB37775D7A7"/>
+						<memberEnd xmi:idref="EAID_src8A6883_778E_4796_A3D0_5FB37775D7A7"/>
+						<ownedEnd aggregation="none" association="EAID_6A8A6883_778E_4796_A3D0_5FB37775D7A7" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src8A6883_778E_4796_A3D0_5FB37775D7A7" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="saveTask" visibility="public" xmi:id="EAID_6E0D4B4E_3C84_4aaa_B412_D63EDF589761" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst0D4B4E_3C84_4aaa_B412_D63EDF589761"/>
+						<memberEnd xmi:idref="EAID_src0D4B4E_3C84_4aaa_B412_D63EDF589761"/>
+						<ownedEnd aggregation="none" association="EAID_6E0D4B4E_3C84_4aaa_B412_D63EDF589761" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src0D4B4E_3C84_4aaa_B412_D63EDF589761" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="viewTask" visibility="public" xmi:id="EAID_1B9AA139_7571_4480_B2AD_68BA05005FBD" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dst9AA139_7571_4480_B2AD_68BA05005FBD"/>
+						<memberEnd xmi:idref="EAID_src9AA139_7571_4480_B2AD_68BA05005FBD"/>
+						<ownedEnd aggregation="none" association="EAID_1B9AA139_7571_4480_B2AD_68BA05005FBD" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_src9AA139_7571_4480_B2AD_68BA05005FBD" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="createTask" visibility="public" xmi:id="EAID_3EB31407_FFE5_48f9_B146_7F4A81670192" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstB31407_FFE5_48f9_B146_7F4A81670192"/>
+						<memberEnd xmi:idref="EAID_srcB31407_FFE5_48f9_B146_7F4A81670192"/>
+						<ownedEnd aggregation="none" association="EAID_3EB31407_FFE5_48f9_B146_7F4A81670192" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcB31407_FFE5_48f9_B146_7F4A81670192" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="editTask" visibility="public" xmi:id="EAID_41B92CAC_2C67_4d3e_BBD9_634CA9E61307" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstB92CAC_2C67_4d3e_BBD9_634CA9E61307"/>
+						<memberEnd xmi:idref="EAID_srcB92CAC_2C67_4d3e_BBD9_634CA9E61307"/>
+						<ownedEnd aggregation="none" association="EAID_41B92CAC_2C67_4d3e_BBD9_634CA9E61307" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcB92CAC_2C67_4d3e_BBD9_634CA9E61307" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="editTask" visibility="public" xmi:id="EAID_B8FB9741_651A_4c7d_B1C7_9A2B27FFBA81" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstFB9741_651A_4c7d_B1C7_9A2B27FFBA81"/>
+						<memberEnd xmi:idref="EAID_srcFB9741_651A_4c7d_B1C7_9A2B27FFBA81"/>
+						<ownedEnd aggregation="none" association="EAID_B8FB9741_651A_4c7d_B1C7_9A2B27FFBA81" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcFB9741_651A_4c7d_B1C7_9A2B27FFBA81" xmi:type="uml:Property">
+							<type xmi:idref="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="TaskListContextMenu" visibility="public" xmi:id="EAID_E14C55E7_8515_44b1_9ADD_26D61E53461D" xmi:type="uml:Class">
+						<nestedClassifier name="EditTaskItem" visibility="public" xmi:id="EAID_DFD7A293_E1F4_4f07_BAE4_A8B1E247AD1F" xmi:type="uml:Class">
+							<ownedOperation concurrency="sequential" name="editTask" visibility="public" xmi:id="EAID_9A3F1B60_9B87_4248_BF8B_4D49AF06DA65"/>
+						</nestedClassifier>
+						<nestedClassifier name="ViewTaskItem" visibility="public" xmi:id="EAID_C6C974BE_858B_42ac_8BAE_D80C34540CF8" xmi:type="uml:Class">
+							<ownedOperation concurrency="sequential" name="viewTask" visibility="public" xmi:id="EAID_3200C0F0_F009_4019_AA9B_A077A9D95BEA"/>
+						</nestedClassifier>
+						<nestedClassifier name="syncTask" visibility="public" xmi:id="EAID_4F156926_2698_4610_959A_2D8B3BDC1F16" xmi:type="uml:Class">
+							<ownedOperation concurrency="sequential" name="To_DoService.syncTask" visibility="public" xmi:id="EAID_0EB327E9_FD8D_4692_BC5B_07ACD4DB965A"/>
+						</nestedClassifier>
+					</packagedElement>
+					<packagedElement visibility="public" xmi:id="EAID_01B339AC_5AE0_4477_B32E_BA5D73CB7D51" xmi:type="uml:Association">
+						<memberEnd xmi:idref="EAID_dstB339AC_5AE0_4477_B32E_BA5D73CB7D51"/>
+						<memberEnd xmi:idref="EAID_srcB339AC_5AE0_4477_B32E_BA5D73CB7D51"/>
+						<ownedEnd aggregation="none" association="EAID_01B339AC_5AE0_4477_B32E_BA5D73CB7D51" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_srcB339AC_5AE0_4477_B32E_BA5D73CB7D51" xmi:type="uml:Property">
+							<type xmi:idref="EAID_319D5D18_C21E_4a43_A735_2635A07DBC0F"/>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement name="TaskListIS" visibility="public" xmi:id="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C" xmi:type="uml:Class">
+						<ownedAttribute aggregation="none" association="EAID_1B9AA139_7571_4480_B2AD_68BA05005FBD" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst9AA139_7571_4480_B2AD_68BA05005FBD" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_3EB31407_FFE5_48f9_B146_7F4A81670192" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstB31407_FFE5_48f9_B146_7F4A81670192" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_41B92CAC_2C67_4d3e_BBD9_634CA9E61307" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstB92CAC_2C67_4d3e_BBD9_634CA9E61307" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_4842E82D_6C1A_4fd9_94E2_1876023F4A1F" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst42E82D_6C1A_4fd9_94E2_1876023F4A1F" xmi:type="uml:Property">
+							<type xmi:idref="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+						</ownedAttribute>
+						<ownedAttribute aggregation="none" association="EAID_B8FB9741_651A_4c7d_B1C7_9A2B27FFBA81" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstFB9741_651A_4c7d_B1C7_9A2B27FFBA81" xmi:type="uml:Property">
+							<type xmi:idref="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2"/>
+						</ownedAttribute>
+						<nestedClassifier name="TaskList" visibility="public" xmi:id="EAID_E6F674DD_0CC5_427c_B01F_9AA57177F1C9" xmi:type="uml:Class">
+							<nestedClassifier name="TaskListItem" visibility="public" xmi:id="EAID_319D5D18_C21E_4a43_A735_2635A07DBC0F" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="editTask" visibility="public" xmi:id="EAID_80BFACAE_E110_4a94_AF01_EC60AF758DE5"/>
+								<ownedAttribute aggregation="none" association="EAID_01B339AC_5AE0_4477_B32E_BA5D73CB7D51" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="true" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dstB339AC_5AE0_4477_B32E_BA5D73CB7D51" xmi:type="uml:Property">
+									<type xmi:idref="EAID_E14C55E7_8515_44b1_9ADD_26D61E53461D"/>
+								</ownedAttribute>
+								<nestedClassifier name="dateLbl" visibility="public" xmi:id="EAID_5BAA88B7_A4A0_4797_AAC7_1FD4787CC481" xmi:type="uml:Class"/>
+								<nestedClassifier name="descriptionLbl" visibility="public" xmi:id="EAID_93F842BD_4BC6_4f83_B0F9_93375328B496" xmi:type="uml:Class"/>
+							</nestedClassifier>
+						</nestedClassifier>
+						<nestedClassifier name="TaskListISImage" visibility="public" xmi:id="EAID_2C7E8799_8021_47be_81B3_59089BC2AA0D" xmi:type="uml:Class"/>
+						<nestedClassifier name="TaskListISMenu" visibility="public" xmi:id="EAID_C072CFA5_8CB1_4d4a_B4F8_32E7FF00B101" xmi:type="uml:Class">
+							<nestedClassifier name="CreateTaskItem" visibility="public" xmi:id="EAID_69C1BCC3_9EA0_4b58_8075_0B5653AF729C" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="createTask" visibility="public" xmi:id="EAID_35A34F02_25AA_40b7_875D_071ABAFED4BB"/>
+							</nestedClassifier>
+							<nestedClassifier name="DeleteAllTaskItem" visibility="public" xmi:id="EAID_F223B207_AB48_4af6_8F1A_85ABD7413645" xmi:type="uml:Class">
+								<ownedOperation concurrency="sequential" name="deleteAllTasks" visibility="public" xmi:id="EAID_3F3BCEA7_3614_4b00_8C91_27F4B8BE919D"/>
+							</nestedClassifier>
+						</nestedClassifier>
+						<nestedClassifier name="TaskListISSiteMap" visibility="public" xmi:id="EAID_88D2C63B_D61B_4669_9B27_84400C756A08" xmi:type="uml:Class"/>
+					</packagedElement>
+				</packagedElement>
+				<packagedElement name="NavigationSpace Model" visibility="public" xmi:id="EAPK_56A1A96E_809B_419a_AFB8_BA2729D3F4EA" xmi:type="uml:Package"/>
+			</packagedElement>
+		</packagedElement>
+		
+		
+		
+		<thecustomprofile:ImplementsGuid ImplementsGuid="{0DF50124-A671-4844-9FDC-1F6B9BE9A79B}" base_Operation="EAID_13CF3C90_1573_4c9a_88BC_2CEC718C66E0"/>
+		<thecustomprofile:Implements Implements="To_DoService.syncTask" base_Operation="EAID_13CF3C90_1573_4c9a_88BC_2CEC718C66E0"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<thecustomprofile:extend base_Extend="EAID_E0C2E3A8_FCF9_4960_988B_D5B8E688FF07"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<profileApplication xmi:id="_knGu4PvjEeWbT9771p-XRw">
+   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_kn_fsPvjEeWbT9771p-XRw">
+     <references href="../../XIS-Web/model.profile.uml#_z1qzkP_wEeWfedY1jUNsBQ" xmi:type="ecore:EPackage"/>
+   </eAnnotations>
+   <appliedProfile href="../../XIS-Web/model.profile.uml#_p7ZwUNSiEeWMgIVLIiCn_g"/>
+</profileApplication>
+    <packagedElement name="EA_PrimitiveTypes_Package" visibility="public" xmi:id="EAPrimitiveTypesPackage" xmi:type="uml:Package">
+				<packagedElement name="EA_Java_Types_Package" visibility="public" xmi:id="EAJavaTypesPackage" xmi:type="uml:Package">
+					<packagedElement name="void" visibility="public" xmi:id="EAJava_void" xmi:type="uml:PrimitiveType">
+          <generalization xmi:id="EAJava_void_General" xmi:type="uml:Generalization">
+            <general xmi:type="uml:PrimitiveType"/>
+          </generalization>
+        </packagedElement>
+					<packagedElement name="String" visibility="public" xmi:id="EAJava_String" xmi:type="uml:PrimitiveType">
+          <generalization xmi:id="EAJava_String_General" xmi:type="uml:Generalization">
+            <general href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String" xmi:type="uml:PrimitiveType"/>
+          </generalization>
+        </packagedElement>
+					<packagedElement name="Date" visibility="public" xmi:id="EAJava_Date" xmi:type="uml:PrimitiveType">
+          <generalization xmi:id="EAJava_Date_General" xmi:type="uml:Generalization">
+            <general xmi:type="uml:PrimitiveType"/>
+          </generalization>
+        </packagedElement>
+				</packagedElement>
+			</packagedElement>
+  </uml:Model>
+	
+<XIS-Web:XisWebApp base_Class="EAID_81D769C1_1ED4_4e2d_94A4_D841CC17983F"/>
+  <XIS-Web:XisWebApp-ServiceAssociation base_Association="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A"/>
+  <XIS-Web:XisServer base_Class="EAID_4D776934_2DF1_4240_B69B_9705D6251392"/>
+  <XIS-Web:XisServiceMethod base_Operation="EAID_13CF3C90_1573_4c9a_88BC_2CEC718C66E0"/>
+  <XIS-Web:XisProvider-ServiceRealization base_Realization="EAID_4EB523DB_83ED_47d0_8EF6_A66208F5D0D0"/>
+  <XIS-Web:XisServiceUC-ProviderAssociation base_Association="EAID_5A12EDB0_F7D1_47c1_9225_03266351DAD1"/>
+  <XIS-Web:XisRemoteService base_Interface="EAID_CDD6D4B7_5111_4066_9404_5BC8F525F861"/>
+  <XIS-Web:XisServiceMethod base_Operation="EAID_0DF50124_A671_4844_9FDC_1F6B9BE9A79B"/>
+  <XIS-Web:Architectural_View __EAStereoName="Architectural View" base_Package="EAPK_82997B3C_BA06_47fe_8B04_1CA404127E73"/>
+  <XIS-Web:XisBusinessEntity base_Class="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+  <XIS-Web:XisBE-EntityDetailAssociation base_Association="EAID_02A03BA4_5E1C_4120_9FCB_7ADDD4DC55C3"/>
+  <XIS-Web:XisBE-EntityReferenceAssociation base_Association="EAID_61150BFE_E123_4868_927C_FC1F733AC325"/>
+  <XIS-Web:XisBE-EntityMasterAssociation base_Association="EAID_7F4FADC4_6CBC_4af0_985E_1F1B55D937C6"/>
+  <XIS-Web:XisServiceUC-BEAssociation base_Association="EAID_231D21F6_3EBA_4928_A2CA_3AAEDB29E0AF"/>
+  <XIS-Web:XisIS-BEAssociation base_Association="EAID_4842E82D_6C1A_4fd9_94E2_1876023F4A1F"/>
+  <XIS-Web:XisIS-BEAssociation base_Association="EAID_49A6FABA_DFAC_49c0_A4FA_011CA687616B"/>
+  <XIS-Web:XisEntityUC-BEAssociation base_Association="EAID_AF1E21A4_5491_4dd3_84AF_527899CE08E7"/>
+  <XIS-Web:XisIS-BEAssociation base_Association="EAID_F118CB83_8115_4c06_882E_D68825D4F541"/>
+  <XIS-Web:BusinessEntities_View __EAStereoName="BusinessEntities View" base_Package="EAPK_1541E411_8FBA_4dad_B1EC_CB5726D915CF"/>
+  <XIS-Web:XisEntity base_Class="EAID_7428194B_1F81_4a72_824F_7EA30DA75A6C" persistent="true"/>
+  <XIS-Web:XisEntityAttribute base_Property="EAID_3CC81548_751E_4898_BAF8_BBC41C396F76" isKey="false" nullable="true" type="Integer"/>
+  <XIS-Web:XisEntityAssociation base_Association="EAID_15B59C12_2468_429a_9B4F_28A4F84E7177"/>
+  <XIS-Web:XisEntity base_Class="EAID_B8BF493A_40B1_4a52_99E8_A9E73D60B4CB" persistent="true"/>
+  <XIS-Web:XisEntityAttribute base_Property="EAID_24E7F61E_2358_413d_AFC0_803BE1AB4264" isKey="false" nullable="true" type="Integer"/>
+  <XIS-Web:XisEntityAssociation base_Association="EAID_EED9341F_DD1B_4719_8CB6_6F6A888A4D05"/>
+  <XIS-Web:XisEntity base_Class="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5" persistent="true"/>
+  <XIS-Web:XisEntityAttribute base_Property="EAID_E784960C_30AD_4a62_98BB_60B18BBF85F3" isKey="false" nullable="true" type="Integer"/>
+  <XIS-Web:XisEntityAttribute base_Property="EAID_C5F24A7F_AA13_489a_9AC6_585A28ADC26E" isKey="false" nullable="true" type="Integer"/>
+  <XIS-Web:XisEntityAttribute base_Property="EAID_A4C9FCD7_44AA_47b5_9F54_985E196CCD8E" isKey="false" nullable="true" type="Integer"/>
+  <XIS-Web:Domain_View __EAStereoName="Domain View" base_Package="EAPK_2476815C_B80B_4a6b_8A7B_CC21ED81A8C2"/>
+  <XIS-Web:XisActor base_Actor="EAID_4471BCBB_8110_455b_B64D_24E1874E4877"/>
+  <XIS-Web:XisActor-UCAssociation base_Association="EAID_83275A7D_5578_4015_A9F2_EAACF661CC32"/>
+  <XIS-Web:XisEntityUseCase CreateDetail="true" CreateMaster="true" CreateReference="true" DeleteDetail="true" DeleteMaster="true" DeleteReference="true" ReadDetail="true" ReadMaster="true" ReadReference="true" UpdateDetail="true" UpdateMaster="true" UpdateReference="true" base_UseCase="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC" isStartingUseCase="true" type="EntityManagement"/>
+  <XIS-Web:XisServiceUseCase base_UseCase="EAID_436757A2_F982_4293_9875_D25C6250AEA6" isStartingUseCase="false"/>
+  <XIS-Web:UseCases_View __EAStereoName="UseCases View" base_Package="EAPK_3EF7E93A_EDAA_4b60_B7BE_ECFEFE0E74EF"/>
+  <XIS-Web:XisInteractionSpace base_Class="EAID_65D57754_EA08_451a_A043_63D0D975AC71" height="500" isMainScreen="false" name="NoteEditorIS" posX="429" posY="260" title="Note Editor" type="DetailEntityEditor" width="425"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_19BC4F9D_4DC5_4555_A490_B3F642A9464E"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_D6C9AB4A_D3D7_45e6_9996_9A1A6E37FE6B"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_5E088F7D_20D9_4288_A1D0_316550A984ED"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_8E135977_965F_48da_AF74_7FD52FA617AC"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_C800293D_D155_4116_BD0E_52D11E5EC93C"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_DC9BD79A_923D_4d23_8B41_C7A6A52B6BB5"/>
+  <XIS-Web:XisImage base_Class="EAID_F063A592_F04A_4bf0_8832_656A7954695E" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
+  <XIS-Web:XisSiteMap base_Class="EAID_CE45F117_1637_4013_AB7B_C37FE1E05337" height="50" posX="429" posY="135" width="405"/>
+  <XIS-Web:XisForm base_Class="EAID_97A945A5_0279_4442_9CA3_186EE71B2666" entityName="Note" height="100" name="NoteForm" posX="429" posY="220" width="405"/>
+  <XIS-Web:XisTextBox base_Class="EAID_97320F9B_680A_42f4_BB76_12EDB717A488" entityAttributeName="Note.text" height="50" hint="text" label="text" lines="1" name="NoteTextTxtBox" posX="429" posY="235" width="385"/>
+  <XIS-Web:XisMenu base_Class="EAID_9FDE4DCA_FEF0_4fd7_9CFC_95D75CACA46A" entityName="Note" height="220" name="NoteMenu" posX="429" posY="390" type="OptionsMenu" width="405"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_995D63EF_24C7_4483_BB6C_99FD5533B138" height="80" name="CancelNote" onTap="cancelNote" posX="429" posY="450" value="Go Back " width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_F0585699_5696_4f6b_8CB2_01A902062312" type="Cancel"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_900FAC9F_952F_49ac_8614_524A01D807A6" height="80" name="SaveNote" onTap="saveNote" posX="429" posY="360" value="Save Note" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_A14B041F_5F3B_4984_B2A3_8ABF95C1BC41" navigation="TaskEditorIS" type="OK"/>
+  <XIS-Web:XisMenu base_Class="EAID_870EDF1F_FF2E_4065_BC8E_393E6390468A" entityName="Note" height="310" name="NoteListContextMenu" posX="822" posY="205" type="ContextMenu" width="280"/>
+  <XIS-Web:XisIS-MenuAssociation base_Association="EAID_94640613_6C6C_4b86_9D7D_46EF6B8768A7"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_C73A55F2_0294_47fb_BAF0_90243C321BF8" height="80" name="DeleteNoteItem" onTap="deleteNote" posX="822" posY="310" value="Delete Note" width="260"/>
+  <XIS-Web:XisAction base_Operation="EAID_D0367AA3_56A4_4ad1_99AB_3968478764D1" type="Delete"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_CA2A052D_5FC0_4085_84E0_02BAC74D83A0" height="80" name="EditNoteItem" onTap="editNote" posX="822" posY="220" value="Edit Note" width="260"/>
+  <XIS-Web:XisAction base_Operation="EAID_55606A9A_7E80_49c6_B54B_D3039CE1D7DD" navigation="NoteEditorIS" type="Update"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_D4FADD7C_2886_4559_90E8_D97AFB95C290" height="80" name="ViewNoteItem" onTap="viewNote" posX="822" posY="130" value="View Note" width="260"/>
+  <XIS-Web:XisAction base_Operation="EAID_A0AFBCAB_3633_4c97_95F1_DB1F608ED17B" navigation="NoteEditorIS" type="Read"/>
+  <XIS-Web:XisInteractionSpace base_Class="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2" height="1625" isMainScreen="false" name="TaskEditorIS" posX="429" posY="822" title="Task Editor" type="MasterEntityEditor" width="425"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_6A8A6883_778E_4796_A3D0_5FB37775D7A7"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_6E0D4B4E_3C84_4aaa_B412_D63EDF589761"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_1B9AA139_7571_4480_B2AD_68BA05005FBD"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_3EB31407_FFE5_48f9_B146_7F4A81670192"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_41B92CAC_2C67_4d3e_BBD9_634CA9E61307"/>
+  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_B8FB9741_651A_4c7d_B1C7_9A2B27FFBA81"/>
+  <XIS-Web:XisForm base_Class="EAID_41A5C5B2_BD18_43e5_959B_07A3067481F1" entityName="Category" height="240" name="CategoryForm" posX="429" posY="1045" width="405"/>
+  <XIS-Web:XisTextBox base_Class="EAID_06F7B54B_E905_4de9_93C9_6A5BAD2691AD" entityAttributeName="Category.name" height="50" hint="name" label="name" lines="1" name="CategoryNameTxtBox" posX="429" posY="990" width="385"/>
+  <XIS-Web:XisVisibilityBoundary Create="true" Edit="true" View="false" base_Class="EAID_88938BE0_E8E1_4fbf_8A11_DE7C6469453F" entityName="Category" height="130" name="SaveCategoryBoundary" posX="429" posY="1090" width="385"/>
+  <XIS-Web:XisButton base_Class="EAID_3EBC1EEE_9F52_4f82_9608_5FB909844DA0" height="80" name="CategorySaveButton" onTap="saveCategory" posX="429" posY="1105" value="Save Category" width="365"/>
+  <XIS-Web:XisAction base_Operation="EAID_1FB5755F_7770_4940_BFCA_42AB2D139CEF" type="OK"/>
+  <XIS-Web:XisCollapsible base_Class="EAID_C3B3D3B7_0977_4be2_B863_3207D802AC52" entityName="Note" height="515" name="NoteCollapsible" posX="429" posY="657" width="405"/>
+  <XIS-Web:XisCollapsibleItem base_Class="EAID_CAFBAB4F_FE20_4967_A0E1_510431F84F2C" height="465" name="NoteCollapsibleItem" posX="429" posY="672" width="385"/>
+  <XIS-Web:XisMenu base_Class="EAID_AEC93DF9_0A76_4226_BAB4_87C9B021B538" entityName="Note" height="220" name="NoteCollapsibleItemMenu" posX="429" posY="785" type="OptionsMenu" width="365"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_67782A3F_307A_42c1_AAD9_E041CF9D4C45" height="80" name="CreateNoteItem" onTap="createNote" posX="429" posY="755" value="Create Note" width="345"/>
+  <XIS-Web:XisAction base_Operation="EAID_C7CF5563_675A_4e76_9BBB_FDF1EF87BEF4" navigation="NoteEditorIS" type="Create"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_2B00D17E_C09E_4d0a_987A_5577BA645A94" height="80" name="DeleteAllNoteItem" onTap="deleteAllNotes" posX="429" posY="845" value="Delete all Notes" width="345"/>
+  <XIS-Web:XisAction base_Operation="EAID_45882AFE_2222_43b4_A107_F39CC55D23C4" type="DeleteAll"/>
+  <XIS-Web:XisList base_Class="EAID_95E395D5_2F96_4151_90BB_652330E874C7" entityName="Note" height="185" name="NoteList" posX="429" posY="572" width="365"/>
+  <XIS-Web:XisListItem base_Class="EAID_4E638117_CF73_4c05_88FB_68A964DF7E28" height="135" name="NoteListItem" onTap="viewNote" posX="429" posY="587" width="345"/>
+  <XIS-Web:XisAction base_Operation="EAID_5AABDE4F_E502_45e2_BF3E_C99245B899C3" navigation="NoteEditorIS" type="Update"/>
+  <XIS-Web:XisLabel base_Class="EAID_83894000_9F18_4dbb_BAAC_C080BFF7FCDE" entityAttributeName="Note.text" headingDepth="0" height="50" name="textLbl" posX="429" posY="620" width="325"/>
+  <XIS-Web:XisImage base_Class="EAID_F4179AF2_776C_42c0_B850_D30CD27B4209" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
+  <XIS-Web:XisMenu base_Class="EAID_5E81E564_7113_4d67_9BCC_4D1B35972700" entityName="Task" height="450" name="TaskEditorISMenu" posX="429" posY="1400" type="OptionsMenu" width="405"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_7179A27D_663E_4e2b_8320_3357011B3385" height="80" name="CancelTask" onTap="cancelTask" posX="429" posY="1575" value="Go Back" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_68712D74_5718_43e7_93EA_3BA4D6D84619" navigation="TaskListIS" type="Cancel"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_4F168786_625B_4717_BF52_E7E055526051" height="80" name="DeleteTaskItem" onTap="deleteTask" posX="429" posY="1395" value="Delete Task" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_CC3EA6A5_2911_4b8c_8730_214A485E31CA" type="Delete"/>
+  <XIS-Web:XisVisibilityBoundary Create="true" Edit="true" View="false" base_Class="EAID_7A90C8F9_ADB0_4ff7_A974_F3FE34BB9BB2" entityName="Task" height="130" name="SaveTaskBoundary" posX="429" posY="1280" width="385"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_A85700C2_B1C3_4d13_A64A_2D36415301AA" height="80" name="SaveTask" onTap="saveTask" posX="429" posY="1295" value="Save Task" width="365"/>
+  <XIS-Web:XisAction base_Operation="EAID_A0ABC204_101D_47c1_92FE_4FD7302F96D1" navigation="TaskListIS" type="OK"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_B07C1B49_B301_4164_8E79_ECE5AED6A836" height="80" name="syncTask" onTap="To_DoService.syncTask" posX="429" posY="1485" value="syncTask" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_AC159A8C_1980_4aca_B132_0396618CACF7" type="WebService"/>
+  <XIS-Web:XisSiteMap base_Class="EAID_F78874F0_5D5A_4232_A08A_361FA66FA090" height="50" posX="429" posY="135" width="405"/>
+  <XIS-Web:XisForm base_Class="EAID_91401DA7_0443_4cb1_AC6A_A1F62147FEA2" entityName="Task" height="220" name="TaskForm" posX="429" posY="280" width="405"/>
+  <XIS-Web:XisDatePicker base_Class="EAID_FA71C03E_834C_4779_B3C3_0E359E53E621" entityAttributeName="Task.date" height="50" name="TaskDateDatePicker" posX="429" posY="235" width="385"/>
+  <XIS-Web:XisTextBox base_Class="EAID_BED46CF1_EBDC_44a9_A210_80A2C9A8942D" entityAttributeName="Task.description" height="50" hint="description" label="description" lines="1" name="TaskDescriptionTxtBox" posX="429" posY="295" width="385"/>
+  <XIS-Web:XisTextBox base_Class="EAID_A2CB19D6_0EB7_4d68_A600_8EC6070420E0" entityAttributeName="Task.name" height="50" hint="name" label="name" lines="1" name="TaskNameTxtBox" posX="429" posY="355" width="385"/>
+  <XIS-Web:XisMenu base_Class="EAID_E14C55E7_8515_44b1_9ADD_26D61E53461D" entityName="Task" height="310" name="TaskListContextMenu" posX="832" posY="165" type="ContextMenu" width="280"/>
+  <XIS-Web:XisIS-MenuAssociation base_Association="EAID_01B339AC_5AE0_4477_B32E_BA5D73CB7D51"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_DFD7A293_E1F4_4f07_BAE4_A8B1E247AD1F" height="80" name="EditTaskItem" onTap="editTask" posX="832" posY="180" value="Edit Task" width="260"/>
+  <XIS-Web:XisAction base_Operation="EAID_9A3F1B60_9B87_4248_BF8B_4D49AF06DA65" navigation="TaskEditorIS" type="Update"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_C6C974BE_858B_42ac_8BAE_D80C34540CF8" height="80" name="ViewTaskItem" onTap="viewTask" posX="832" posY="90" value="View Task" width="260"/>
+  <XIS-Web:XisAction base_Operation="EAID_3200C0F0_F009_4019_AA9B_A077A9D95BEA" navigation="TaskEditorIS" type="Read"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_4F156926_2698_4610_959A_2D8B3BDC1F16" height="80" name="syncTask" onTap="To_DoService.syncTask" posX="832" posY="270" value="syncTask" width="260"/>
+  <XIS-Web:XisAction base_Operation="EAID_0EB327E9_FD8D_4692_BC5B_07ACD4DB965A" type="WebService"/>
+  <XIS-Web:XisInteractionSpace base_Class="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C" height="645" isMainScreen="true" name="TaskListIS" posX="429" posY="332" title="Manage Tasks" type="MasterEntityList" width="425"/>
+  <XIS-Web:XisList base_Class="EAID_E6F674DD_0CC5_427c_B01F_9AA57177F1C9" entityName="Task" height="245" name="TaskList" posX="429" posY="292" width="405"/>
+  <XIS-Web:XisListItem base_Class="EAID_319D5D18_C21E_4a43_A735_2635A07DBC0F" height="195" name="TaskListItem" onTap="editTask" posX="429" posY="307" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_80BFACAE_E110_4a94_AF01_EC60AF758DE5" navigation="TaskEditorIS" type="Update"/>
+  <XIS-Web:XisLabel base_Class="EAID_5BAA88B7_A4A0_4797_AAC7_1FD4787CC481" entityAttributeName="Task.date" headingDepth="0" height="50" name="dateLbl" posX="429" posY="310" width="365"/>
+  <XIS-Web:XisLabel base_Class="EAID_93F842BD_4BC6_4f83_B0F9_93375328B496" entityAttributeName="Task.description" headingDepth="0" height="50" name="descriptionLbl" posX="429" posY="370" width="365"/>
+  <XIS-Web:XisImage base_Class="EAID_2C7E8799_8021_47be_81B3_59089BC2AA0D" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
+  <XIS-Web:XisMenu base_Class="EAID_C072CFA5_8CB1_4d4a_B4F8_32E7FF00B101" entityName="Task" height="220" name="TaskListISMenu" posX="429" posY="535" type="OptionsMenu" width="405"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_69C1BCC3_9EA0_4b58_8075_0B5653AF729C" height="80" name="CreateTaskItem" onTap="createTask" posX="429" posY="505" value="Create Task" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_35A34F02_25AA_40b7_875D_071ABAFED4BB" navigation="TaskEditorIS" type="Create"/>
+  <XIS-Web:XisMenuItem base_Class="EAID_F223B207_AB48_4af6_8F1A_85ABD7413645" height="80" name="DeleteAllTaskItem" onTap="deleteAllTasks" posX="429" posY="595" value="Delete all Tasks" width="385"/>
+  <XIS-Web:XisAction base_Operation="EAID_3F3BCEA7_3614_4b00_8C91_27F4B8BE919D" type="DeleteAll"/>
+  <XIS-Web:XisSiteMap base_Class="EAID_88D2C63B_D61B_4669_9B27_84400C756A08" height="50" posX="429" posY="135" width="405"/>
+  <XIS-Web:InteractionSpace_View __EAStereoName="InteractionSpace View" base_Package="EAPK_C63A1800_1FEB_417d_9624_67667778AD6B"/>
+  <XIS-Web:NavigationSpace_View __EAStereoName="NavigationSpace View" base_Package="EAPK_56A1A96E_809B_419a_AFB8_BA2729D3F4EA"/>
+</xmi:XMI>
