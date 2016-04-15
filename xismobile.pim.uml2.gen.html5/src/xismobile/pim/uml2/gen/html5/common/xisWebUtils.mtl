@@ -727,11 +727,11 @@
 /]
 
 [query public isXisSitemap(c : Class) : Boolean =
-	not c.getAppliedStereotype('XIS-Web::XisSitemap').oclIsUndefined()
+	not c.getAppliedStereotype('XIS-Web::XisSiteMap').oclIsUndefined()
 /]
 
 [query public getXisSitemap(c : Class) : Stereotype =
-	c.getAppliedStereotype('XIS-Web::XisSitemap')
+	c.getAppliedStereotype('XIS-Web::XisSiteMap')
 /]
 
 [comment Should be using these function in the future, instead of the specialized ones /]

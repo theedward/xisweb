@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:XIS-Web="http:///schemas/XISWeb/_z1OHoP_wEeWfedY1jUNsBQ/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.1" xsi:schemaLocation="http:///schemas/XISWeb/_z1OHoP_wEeWfedY1jUNsBQ/15 file:/C:\Users\João%20Seixas\Desktop\XIS-Web/model.profile.uml#_z1qzkP_wEeWfedY1jUNsBQ">
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:XISWeb="http:///schemas/XISWeb/_aIPtsAChEeafedY1jUNsBQ/16" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.1" xsi:schemaLocation="http:///schemas/XISWeb/_aIPtsAChEeafedY1jUNsBQ/16 ../../XIS-Web/model.profile.uml#_aIZesAChEeafedY1jUNsBQ">
 	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
 	<uml:Model name="Model" visibility="public" xmi:type="uml:Model">
 		<packagedElement name="Model" visibility="public" xmi:id="EAPK_84914069_7B2A_4678_8974_2CE1D88001E1" xmi:type="uml:Package">
-			<packagedElement name="XIS-Web Framework" visibility="public" xmi:id="EAPK_6CB58B53_A8C1_49db_8A86_A3902F3D4C8E" xmi:type="uml:Package">
+			<packagedElement name="XISWeb Framework" visibility="public" xmi:id="EAPK_6CB58B53_A8C1_49db_8A86_A3902F3D4C8E" xmi:type="uml:Package">
 				<packagedElement name="Architectural Model" visibility="public" xmi:id="EAPK_82997B3C_BA06_47fe_8B04_1CA404127E73" xmi:type="uml:Package">
 					<packagedElement name="To-DoListApp" visibility="public" xmi:id="EAID_81D769C1_1ED4_4e2d_94A4_D841CC17983F" xmi:type="uml:Class">
 						<ownedAttribute aggregation="none" association="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A" isDerived="false" isDerivedUnion="false" isOrdered="false" isReadOnly="false" isStatic="false" isUnique="true" visibility="public" xmi:id="EAID_dst86659F_7D4F_43b3_A75D_9853D43D2D2A" xmi:type="uml:Property">
@@ -581,9 +581,9 @@
 		
 	<profileApplication xmi:id="_knGu4PvjEeWbT9771p-XRw">
    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_kn_fsPvjEeWbT9771p-XRw">
-     <references href="../../XIS-Web/model.profile.uml#_z1qzkP_wEeWfedY1jUNsBQ" xmi:type="ecore:EPackage"/>
+     <references href="../../model.profile.uml#_aIZesAChEeafedY1jUNsBQ" xmi:type="ecore:EPackage"/>
    </eAnnotations>
-   <appliedProfile href="../../XIS-Web/model.profile.uml#_p7ZwUNSiEeWMgIVLIiCn_g"/>
+   <appliedProfile href="../../model.profile.uml#_aIZesAChEeafedY1jUNsBQ"/>
 </profileApplication>
     <packagedElement name="EA_PrimitiveTypes_Package" visibility="public" xmi:id="EAPrimitiveTypesPackage" xmi:type="uml:Package">
 				<packagedElement name="EA_Java_Types_Package" visibility="public" xmi:id="EAJavaTypesPackage" xmi:type="uml:Package">
@@ -606,125 +606,125 @@
 			</packagedElement>
   </uml:Model>
 	
-<XIS-Web:XisWebApp base_Class="EAID_81D769C1_1ED4_4e2d_94A4_D841CC17983F"/>
-  <XIS-Web:XisWebApp-ServiceAssociation base_Association="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A"/>
-  <XIS-Web:XisServer base_Class="EAID_4D776934_2DF1_4240_B69B_9705D6251392"/>
-  <XIS-Web:XisServiceMethod base_Operation="EAID_13CF3C90_1573_4c9a_88BC_2CEC718C66E0"/>
-  <XIS-Web:XisProvider-ServiceRealization base_Realization="EAID_4EB523DB_83ED_47d0_8EF6_A66208F5D0D0"/>
-  <XIS-Web:XisServiceUC-ProviderAssociation base_Association="EAID_5A12EDB0_F7D1_47c1_9225_03266351DAD1"/>
-  <XIS-Web:XisRemoteService base_Interface="EAID_CDD6D4B7_5111_4066_9404_5BC8F525F861"/>
-  <XIS-Web:XisServiceMethod base_Operation="EAID_0DF50124_A671_4844_9FDC_1F6B9BE9A79B"/>
-  <XIS-Web:Architectural_View __EAStereoName="Architectural View" base_Package="EAPK_82997B3C_BA06_47fe_8B04_1CA404127E73"/>
-  <XIS-Web:XisBusinessEntity base_Class="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
-  <XIS-Web:XisBE-EntityDetailAssociation base_Association="EAID_02A03BA4_5E1C_4120_9FCB_7ADDD4DC55C3"/>
-  <XIS-Web:XisBE-EntityReferenceAssociation base_Association="EAID_61150BFE_E123_4868_927C_FC1F733AC325"/>
-  <XIS-Web:XisBE-EntityMasterAssociation base_Association="EAID_7F4FADC4_6CBC_4af0_985E_1F1B55D937C6"/>
-  <XIS-Web:XisServiceUC-BEAssociation base_Association="EAID_231D21F6_3EBA_4928_A2CA_3AAEDB29E0AF"/>
-  <XIS-Web:XisIS-BEAssociation base_Association="EAID_4842E82D_6C1A_4fd9_94E2_1876023F4A1F"/>
-  <XIS-Web:XisIS-BEAssociation base_Association="EAID_49A6FABA_DFAC_49c0_A4FA_011CA687616B"/>
-  <XIS-Web:XisEntityUC-BEAssociation base_Association="EAID_AF1E21A4_5491_4dd3_84AF_527899CE08E7"/>
-  <XIS-Web:XisIS-BEAssociation base_Association="EAID_F118CB83_8115_4c06_882E_D68825D4F541"/>
-  <XIS-Web:BusinessEntities_View __EAStereoName="BusinessEntities View" base_Package="EAPK_1541E411_8FBA_4dad_B1EC_CB5726D915CF"/>
-  <XIS-Web:XisEntity base_Class="EAID_7428194B_1F81_4a72_824F_7EA30DA75A6C" persistent="true"/>
-  <XIS-Web:XisEntityAttribute base_Property="EAID_3CC81548_751E_4898_BAF8_BBC41C396F76" isKey="false" nullable="true" type="Integer"/>
-  <XIS-Web:XisEntityAssociation base_Association="EAID_15B59C12_2468_429a_9B4F_28A4F84E7177"/>
-  <XIS-Web:XisEntity base_Class="EAID_B8BF493A_40B1_4a52_99E8_A9E73D60B4CB" persistent="true"/>
-  <XIS-Web:XisEntityAttribute base_Property="EAID_24E7F61E_2358_413d_AFC0_803BE1AB4264" isKey="false" nullable="true" type="Integer"/>
-  <XIS-Web:XisEntityAssociation base_Association="EAID_EED9341F_DD1B_4719_8CB6_6F6A888A4D05"/>
-  <XIS-Web:XisEntity base_Class="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5" persistent="true"/>
-  <XIS-Web:XisEntityAttribute base_Property="EAID_E784960C_30AD_4a62_98BB_60B18BBF85F3" isKey="false" nullable="true" type="Integer"/>
-  <XIS-Web:XisEntityAttribute base_Property="EAID_C5F24A7F_AA13_489a_9AC6_585A28ADC26E" isKey="false" nullable="true" type="Integer"/>
-  <XIS-Web:XisEntityAttribute base_Property="EAID_A4C9FCD7_44AA_47b5_9F54_985E196CCD8E" isKey="false" nullable="true" type="Integer"/>
-  <XIS-Web:Domain_View __EAStereoName="Domain View" base_Package="EAPK_2476815C_B80B_4a6b_8A7B_CC21ED81A8C2"/>
-  <XIS-Web:XisActor base_Actor="EAID_4471BCBB_8110_455b_B64D_24E1874E4877"/>
-  <XIS-Web:XisActor-UCAssociation base_Association="EAID_83275A7D_5578_4015_A9F2_EAACF661CC32"/>
-  <XIS-Web:XisEntityUseCase CreateDetail="true" CreateMaster="true" CreateReference="true" DeleteDetail="true" DeleteMaster="true" DeleteReference="true" ReadDetail="true" ReadMaster="true" ReadReference="true" UpdateDetail="true" UpdateMaster="true" UpdateReference="true" base_UseCase="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC" isStartingUseCase="true" type="EntityManagement"/>
-  <XIS-Web:XisServiceUseCase base_UseCase="EAID_436757A2_F982_4293_9875_D25C6250AEA6" isStartingUseCase="false"/>
-  <XIS-Web:UseCases_View __EAStereoName="UseCases View" base_Package="EAPK_3EF7E93A_EDAA_4b60_B7BE_ECFEFE0E74EF"/>
-  <XIS-Web:XisInteractionSpace base_Class="EAID_65D57754_EA08_451a_A043_63D0D975AC71" height="500" isMainScreen="false" name="NoteEditorIS" posX="429" posY="260" title="Note Editor" type="DetailEntityEditor" width="425"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_19BC4F9D_4DC5_4555_A490_B3F642A9464E"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_D6C9AB4A_D3D7_45e6_9996_9A1A6E37FE6B"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_5E088F7D_20D9_4288_A1D0_316550A984ED"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_8E135977_965F_48da_AF74_7FD52FA617AC"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_C800293D_D155_4116_BD0E_52D11E5EC93C"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_DC9BD79A_923D_4d23_8B41_C7A6A52B6BB5"/>
-  <XIS-Web:XisImage base_Class="EAID_F063A592_F04A_4bf0_8832_656A7954695E" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
-  <XIS-Web:XisSiteMap base_Class="EAID_CE45F117_1637_4013_AB7B_C37FE1E05337" height="50" posX="429" posY="135" width="405"/>
-  <XIS-Web:XisForm base_Class="EAID_97A945A5_0279_4442_9CA3_186EE71B2666" entityName="Note" height="100" name="NoteForm" posX="429" posY="220" width="405"/>
-  <XIS-Web:XisTextBox base_Class="EAID_97320F9B_680A_42f4_BB76_12EDB717A488" entityAttributeName="Note.text" height="50" hint="text" label="text" lines="1" name="NoteTextTxtBox" posX="429" posY="235" width="385"/>
-  <XIS-Web:XisMenu base_Class="EAID_9FDE4DCA_FEF0_4fd7_9CFC_95D75CACA46A" entityName="Note" height="220" name="NoteMenu" posX="429" posY="390" type="OptionsMenu" width="405"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_995D63EF_24C7_4483_BB6C_99FD5533B138" height="80" name="CancelNote" onTap="cancelNote" posX="429" posY="450" value="Go Back " width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_F0585699_5696_4f6b_8CB2_01A902062312" type="Cancel"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_900FAC9F_952F_49ac_8614_524A01D807A6" height="80" name="SaveNote" onTap="saveNote" posX="429" posY="360" value="Save Note" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_A14B041F_5F3B_4984_B2A3_8ABF95C1BC41" navigation="TaskEditorIS" type="OK"/>
-  <XIS-Web:XisMenu base_Class="EAID_870EDF1F_FF2E_4065_BC8E_393E6390468A" entityName="Note" height="310" name="NoteListContextMenu" posX="822" posY="205" type="ContextMenu" width="280"/>
-  <XIS-Web:XisIS-MenuAssociation base_Association="EAID_94640613_6C6C_4b86_9D7D_46EF6B8768A7"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_C73A55F2_0294_47fb_BAF0_90243C321BF8" height="80" name="DeleteNoteItem" onTap="deleteNote" posX="822" posY="310" value="Delete Note" width="260"/>
-  <XIS-Web:XisAction base_Operation="EAID_D0367AA3_56A4_4ad1_99AB_3968478764D1" type="Delete"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_CA2A052D_5FC0_4085_84E0_02BAC74D83A0" height="80" name="EditNoteItem" onTap="editNote" posX="822" posY="220" value="Edit Note" width="260"/>
-  <XIS-Web:XisAction base_Operation="EAID_55606A9A_7E80_49c6_B54B_D3039CE1D7DD" navigation="NoteEditorIS" type="Update"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_D4FADD7C_2886_4559_90E8_D97AFB95C290" height="80" name="ViewNoteItem" onTap="viewNote" posX="822" posY="130" value="View Note" width="260"/>
-  <XIS-Web:XisAction base_Operation="EAID_A0AFBCAB_3633_4c97_95F1_DB1F608ED17B" navigation="NoteEditorIS" type="Read"/>
-  <XIS-Web:XisInteractionSpace base_Class="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2" height="1625" isMainScreen="false" name="TaskEditorIS" posX="429" posY="822" title="Task Editor" type="MasterEntityEditor" width="425"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_6A8A6883_778E_4796_A3D0_5FB37775D7A7"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_6E0D4B4E_3C84_4aaa_B412_D63EDF589761"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_1B9AA139_7571_4480_B2AD_68BA05005FBD"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_3EB31407_FFE5_48f9_B146_7F4A81670192"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_41B92CAC_2C67_4d3e_BBD9_634CA9E61307"/>
-  <XIS-Web:XisInteractionSpaceAssociation base_Association="EAID_B8FB9741_651A_4c7d_B1C7_9A2B27FFBA81"/>
-  <XIS-Web:XisForm base_Class="EAID_41A5C5B2_BD18_43e5_959B_07A3067481F1" entityName="Category" height="240" name="CategoryForm" posX="429" posY="1045" width="405"/>
-  <XIS-Web:XisTextBox base_Class="EAID_06F7B54B_E905_4de9_93C9_6A5BAD2691AD" entityAttributeName="Category.name" height="50" hint="name" label="name" lines="1" name="CategoryNameTxtBox" posX="429" posY="990" width="385"/>
-  <XIS-Web:XisVisibilityBoundary Create="true" Edit="true" View="false" base_Class="EAID_88938BE0_E8E1_4fbf_8A11_DE7C6469453F" entityName="Category" height="130" name="SaveCategoryBoundary" posX="429" posY="1090" width="385"/>
-  <XIS-Web:XisButton base_Class="EAID_3EBC1EEE_9F52_4f82_9608_5FB909844DA0" height="80" name="CategorySaveButton" onTap="saveCategory" posX="429" posY="1105" value="Save Category" width="365"/>
-  <XIS-Web:XisAction base_Operation="EAID_1FB5755F_7770_4940_BFCA_42AB2D139CEF" type="OK"/>
-  <XIS-Web:XisCollapsible base_Class="EAID_C3B3D3B7_0977_4be2_B863_3207D802AC52" entityName="Note" height="515" name="NoteCollapsible" posX="429" posY="657" width="405"/>
-  <XIS-Web:XisCollapsibleItem base_Class="EAID_CAFBAB4F_FE20_4967_A0E1_510431F84F2C" height="465" name="NoteCollapsibleItem" posX="429" posY="672" width="385"/>
-  <XIS-Web:XisMenu base_Class="EAID_AEC93DF9_0A76_4226_BAB4_87C9B021B538" entityName="Note" height="220" name="NoteCollapsibleItemMenu" posX="429" posY="785" type="OptionsMenu" width="365"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_67782A3F_307A_42c1_AAD9_E041CF9D4C45" height="80" name="CreateNoteItem" onTap="createNote" posX="429" posY="755" value="Create Note" width="345"/>
-  <XIS-Web:XisAction base_Operation="EAID_C7CF5563_675A_4e76_9BBB_FDF1EF87BEF4" navigation="NoteEditorIS" type="Create"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_2B00D17E_C09E_4d0a_987A_5577BA645A94" height="80" name="DeleteAllNoteItem" onTap="deleteAllNotes" posX="429" posY="845" value="Delete all Notes" width="345"/>
-  <XIS-Web:XisAction base_Operation="EAID_45882AFE_2222_43b4_A107_F39CC55D23C4" type="DeleteAll"/>
-  <XIS-Web:XisList base_Class="EAID_95E395D5_2F96_4151_90BB_652330E874C7" entityName="Note" height="185" name="NoteList" posX="429" posY="572" width="365"/>
-  <XIS-Web:XisListItem base_Class="EAID_4E638117_CF73_4c05_88FB_68A964DF7E28" height="135" name="NoteListItem" onTap="viewNote" posX="429" posY="587" width="345"/>
-  <XIS-Web:XisAction base_Operation="EAID_5AABDE4F_E502_45e2_BF3E_C99245B899C3" navigation="NoteEditorIS" type="Update"/>
-  <XIS-Web:XisLabel base_Class="EAID_83894000_9F18_4dbb_BAAC_C080BFF7FCDE" entityAttributeName="Note.text" headingDepth="0" height="50" name="textLbl" posX="429" posY="620" width="325"/>
-  <XIS-Web:XisImage base_Class="EAID_F4179AF2_776C_42c0_B850_D30CD27B4209" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
-  <XIS-Web:XisMenu base_Class="EAID_5E81E564_7113_4d67_9BCC_4D1B35972700" entityName="Task" height="450" name="TaskEditorISMenu" posX="429" posY="1400" type="OptionsMenu" width="405"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_7179A27D_663E_4e2b_8320_3357011B3385" height="80" name="CancelTask" onTap="cancelTask" posX="429" posY="1575" value="Go Back" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_68712D74_5718_43e7_93EA_3BA4D6D84619" navigation="TaskListIS" type="Cancel"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_4F168786_625B_4717_BF52_E7E055526051" height="80" name="DeleteTaskItem" onTap="deleteTask" posX="429" posY="1395" value="Delete Task" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_CC3EA6A5_2911_4b8c_8730_214A485E31CA" type="Delete"/>
-  <XIS-Web:XisVisibilityBoundary Create="true" Edit="true" View="false" base_Class="EAID_7A90C8F9_ADB0_4ff7_A974_F3FE34BB9BB2" entityName="Task" height="130" name="SaveTaskBoundary" posX="429" posY="1280" width="385"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_A85700C2_B1C3_4d13_A64A_2D36415301AA" height="80" name="SaveTask" onTap="saveTask" posX="429" posY="1295" value="Save Task" width="365"/>
-  <XIS-Web:XisAction base_Operation="EAID_A0ABC204_101D_47c1_92FE_4FD7302F96D1" navigation="TaskListIS" type="OK"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_B07C1B49_B301_4164_8E79_ECE5AED6A836" height="80" name="syncTask" onTap="To_DoService.syncTask" posX="429" posY="1485" value="syncTask" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_AC159A8C_1980_4aca_B132_0396618CACF7" type="WebService"/>
-  <XIS-Web:XisSiteMap base_Class="EAID_F78874F0_5D5A_4232_A08A_361FA66FA090" height="50" posX="429" posY="135" width="405"/>
-  <XIS-Web:XisForm base_Class="EAID_91401DA7_0443_4cb1_AC6A_A1F62147FEA2" entityName="Task" height="220" name="TaskForm" posX="429" posY="280" width="405"/>
-  <XIS-Web:XisDatePicker base_Class="EAID_FA71C03E_834C_4779_B3C3_0E359E53E621" entityAttributeName="Task.date" height="50" name="TaskDateDatePicker" posX="429" posY="235" width="385"/>
-  <XIS-Web:XisTextBox base_Class="EAID_BED46CF1_EBDC_44a9_A210_80A2C9A8942D" entityAttributeName="Task.description" height="50" hint="description" label="description" lines="1" name="TaskDescriptionTxtBox" posX="429" posY="295" width="385"/>
-  <XIS-Web:XisTextBox base_Class="EAID_A2CB19D6_0EB7_4d68_A600_8EC6070420E0" entityAttributeName="Task.name" height="50" hint="name" label="name" lines="1" name="TaskNameTxtBox" posX="429" posY="355" width="385"/>
-  <XIS-Web:XisMenu base_Class="EAID_E14C55E7_8515_44b1_9ADD_26D61E53461D" entityName="Task" height="310" name="TaskListContextMenu" posX="832" posY="165" type="ContextMenu" width="280"/>
-  <XIS-Web:XisIS-MenuAssociation base_Association="EAID_01B339AC_5AE0_4477_B32E_BA5D73CB7D51"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_DFD7A293_E1F4_4f07_BAE4_A8B1E247AD1F" height="80" name="EditTaskItem" onTap="editTask" posX="832" posY="180" value="Edit Task" width="260"/>
-  <XIS-Web:XisAction base_Operation="EAID_9A3F1B60_9B87_4248_BF8B_4D49AF06DA65" navigation="TaskEditorIS" type="Update"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_C6C974BE_858B_42ac_8BAE_D80C34540CF8" height="80" name="ViewTaskItem" onTap="viewTask" posX="832" posY="90" value="View Task" width="260"/>
-  <XIS-Web:XisAction base_Operation="EAID_3200C0F0_F009_4019_AA9B_A077A9D95BEA" navigation="TaskEditorIS" type="Read"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_4F156926_2698_4610_959A_2D8B3BDC1F16" height="80" name="syncTask" onTap="To_DoService.syncTask" posX="832" posY="270" value="syncTask" width="260"/>
-  <XIS-Web:XisAction base_Operation="EAID_0EB327E9_FD8D_4692_BC5B_07ACD4DB965A" type="WebService"/>
-  <XIS-Web:XisInteractionSpace base_Class="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C" height="645" isMainScreen="true" name="TaskListIS" posX="429" posY="332" title="Manage Tasks" type="MasterEntityList" width="425"/>
-  <XIS-Web:XisList base_Class="EAID_E6F674DD_0CC5_427c_B01F_9AA57177F1C9" entityName="Task" height="245" name="TaskList" posX="429" posY="292" width="405"/>
-  <XIS-Web:XisListItem base_Class="EAID_319D5D18_C21E_4a43_A735_2635A07DBC0F" height="195" name="TaskListItem" onTap="editTask" posX="429" posY="307" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_80BFACAE_E110_4a94_AF01_EC60AF758DE5" navigation="TaskEditorIS" type="Update"/>
-  <XIS-Web:XisLabel base_Class="EAID_5BAA88B7_A4A0_4797_AAC7_1FD4787CC481" entityAttributeName="Task.date" headingDepth="0" height="50" name="dateLbl" posX="429" posY="310" width="365"/>
-  <XIS-Web:XisLabel base_Class="EAID_93F842BD_4BC6_4f83_B0F9_93375328B496" entityAttributeName="Task.description" headingDepth="0" height="50" name="descriptionLbl" posX="429" posY="370" width="365"/>
-  <XIS-Web:XisImage base_Class="EAID_2C7E8799_8021_47be_81B3_59089BC2AA0D" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
-  <XIS-Web:XisMenu base_Class="EAID_C072CFA5_8CB1_4d4a_B4F8_32E7FF00B101" entityName="Task" height="220" name="TaskListISMenu" posX="429" posY="535" type="OptionsMenu" width="405"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_69C1BCC3_9EA0_4b58_8075_0B5653AF729C" height="80" name="CreateTaskItem" onTap="createTask" posX="429" posY="505" value="Create Task" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_35A34F02_25AA_40b7_875D_071ABAFED4BB" navigation="TaskEditorIS" type="Create"/>
-  <XIS-Web:XisMenuItem base_Class="EAID_F223B207_AB48_4af6_8F1A_85ABD7413645" height="80" name="DeleteAllTaskItem" onTap="deleteAllTasks" posX="429" posY="595" value="Delete all Tasks" width="385"/>
-  <XIS-Web:XisAction base_Operation="EAID_3F3BCEA7_3614_4b00_8C91_27F4B8BE919D" type="DeleteAll"/>
-  <XIS-Web:XisSiteMap base_Class="EAID_88D2C63B_D61B_4669_9B27_84400C756A08" height="50" posX="429" posY="135" width="405"/>
-  <XIS-Web:InteractionSpace_View __EAStereoName="InteractionSpace View" base_Package="EAPK_C63A1800_1FEB_417d_9624_67667778AD6B"/>
-  <XIS-Web:NavigationSpace_View __EAStereoName="NavigationSpace View" base_Package="EAPK_56A1A96E_809B_419a_AFB8_BA2729D3F4EA"/>
+<XISWeb:XisWebApp base_Class="EAID_81D769C1_1ED4_4e2d_94A4_D841CC17983F"/>
+  <XISWeb:XisWebAppAssociation base_Association="EAID_4A86659F_7D4F_43b3_A75D_9853D43D2D2A"/>
+  <XISWeb:XisServer base_Class="EAID_4D776934_2DF1_4240_B69B_9705D6251392"/>
+  <XISWeb:XisServiceMethod base_Operation="EAID_13CF3C90_1573_4c9a_88BC_2CEC718C66E0"/>
+  <XISWeb:XisProviderServiceRealization base_Realization="EAID_4EB523DB_83ED_47d0_8EF6_A66208F5D0D0"/>
+  <XISWeb:XisServiceUCProviderAssociation base_Association="EAID_5A12EDB0_F7D1_47c1_9225_03266351DAD1"/>
+  <XISWeb:XisRemoteService base_Interface="EAID_CDD6D4B7_5111_4066_9404_5BC8F525F861"/>
+  <XISWeb:XisServiceMethod base_Operation="EAID_0DF50124_A671_4844_9FDC_1F6B9BE9A79B"/>
+  <XISWeb:Architectural_View __EAStereoName="Architectural View" base_Package="EAPK_82997B3C_BA06_47fe_8B04_1CA404127E73"/>
+  <XISWeb:XisBusinessEntity base_Class="EAID_40D3556E_B93B_4812_AA60_47F139F4A1F6"/>
+  <XISWeb:XisBEEntityDetailAssociation base_Association="EAID_02A03BA4_5E1C_4120_9FCB_7ADDD4DC55C3"/>
+  <XISWeb:XisBEEntityReferenceAssociation base_Association="EAID_61150BFE_E123_4868_927C_FC1F733AC325"/>
+  <XISWeb:XisBEEntityMasterAssociation base_Association="EAID_7F4FADC4_6CBC_4af0_985E_1F1B55D937C6"/>
+  <XISWeb:XisServiceUCBEAssociation base_Association="EAID_231D21F6_3EBA_4928_A2CA_3AAEDB29E0AF"/>
+  <XISWeb:XisISBEAssociation base_Association="EAID_4842E82D_6C1A_4fd9_94E2_1876023F4A1F"/>
+  <XISWeb:XisISBEAssociation base_Association="EAID_49A6FABA_DFAC_49c0_A4FA_011CA687616B"/>
+  <XISWeb:XisEntityUCBEAssociation base_Association="EAID_AF1E21A4_5491_4dd3_84AF_527899CE08E7"/>
+  <XISWeb:XisISBEAssociation base_Association="EAID_F118CB83_8115_4c06_882E_D68825D4F541"/>
+  <XISWeb:BusinessEntities_View __EAStereoName="BusinessEntities View" base_Package="EAPK_1541E411_8FBA_4dad_B1EC_CB5726D915CF"/>
+  <XISWeb:XisEntity base_Class="EAID_7428194B_1F81_4a72_824F_7EA30DA75A6C" persistent="true"/>
+  <XISWeb:XisEntityAttribute base_Property="EAID_3CC81548_751E_4898_BAF8_BBC41C396F76" isKey="false" nullable="true" type="Integer"/>
+  <XISWeb:XisEntityAssociation base_Association="EAID_15B59C12_2468_429a_9B4F_28A4F84E7177"/>
+  <XISWeb:XisEntity base_Class="EAID_B8BF493A_40B1_4a52_99E8_A9E73D60B4CB" persistent="true"/>
+  <XISWeb:XisEntityAttribute base_Property="EAID_24E7F61E_2358_413d_AFC0_803BE1AB4264" isKey="false" nullable="true" type="Integer"/>
+  <XISWeb:XisEntityAssociation base_Association="EAID_EED9341F_DD1B_4719_8CB6_6F6A888A4D05"/>
+  <XISWeb:XisEntity base_Class="EAID_7045981C_E392_407b_8C7C_6D2C3E0618D5" persistent="true"/>
+  <XISWeb:XisEntityAttribute base_Property="EAID_E784960C_30AD_4a62_98BB_60B18BBF85F3" isKey="false" nullable="true" type="Integer"/>
+  <XISWeb:XisEntityAttribute base_Property="EAID_C5F24A7F_AA13_489a_9AC6_585A28ADC26E" isKey="false" nullable="true" type="Integer"/>
+  <XISWeb:XisEntityAttribute base_Property="EAID_A4C9FCD7_44AA_47b5_9F54_985E196CCD8E" isKey="false" nullable="true" type="Integer"/>
+  <XISWeb:Domain_View __EAStereoName="Domain View" base_Package="EAPK_2476815C_B80B_4a6b_8A7B_CC21ED81A8C2"/>
+  <XISWeb:XisActor base_Actor="EAID_4471BCBB_8110_455b_B64D_24E1874E4877"/>
+  <XISWeb:XisActorUCAssociation base_Association="EAID_83275A7D_5578_4015_A9F2_EAACF661CC32"/>
+  <XISWeb:XisEntityUseCase CreateDetail="true" CreateMaster="true" CreateReference="true" DeleteDetail="true" DeleteMaster="true" DeleteReference="true" ReadDetail="true" ReadMaster="true" ReadReference="true" UpdateDetail="true" UpdateMaster="true" UpdateReference="true" base_UseCase="EAID_F21C1BE9_D6D8_450e_9FB4_66CF590815BC" isStartingUseCase="true" type="EntityManagement"/>
+  <XISWeb:XisServiceUseCase base_UseCase="EAID_436757A2_F982_4293_9875_D25C6250AEA6" isStartingUseCase="false"/>
+  <XISWeb:UseCases_View __EAStereoName="UseCases View" base_Package="EAPK_3EF7E93A_EDAA_4b60_B7BE_ECFEFE0E74EF"/>
+  <XISWeb:XisInteractionSpace base_Class="EAID_65D57754_EA08_451a_A043_63D0D975AC71" height="500" isMainScreen="false" name="NoteEditorIS" posX="429" posY="260" title="Note Editor" type="DetailEntityEditor" width="425"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_19BC4F9D_4DC5_4555_A490_B3F642A9464E"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_D6C9AB4A_D3D7_45e6_9996_9A1A6E37FE6B"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_5E088F7D_20D9_4288_A1D0_316550A984ED"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_8E135977_965F_48da_AF74_7FD52FA617AC"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_C800293D_D155_4116_BD0E_52D11E5EC93C"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_DC9BD79A_923D_4d23_8B41_C7A6A52B6BB5"/>
+  <XISWeb:XisImage base_Class="EAID_F063A592_F04A_4bf0_8832_656A7954695E" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
+  <XISWeb:XisSiteMap base_Class="EAID_CE45F117_1637_4013_AB7B_C37FE1E05337" height="50" posX="429" posY="135" width="405"/>
+  <XISWeb:XisForm base_Class="EAID_97A945A5_0279_4442_9CA3_186EE71B2666" entityName="Note" height="100" name="NoteForm" posX="429" posY="220" width="405"/>
+  <XISWeb:XisTextBox base_Class="EAID_97320F9B_680A_42f4_BB76_12EDB717A488" entityAttributeName="Note.text" height="50" hint="text" label="text" lines="1" name="NoteTextTxtBox" posX="429" posY="235" width="385"/>
+  <XISWeb:XisMenu base_Class="EAID_9FDE4DCA_FEF0_4fd7_9CFC_95D75CACA46A" entityName="Note" height="220" name="NoteMenu" posX="429" posY="390" type="OptionsMenu" width="405"/>
+  <XISWeb:XisMenuItem base_Class="EAID_995D63EF_24C7_4483_BB6C_99FD5533B138" height="80" name="CancelNote" onTap="cancelNote" posX="429" posY="450" value="Go Back " width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_F0585699_5696_4f6b_8CB2_01A902062312" type="Cancel"/>
+  <XISWeb:XisMenuItem base_Class="EAID_900FAC9F_952F_49ac_8614_524A01D807A6" height="80" name="SaveNote" onTap="saveNote" posX="429" posY="360" value="Save Note" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_A14B041F_5F3B_4984_B2A3_8ABF95C1BC41" navigation="TaskEditorIS" type="OK"/>
+  <XISWeb:XisMenu base_Class="EAID_870EDF1F_FF2E_4065_BC8E_393E6390468A" entityName="Note" height="310" name="NoteListContextMenu" posX="822" posY="205" type="ContextMenu" width="280"/>
+  <XISWeb:XisISMenuAssociation base_Association="EAID_94640613_6C6C_4b86_9D7D_46EF6B8768A7"/>
+  <XISWeb:XisMenuItem base_Class="EAID_C73A55F2_0294_47fb_BAF0_90243C321BF8" height="80" name="DeleteNoteItem" onTap="deleteNote" posX="822" posY="310" value="Delete Note" width="260"/>
+  <XISWeb:XisAction base_Operation="EAID_D0367AA3_56A4_4ad1_99AB_3968478764D1" type="Delete"/>
+  <XISWeb:XisMenuItem base_Class="EAID_CA2A052D_5FC0_4085_84E0_02BAC74D83A0" height="80" name="EditNoteItem" onTap="editNote" posX="822" posY="220" value="Edit Note" width="260"/>
+  <XISWeb:XisAction base_Operation="EAID_55606A9A_7E80_49c6_B54B_D3039CE1D7DD" navigation="NoteEditorIS" type="Update"/>
+  <XISWeb:XisMenuItem base_Class="EAID_D4FADD7C_2886_4559_90E8_D97AFB95C290" height="80" name="ViewNoteItem" onTap="viewNote" posX="822" posY="130" value="View Note" width="260"/>
+  <XISWeb:XisAction base_Operation="EAID_A0AFBCAB_3633_4c97_95F1_DB1F608ED17B" navigation="NoteEditorIS" type="Read"/>
+  <XISWeb:XisInteractionSpace base_Class="EAID_947F10C3_B46D_4b75_B61B_F240A53BC0E2" height="1625" isMainScreen="false" name="TaskEditorIS" posX="429" posY="822" title="Task Editor" type="MasterEntityEditor" width="425"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_6A8A6883_778E_4796_A3D0_5FB37775D7A7"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_6E0D4B4E_3C84_4aaa_B412_D63EDF589761"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_1B9AA139_7571_4480_B2AD_68BA05005FBD"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_3EB31407_FFE5_48f9_B146_7F4A81670192"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_41B92CAC_2C67_4d3e_BBD9_634CA9E61307"/>
+  <XISWeb:XisInteractionSpaceAssociation base_Association="EAID_B8FB9741_651A_4c7d_B1C7_9A2B27FFBA81"/>
+  <XISWeb:XisForm base_Class="EAID_41A5C5B2_BD18_43e5_959B_07A3067481F1" entityName="Category" height="240" name="CategoryForm" posX="429" posY="1045" width="405"/>
+  <XISWeb:XisTextBox base_Class="EAID_06F7B54B_E905_4de9_93C9_6A5BAD2691AD" entityAttributeName="Category.name" height="50" hint="name" label="name" lines="1" name="CategoryNameTxtBox" posX="429" posY="990" width="385"/>
+  <XISWeb:XisVisibilityBoundary Create="true" Edit="true" View="false" base_Class="EAID_88938BE0_E8E1_4fbf_8A11_DE7C6469453F" entityName="Category" height="130" name="SaveCategoryBoundary" posX="429" posY="1090" width="385"/>
+  <XISWeb:XisButton base_Class="EAID_3EBC1EEE_9F52_4f82_9608_5FB909844DA0" height="80" name="CategorySaveButton" onTap="saveCategory" posX="429" posY="1105" value="Save Category" width="365"/>
+  <XISWeb:XisAction base_Operation="EAID_1FB5755F_7770_4940_BFCA_42AB2D139CEF" type="OK"/>
+  <XISWeb:XisCollapsible base_Class="EAID_C3B3D3B7_0977_4be2_B863_3207D802AC52" entityName="Note" height="515" name="NoteCollapsible" posX="429" posY="657" width="405"/>
+  <XISWeb:XisCollapsibleItem base_Class="EAID_CAFBAB4F_FE20_4967_A0E1_510431F84F2C" height="465" name="NoteCollapsibleItem" posX="429" posY="672" width="385"/>
+  <XISWeb:XisMenu base_Class="EAID_AEC93DF9_0A76_4226_BAB4_87C9B021B538" entityName="Note" height="220" name="NoteCollapsibleItemMenu" posX="429" posY="785" type="OptionsMenu" width="365"/>
+  <XISWeb:XisMenuItem base_Class="EAID_67782A3F_307A_42c1_AAD9_E041CF9D4C45" height="80" name="CreateNoteItem" onTap="createNote" posX="429" posY="755" value="Create Note" width="345"/>
+  <XISWeb:XisAction base_Operation="EAID_C7CF5563_675A_4e76_9BBB_FDF1EF87BEF4" navigation="NoteEditorIS" type="Create"/>
+  <XISWeb:XisMenuItem base_Class="EAID_2B00D17E_C09E_4d0a_987A_5577BA645A94" height="80" name="DeleteAllNoteItem" onTap="deleteAllNotes" posX="429" posY="845" value="Delete all Notes" width="345"/>
+  <XISWeb:XisAction base_Operation="EAID_45882AFE_2222_43b4_A107_F39CC55D23C4" type="DeleteAll"/>
+  <XISWeb:XisList base_Class="EAID_95E395D5_2F96_4151_90BB_652330E874C7" entityName="Note" height="185" name="NoteList" posX="429" posY="572" width="365"/>
+  <XISWeb:XisListItem base_Class="EAID_4E638117_CF73_4c05_88FB_68A964DF7E28" height="135" name="NoteListItem" onTap="viewNote" posX="429" posY="587" width="345"/>
+  <XISWeb:XisAction base_Operation="EAID_5AABDE4F_E502_45e2_BF3E_C99245B899C3" navigation="NoteEditorIS" type="Update"/>
+  <XISWeb:XisLabel base_Class="EAID_83894000_9F18_4dbb_BAAC_C080BFF7FCDE" entityAttributeName="Note.text" headingDepth="0" height="50" name="textLbl" posX="429" posY="620" width="325"/>
+  <XISWeb:XisImage base_Class="EAID_F4179AF2_776C_42c0_B850_D30CD27B4209" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
+  <XISWeb:XisMenu base_Class="EAID_5E81E564_7113_4d67_9BCC_4D1B35972700" entityName="Task" height="450" name="TaskEditorISMenu" posX="429" posY="1400" type="OptionsMenu" width="405"/>
+  <XISWeb:XisMenuItem base_Class="EAID_7179A27D_663E_4e2b_8320_3357011B3385" height="80" name="CancelTask" onTap="cancelTask" posX="429" posY="1575" value="Go Back" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_68712D74_5718_43e7_93EA_3BA4D6D84619" navigation="TaskListIS" type="Cancel"/>
+  <XISWeb:XisMenuItem base_Class="EAID_4F168786_625B_4717_BF52_E7E055526051" height="80" name="DeleteTaskItem" onTap="deleteTask" posX="429" posY="1395" value="Delete Task" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_CC3EA6A5_2911_4b8c_8730_214A485E31CA" type="Delete"/>
+  <XISWeb:XisVisibilityBoundary Create="true" Edit="true" View="false" base_Class="EAID_7A90C8F9_ADB0_4ff7_A974_F3FE34BB9BB2" entityName="Task" height="130" name="SaveTaskBoundary" posX="429" posY="1280" width="385"/>
+  <XISWeb:XisMenuItem base_Class="EAID_A85700C2_B1C3_4d13_A64A_2D36415301AA" height="80" name="SaveTask" onTap="saveTask" posX="429" posY="1295" value="Save Task" width="365"/>
+  <XISWeb:XisAction base_Operation="EAID_A0ABC204_101D_47c1_92FE_4FD7302F96D1" navigation="TaskListIS" type="OK"/>
+  <XISWeb:XisMenuItem base_Class="EAID_B07C1B49_B301_4164_8E79_ECE5AED6A836" height="80" name="syncTask" onTap="To_DoService.syncTask" posX="429" posY="1485" value="syncTask" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_AC159A8C_1980_4aca_B132_0396618CACF7" type="WebService"/>
+  <XISWeb:XisSiteMap base_Class="EAID_F78874F0_5D5A_4232_A08A_361FA66FA090" height="50" posX="429" posY="135" width="405"/>
+  <XISWeb:XisForm base_Class="EAID_91401DA7_0443_4cb1_AC6A_A1F62147FEA2" entityName="Task" height="220" name="TaskForm" posX="429" posY="280" width="405"/>
+  <XISWeb:XisDatePicker base_Class="EAID_FA71C03E_834C_4779_B3C3_0E359E53E621" entityAttributeName="Task.date" height="50" name="TaskDateDatePicker" posX="429" posY="235" width="385"/>
+  <XISWeb:XisTextBox base_Class="EAID_BED46CF1_EBDC_44a9_A210_80A2C9A8942D" entityAttributeName="Task.description" height="50" hint="description" label="description" lines="1" name="TaskDescriptionTxtBox" posX="429" posY="295" width="385"/>
+  <XISWeb:XisTextBox base_Class="EAID_A2CB19D6_0EB7_4d68_A600_8EC6070420E0" entityAttributeName="Task.name" height="50" hint="name" label="name" lines="1" name="TaskNameTxtBox" posX="429" posY="355" width="385"/>
+  <XISWeb:XisMenu base_Class="EAID_E14C55E7_8515_44b1_9ADD_26D61E53461D" entityName="Task" height="310" name="TaskListContextMenu" posX="832" posY="165" type="ContextMenu" width="280"/>
+  <XISWeb:XisISMenuAssociation base_Association="EAID_01B339AC_5AE0_4477_B32E_BA5D73CB7D51"/>
+  <XISWeb:XisMenuItem base_Class="EAID_DFD7A293_E1F4_4f07_BAE4_A8B1E247AD1F" height="80" name="EditTaskItem" onTap="editTask" posX="832" posY="180" value="Edit Task" width="260"/>
+  <XISWeb:XisAction base_Operation="EAID_9A3F1B60_9B87_4248_BF8B_4D49AF06DA65" navigation="TaskEditorIS" type="Update"/>
+  <XISWeb:XisMenuItem base_Class="EAID_C6C974BE_858B_42ac_8BAE_D80C34540CF8" height="80" name="ViewTaskItem" onTap="viewTask" posX="832" posY="90" value="View Task" width="260"/>
+  <XISWeb:XisAction base_Operation="EAID_3200C0F0_F009_4019_AA9B_A077A9D95BEA" navigation="TaskEditorIS" type="Read"/>
+  <XISWeb:XisMenuItem base_Class="EAID_4F156926_2698_4610_959A_2D8B3BDC1F16" height="80" name="syncTask" onTap="To_DoService.syncTask" posX="832" posY="270" value="syncTask" width="260"/>
+  <XISWeb:XisAction base_Operation="EAID_0EB327E9_FD8D_4692_BC5B_07ACD4DB965A" type="WebService"/>
+  <XISWeb:XisInteractionSpace base_Class="EAID_BAD910EB_1963_43ab_B769_1610FF231B3C" height="645" isMainScreen="true" name="TaskListIS" posX="429" posY="332" title="Manage Tasks" type="MasterEntityList" width="425"/>
+  <XISWeb:XisList base_Class="EAID_E6F674DD_0CC5_427c_B01F_9AA57177F1C9" entityName="Task" height="245" name="TaskList" posX="429" posY="292" width="405"/>
+  <XISWeb:XisListItem base_Class="EAID_319D5D18_C21E_4a43_A735_2635A07DBC0F" height="195" name="TaskListItem" onTap="editTask" posX="429" posY="307" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_80BFACAE_E110_4a94_AF01_EC60AF758DE5" navigation="TaskEditorIS" type="Update"/>
+  <XISWeb:XisLabel base_Class="EAID_5BAA88B7_A4A0_4797_AAC7_1FD4787CC481" entityAttributeName="Task.date" headingDepth="0" height="50" name="dateLbl" posX="429" posY="310" width="365"/>
+  <XISWeb:XisLabel base_Class="EAID_93F842BD_4BC6_4f83_B0F9_93375328B496" entityAttributeName="Task.description" headingDepth="0" height="50" name="descriptionLbl" posX="429" posY="370" width="365"/>
+  <XISWeb:XisImage base_Class="EAID_2C7E8799_8021_47be_81B3_59089BC2AA0D" height="50" posX="429" posY="75" src="../../images/default.png" width="405"/>
+  <XISWeb:XisMenu base_Class="EAID_C072CFA5_8CB1_4d4a_B4F8_32E7FF00B101" entityName="Task" height="220" name="TaskListISMenu" posX="429" posY="535" type="OptionsMenu" width="405"/>
+  <XISWeb:XisMenuItem base_Class="EAID_69C1BCC3_9EA0_4b58_8075_0B5653AF729C" height="80" name="CreateTaskItem" onTap="createTask" posX="429" posY="505" value="Create Task" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_35A34F02_25AA_40b7_875D_071ABAFED4BB" navigation="TaskEditorIS" type="Create"/>
+  <XISWeb:XisMenuItem base_Class="EAID_F223B207_AB48_4af6_8F1A_85ABD7413645" height="80" name="DeleteAllTaskItem" onTap="deleteAllTasks" posX="429" posY="595" value="Delete all Tasks" width="385"/>
+  <XISWeb:XisAction base_Operation="EAID_3F3BCEA7_3614_4b00_8C91_27F4B8BE919D" type="DeleteAll"/>
+  <XISWeb:XisSiteMap base_Class="EAID_88D2C63B_D61B_4669_9B27_84400C756A08" height="50" posX="429" posY="135" width="405"/>
+  <XISWeb:InteractionSpace_View __EAStereoName="InteractionSpace View" base_Package="EAPK_C63A1800_1FEB_417d_9624_67667778AD6B"/>
+  <XISWeb:NavigationSpace_View __EAStereoName="NavigationSpace View" base_Package="EAPK_56A1A96E_809B_419a_AFB8_BA2729D3F4EA"/>
 </xmi:XMI>

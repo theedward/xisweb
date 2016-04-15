@@ -1,8 +1,14 @@
 package xismobile.parser;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -113,6 +119,7 @@ public class XMLParser {
 						aux = lst.item(i);
 						if (aux.getNodeName().equals("XIS-Web:XisEntityAttribute")) {
 							Element el = (Element) aux;
+							el.getNamespaceURI();
 							if (el.hasAttribute("base_Attribute"))
 							{
 								el.setAttribute("base_Property", el.getAttribute("base_Attribute"));
@@ -120,6 +127,7 @@ public class XMLParser {
 	//							System.out.println(el.getAttribute("base_Property"));
 							}
 						}
+						//docEA.renameNode(aux, aux.getNamespaceURI(),"asdas");
 						parent.removeChild(aux);
 						xmiElement.appendChild(aux.cloneNode(true));
 					}
@@ -137,7 +145,53 @@ public class XMLParser {
 				transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 				transformer.transform(source, result);
 				// transformer.transform(source, result2);
-				System.out.println("Document successfully parsed!");
+				System.out.println("Document successfully parsed!");				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			//HAMMER TIME
+			try{
+				InputStream is = new FileInputStream(args[2] + ".uml");
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+				String line;
+				String buffer ="";
+				while((line = reader.readLine()) != null){
+					if(line.contains("BE-")){
+						line = line.replace("BE-", "BE").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("IS-BE")){
+						line = line.replace("IS-BE", "ISBE").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("UC-")){
+						line = line.replace("UC-", "UC").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("IS-Menu")){
+						line = line.replace("IS-Menu", "ISMenu").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("WebApp-Service")){
+						line = line.replace("WebApp-Service", "WebApp").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("Provider-")){
+						line = line.replace("Provider-", "Provider").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("UC-")){
+						line = line.replace("UC-", "UC").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("Actor-")){
+						line = line.replace("Actor-", "Actor").replace("XIS-Web", "XISWeb");
+					}else if(line.contains("<xmi:XMI xml")){
+						line = line.replace("XIS-Web", "XISWeb").replace("XISWeb/model.profile", "XIS-Web/model.profile");
+					}else if(line.contains("XIS-Web")){
+						line = line.replace("XIS-Web", "XISWeb");
+					}
+					
+					buffer += line + '\n';
+				}
+				reader.close();
+				//System.out.println("I read everything like a boss");
+				FileOutputStream fs = new FileOutputStream(args[2] + ".uml");
+				OutputStreamWriter osw = new OutputStreamWriter(fs);
+				BufferedWriter writer = new BufferedWriter(osw);
+				writer.write(buffer);
+				writer.flush();
+				writer.close();
+				
+				//System.out.println("I wrote everything like a boss");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -146,12 +200,12 @@ public class XMLParser {
 
 	private static void addAttributesToXMI(Element xmiElement) {
 		xmiElement.setAttribute("xmlns:uml", "http://www.eclipse.org/uml2/4.0.0/UML");
-		xmiElement.setAttribute("xmlns:XIS-Web", "http:///schemas/XISWeb/_z1OHoP_wEeWfedY1jUNsBQ/15");
+		xmiElement.setAttribute("xmlns:XIS-Web", "http:///schemas/XISWeb/_aIPtsAChEeafedY1jUNsBQ/16");
 		xmiElement.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
 		xmiElement.setAttribute("xmlns:ecore", "http://www.eclipse.org/emf/2002/Ecore");
-		String schemaLocation = "http:///schemas/XISWeb/_z1OHoP_wEeWfedY1jUNsBQ/15";
+		String schemaLocation = "http:///schemas/XISWeb/_aIPtsAChEeafedY1jUNsBQ/16";
 		jarPath = jarPath.replace(" ", "%20");
-		schemaLocation += " file:/" + jarPath + "/XIS-Web/model.profile.uml#_C0djsPv3EeWhDONV5HFNPQ";
+		schemaLocation += " file:/" + jarPath + "/XIS-Web/model.profile.uml#_aIZesAChEeafedY1jUNsBQ";
 		xmiElement.setAttribute("xsi:schemaLocation", schemaLocation);
 	}
 
