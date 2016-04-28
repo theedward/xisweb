@@ -621,7 +621,7 @@ namespace XisWebEAPlugin
                         DoRule33(Repository, Element);
                         break;
                     case rule34:
-                        DoRule34(Repository, Element);
+                        //DoRule34(Repository, Element);
                         break;
                     case rule38:
                         DoRule38(Repository, Element);
@@ -657,7 +657,7 @@ namespace XisWebEAPlugin
                         DoRule49(Repository, Element);
                         break;
                     case rule50:
-                        DoRule50(Repository, Element);
+                        //DoRule50(Repository, Element);
                         break;
                     case rule51:
                         DoRule51_54_57(Repository, Element, "XisButton");
@@ -1672,6 +1672,7 @@ namespace XisWebEAPlugin
                             case "XisForm":
                             case "XisVisibilityBoundary":
                             case "XisMenu":
+                            case "XisCollapsible":
                                 break;
                             default:
                                 valid = false;

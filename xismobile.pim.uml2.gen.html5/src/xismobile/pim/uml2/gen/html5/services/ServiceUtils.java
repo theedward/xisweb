@@ -425,22 +425,27 @@ public final class ServiceUtils {
 	}
 	
 	public static int getPosX(Class c, Stereotype s) {
-		int posX = (int) c.getValue(s, "posX"); 
+		System.out.println("This is the " + s.getName());
+		int posX = (int) c.getValue(s, "posX");
+		System.out.println("PosX: " + posX);
 		return posX;
 	}
 	
 	public static int getPosY(Class c, Stereotype s) {
 		int posY = (int) c.getValue(s, "posY");
+		System.out.println("PosY: " + posY);
 		return posY;
 	}
 	
 	public static int getWidth(Class c, Stereotype s) {
 		int width = (int) c.getValue(s, "width");
+		System.out.println("Width: " + width);
 		return width;
 	}
 	
 	public static int getHeight(Class c, Stereotype s) {
 		int height = (int) c.getValue(s, "height");
+		System.out.println("Height: " + height);
 		return height;
 	}
 	

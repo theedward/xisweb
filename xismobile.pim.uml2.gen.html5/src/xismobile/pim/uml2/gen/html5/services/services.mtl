@@ -82,8 +82,12 @@
 	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'addLibrary(java.lang.String)', Sequence{jar})
 /]
 
-[query public addDrawable(fileName : String, resolution : String) : OclVoid = 
-	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'addDrawable(java.lang.String, java.lang.String)', Sequence{fileName, resolution})
+[query public addImage(fileName : String) : OclVoid = 
+	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'addImage(java.lang.String)', Sequence{fileName})
+/]
+
+[query public addImagesFromFolder(m : Model) : OclVoid = 
+	invoke('xismobile.pim.uml2.gen.html5.services.Services', 'addImagesFromFolder(org.eclipse.uml2.uml.Model)', Sequence{m})
 /]
 
 [query public getParentXisInteractionSpace(c : Class) : Class =

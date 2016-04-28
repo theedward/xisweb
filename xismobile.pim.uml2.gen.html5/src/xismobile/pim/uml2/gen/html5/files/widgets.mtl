@@ -234,7 +234,6 @@
 			<li role="presentation"><a class="btn btn-danger" id="[c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisCompositeWidgetEntityName(c.getXisMenu()).toLower() + '_' + cl.getXisAction().name.toLower()/]_btn" onClick="[cl.getXisMenuItemOnTap()/]()">[cl.getXisWidgetValue(cl.getXisMenuItem())/]</a></button></li>
 			[else]
 			<li role="presentation"><a class="btn btn-default" [if (not cl.getXisAction().getNavigation().oclIsUndefined())]href="[cl.getXisAction().getNavigation().toLowerFirst()/].html"[/if] id="[c.getParentXisInteractionSpace().name.toLower() + '_' + c.getXisCompositeWidgetEntityName(c.getXisMenu()).toLower() + '_' + cl.getXisAction().name.toLower()/]_btn">[cl.getXisWidgetValue(cl.getXisMenuItem())/]</a></button></li>
->
 			[/if]
 			[/for]
 		</ul>

@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
+import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
@@ -810,20 +811,40 @@ public class Services {
 	}
 	
 	/**
-	 * Copies the desired file into the target generation folder.
-	 * 
-	 * @param fileName the file name
-	 * @param resolution the icon resolution ('low', 'medium', 'high' or 'xhigh')
+	 * Iterates through the files of a folder
+	 * @param folderName the folder name
 	 */
-	public void addDrawable(String fileName, String resolution) {
+	public void addImagesFromFolder(Model m){
+		try{
+			JarFile srcFile = new JarFile(Uml2Html5.jarPath + "/Html5Generator.jar");
+			Enumeration<JarEntry> entries = srcFile.entries();
+			JarEntry entry = null;
+			
+			while (entries.hasMoreElements()) {
+				entry = (JarEntry) entries.nextElement();
+				if (entry.getName().endsWith(".png") || entry.getName().endsWith(".jpg")) {
+					System.out.println("FOUND AN IMAGE WITH NAME: " + entry.getName());
+					addImage(entry.getName());
+	            }
+			}
+			
+			srcFile.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Copies the desired file into the target generation folder.
+	 */
+	public void addImage(String fileName) {
 		try {
 			boolean fileExists = false;
-			String folder = getResolutionFolder(resolution);
 			
-			String target = Uml2Html5.targetFolderPath + "/res/" + folder + "/";
-			JarFile srcFile = new JarFile(Uml2Html5.jarPath + "/AndroidGenerator.jar");
-			File destFolder = new File(target);
-			File destFile = new File(target + fileName);
+			String targetFolder = Uml2Html5.targetFolderPath + "/images/";
+			JarFile srcFile = new JarFile(Uml2Html5.jarPath + "/Html5Generator.jar");
+			File destFolder = new File(targetFolder);
+			File destFile = new File(targetFolder + fileName);
 			
 			if (!destFolder.exists()) {
 				destFolder.mkdirs();
@@ -834,7 +855,7 @@ public class Services {
 			
 			while (entries.hasMoreElements()) {
 				entry = (JarEntry) entries.nextElement();
-				if (entry.getName().equals("icons/" + folder + "/" + fileName)) {
+				if (entry.getName().equals("images/" + fileName)) {
 					fileExists = true;
 					break;
 	            }
@@ -906,6 +927,14 @@ public class Services {
 		return space;
 	}
 	
+	
+	/**
+	 * Adds the elements owned by the XisInteractionSpace
+	 * to the list of widgets (checks for VisibilityBoundaries)
+	 * 
+	 * @param c the XisInteractionSpace
+	 * @return list of XisWidgets that are owned by the XisInteractionSpace
+	 */
 	public List<Class> getXisInteractionSpaceWidgets(Class c) {
 		List<Class> widgets = new ArrayList<Class>();
 		
@@ -934,8 +963,13 @@ public class Services {
 		return widgets;
 	}
 	
-	
-	//TO BE TESTED
+	/**
+	 * Adds the elements owned by the XisForm
+	 * to the list of widgets
+	 * 
+	 * @param c the XisForm
+	 * @return list of XisWidgets that are owned by the XisForm
+	 */
 	public List<Class> getXisFormWidgets(Class c) {
 		List<Class> widgets = new ArrayList<Class>();
 				
@@ -948,7 +982,13 @@ public class Services {
 		return widgets;
 	}
 	
-	//TO BE TESTED
+	/**
+	 * Checks if the owned element of the XisCollapsible is a XisCollapsibleItem, and if it is adds it and its owned elements
+	 * to the list of widgets
+	 * 
+	 * @param c the XisCollapsible
+	 * @return list of XisWidgets that are owned by the XisCollapsible
+	 */
 		public List<Class> getXisCollapsibleWidgets(Class c) {
 			List<Class> widgets = new ArrayList<Class>();
 					
