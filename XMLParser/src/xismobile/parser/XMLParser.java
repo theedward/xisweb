@@ -175,7 +175,7 @@ public class XMLParser {
 					}else if(line.contains("Actor-")){
 						line = line.replace("Actor-", "Actor").replace("XIS-Web", "XISWeb");
 					}else if(line.contains("<xmi:XMI xml")){
-						line = line.replace("XIS-Web", "XISWeb").replace("XISWeb/model.profile", "XIS-Web/model.profile");
+						line = line.replaceFirst("XIS-Web", "XISWeb");
 					}else if(line.contains("XIS-Web")){
 						line = line.replace("XIS-Web", "XISWeb");
 					}

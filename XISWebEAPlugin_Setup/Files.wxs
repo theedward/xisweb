@@ -1,0 +1,83 @@
+﻿<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="XIS-Web EA Plugin">
+					<Component Id="XISWebEAPluginFiles" Guid="81A733BA-8264-46B7-AA02-40DC57B8AD66" DiskId="1">
+						<File Id="Html5Generator.jar" Name="Html5Generator.jar" Source="..\XISWebEAPlugin\bin\Debug\Html5Generator.jar">
+							<Permission ChangePermission="yes" GenericAll="yes" User="Everyone" />
+						</File>
+						<File Id="XISWebEAPlugin.dll.config" Name="XISWebEAPlugin.dll.config" Source="..\XISWebEAPlugin\bin\Debug\XISWebEAPlugin.dll.config" />
+						<File Id="XISWebEAPlugin.pdb" Name="XISWebEAPlugin.pdb" Source="..\XISWebEAPlugin\bin\Debug\XISWebEAPlugin.pdb" />
+						<File Id="XISWebEAPlugin.tlb" Name="XISWebEAPlugin.tlb" Source="..\XISWebEAPlugin\bin\Debug\XISWebEAPlugin.tlb" />
+						<File Id="XMLParser.jar" Name="XMLParser.jar" Source="..\XISWebEAPlugin\bin\Debug\XMLParser.jar" />
+						<Class Id="{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}" Context="InprocServer32" Description="XisWebEAPlugin.CodeGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
+		                    <ProgId Id="XisWebEAPlugin.CodeGenerator" Description="XisWebEAPlugin.CodeGenerator" />
+		                </Class>
+		                <Class Id="{4F4062CF-E694-3E3D-8419-46D5B1A45225}" Context="InprocServer32" Description="XisWebEAPlugin.Rules" ThreadingModel="both" ForeignServer="mscoree.dll">
+		                    <ProgId Id="XisWebEAPlugin.Rules" Description="XisWebEAPlugin.Rules" />
+		                </Class>
+		                <File Id="fil22111F29BC01D0BB596A422DA6046076" Name="XISWebEAPlugin.dll" KeyPath="yes" Source="..\XISWebEAPlugin\bin\Debug\XISWebEAPlugin.dll" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32\1.0.0.0" Name="Class" Value="XisWebEAPlugin.CodeGenerator" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32\1.0.0.0" Name="Assembly" Value="XISWebEAPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#fil22111F29BC01D0BB596A422DA6046076]" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32" Name="Class" Value="XisWebEAPlugin.CodeGenerator" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32" Name="Assembly" Value="XISWebEAPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{1EC0E52F-831B-3D0C-BEE7-42532E5A779E}\InprocServer32" Name="CodeBase" Value="file:///[#fil22111F29BC01D0BB596A422DA6046076]" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32\1.0.0.0" Name="Class" Value="XisWebEAPlugin.Rules" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32\1.0.0.0" Name="Assembly" Value="XISWebEAPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#fil22111F29BC01D0BB596A422DA6046076]" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32" Name="Class" Value="XisWebEAPlugin.Rules" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32" Name="Assembly" Value="XISWebEAPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="CLSID\{4F4062CF-E694-3E3D-8419-46D5B1A45225}\InprocServer32" Name="CodeBase" Value="file:///[#fil22111F29BC01D0BB596A422DA6046076]" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{0054F30A-8D5B-44DA-AE6D-BD5D34896440}\1.0.0.0" Name="Class" Value="EA.EnumXMIType" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{0054F30A-8D5B-44DA-AE6D-BD5D34896440}\1.0.0.0" Name="Assembly" Value="XISWebEAPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{0054F30A-8D5B-44DA-AE6D-BD5D34896440}\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{0054F30A-8D5B-44DA-AE6D-BD5D34896440}\1.0.0.0" Name="CodeBase" Value="file:///[#fil22111F29BC01D0BB596A422DA6046076]" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{6402E05F-6218-468D-BF1F-C8AD2CB1E87E}\1.0.0.0" Name="Class" Value="EA.EnumMVErrorType" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{6402E05F-6218-468D-BF1F-C8AD2CB1E87E}\1.0.0.0" Name="Assembly" Value="XISWebEAPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{6402E05F-6218-468D-BF1F-C8AD2CB1E87E}\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+		                <RegistryValue Root="HKCR" Key="Record\{6402E05F-6218-468D-BF1F-C8AD2CB1E87E}\1.0.0.0" Name="CodeBase" Value="file:///[#fil22111F29BC01D0BB596A422DA6046076]" Type="string" Action="write" />
+					</Component>
+					<Component Id="XISWebEAPluginRegEntries" Guid="2936EFE7-AB1F-429A-890B-A2ACF8660BBB">
+						<RegistryKey Root="HKCU" Key="Software\Sparx Systems\EAAddins\XIS-Web EA Plugin" ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes">
+							<RegistryValue Type="string" Value="XISWebEAPlugin.CodeGenerator" />
+						</RegistryKey>
+					</Component>
+					<Directory Id="XIS_Web_MDG" Name="XIS-Web MDG">
+						<Component Id="XISWebMDGFiles" Guid="071D2ABB-50AC-4AFF-BE20-42AD1CC7B766" DiskId="1">
+							<File Id="ArchitecturalViewToolbox.xml" Name="ArchitecturalViewToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\ArchitecturalViewToolbox.xml" />
+							<File Id="BusinessEntitiesViewToolbox.xml" Name="BusinessEntitiesViewToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\BusinessEntitiesViewToolbox.xml" />
+							<File Id="DomainViewToolbox.xml" Name="DomainViewToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\DomainViewToolbox.xml" />
+							<File Id="InteractionSpaceViewToolbox.xml" Name="InteractionSpaceViewToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\InteractionSpaceViewToolbox.xml" />
+							<File Id="NavigationSpaceViewToolbox.xml" Name="NavigationSpaceViewToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\NavigationSpaceViewToolbox.xml" />
+							<File Id="UseCaseViewToolbox.xml" Name="UseCaseViewToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\UseCaseViewToolbox.xml" />
+							<File Id="XIS_Web_Technology.xml" Name="XIS-Web Technology.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-Web Technology.xml">
+								<Permission ChangePermission="yes" GenericAll="yes" User="Everyone" />
+							</File>
+							<File Id="XIS_Web.mts" Name="XIS-Web.mts" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-Web.mts" />
+							<File Id="XIS_Web.xml" Name="XIS-Web.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-Web.xml" />
+							<File Id="XIS_Web_Diagrams.xml" Name="XIS-Web_Diagrams.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-Web_Diagrams.xml" />
+							<File Id="XIS_Web_Template.xml" Name="XIS-Web_Template.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-Web_Template.xml" />
+							<File Id="XIS_Web_Toolboxes.xml" Name="XIS-Web_Toolboxes.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-Web_Toolboxes.xml" />
+							<File Id="XIS_WebViewsToolbox.xml" Name="XIS-WebViewsToolbox.xml" Source="..\XISWebEAPlugin\XIS-Web MDG\XIS-WebViewsToolbox.xml" />
+						</Component>
+					</Directory>
+					<Directory Id="XIS_Web" Name="XIS-Web">
+						<Component Id="XISWebProfileFiles" Guid="C948C04A-9907-4FC1-B955-3AD8086E29E3" DiskId="1">
+							<File Id="model.profile.di" Name="model.profile.di" Source="..\XISWebEAPlugin\XIS-Web\model.profile.di" />
+							<File Id="model.profile.notation" Name="model.profile.notation" Source="..\XISWebEAPlugin\XIS-Web\model.profile.notation" />
+							<File Id="model.profile.uml" Name="model.profile.uml" Source="..\XISWebEAPlugin\XIS-Web\model.profile.uml" />
+						</Component>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

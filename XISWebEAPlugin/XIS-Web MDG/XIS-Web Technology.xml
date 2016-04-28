@@ -1077,4 +1077,4 @@ AAABAAEAPgAAANgBAAAAAA==</Image>
 				<TaggedValueTypes/>
 			</Content>
 		</UMLProfile>
-	</UIToolboxes></MDG.Technology>
+	</UIToolboxes><ModelTemplates><Model name="XIS-Web Framework model" description="Packages, Diagrams and Elements for modeling with the XIS-Web Framework." location="%PATH%" default="yes" icon="34" filter="Common"/></ModelTemplates></MDG.Technology>
