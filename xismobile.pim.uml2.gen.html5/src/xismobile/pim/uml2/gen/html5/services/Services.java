@@ -823,7 +823,6 @@ public class Services {
 			while (entries.hasMoreElements()) {
 				entry = (JarEntry) entries.nextElement();
 				if (entry.getName().endsWith(".png") || entry.getName().endsWith(".jpg")) {
-					System.out.println("FOUND AN IMAGE WITH NAME: " + entry.getName());
 					addImage(entry.getName());
 	            }
 			}
@@ -841,7 +840,7 @@ public class Services {
 		try {
 			boolean fileExists = false;
 			
-			String targetFolder = Uml2Html5.targetFolderPath + "/images/";
+			String targetFolder = Uml2Html5.targetFolderPath + "/";
 			JarFile srcFile = new JarFile(Uml2Html5.jarPath + "/Html5Generator.jar");
 			File destFolder = new File(targetFolder);
 			File destFile = new File(targetFolder + fileName);
@@ -855,7 +854,8 @@ public class Services {
 			
 			while (entries.hasMoreElements()) {
 				entry = (JarEntry) entries.nextElement();
-				if (entry.getName().equals("images/" + fileName)) {
+				//System.out.println("ENTRY NAME: " + entry.getName() + " FILENAME: " + fileName);
+				if (entry.getName().equals(fileName)) {
 					fileExists = true;
 					break;
 	            }
@@ -1453,31 +1453,9 @@ public class Services {
 	 */
 	
 	/**
-	 * Gets the name of the drawable folder according to its resolution.
-	 * 
-	 * @param resolution the resolution of the drawable
-	 * @return the drawable folder name
-	 */
-	private String getResolutionFolder(String resolution) {
-		String folder = "drawable";
-		
-		if (resolution.equalsIgnoreCase("low")) {
-			return folder + "-ldpi";
-		} else if (resolution.equalsIgnoreCase("medium")) {
-			return folder + "-mdpi";
-		} else if (resolution.equalsIgnoreCase("high")) {
-			return folder + "-hdpi";
-		} else if (resolution.equalsIgnoreCase("xhigh")) {
-			return folder + "-xhdpi";
-		} else {
-			return folder;
-		}
-	}
-	
-	/**
 	 * Compares XisWidgets according to their positions.
 	 * 
-	 * @author André Ribeiro
+	 * @author Andre Ribeiro
 	 * @see Comparator
 	 */
 	class WidgetComparator implements Comparator<Class> {
