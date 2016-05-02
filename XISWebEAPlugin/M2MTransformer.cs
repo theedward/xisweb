@@ -324,7 +324,7 @@ namespace XisWebEAPlugin
             }
 
             //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, listIS, listDiagram, "../../images/default.png");
+            XisImage img = new XisImage(repository, listIS, listDiagram, "../images/default.png");
 
             XisSiteMap siteMap = new XisSiteMap(repository, listIS, listDiagram);
 
@@ -1074,7 +1074,7 @@ namespace XisWebEAPlugin
                 master.Element.Name + " Editor", InteractionSpaceType.MasterEntityEditor, false, true);
 
             //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, detailIS, diagram, "../../images/default.png");
+            XisImage img = new XisImage(repository, detailIS, diagram, "../images/default.png");
 
             XisSiteMap siteMap = new XisSiteMap(repository, detailIS, diagram);
 
@@ -1392,7 +1392,7 @@ namespace XisWebEAPlugin
             XisInteractionSpace detailIS = new XisInteractionSpace(repository, package, diagram, entity.Element.Name + "EditorIS", entity.Element.Name + " Editor", InteractionSpaceType.DetailEntityEditor);
 
             //Image & Sitemap Creation - Define a proper source path!
-            XisImage img = new XisImage(repository, detailIS, diagram, "../../images/default.png");
+            XisImage img = new XisImage(repository, detailIS, diagram, "../images/default.png");
 
             XisSiteMap siteMap = new XisSiteMap(repository, detailIS, diagram);
 

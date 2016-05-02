@@ -823,7 +823,7 @@ public class Services {
 			while (entries.hasMoreElements()) {
 				entry = (JarEntry) entries.nextElement();
 				if (entry.getName().endsWith(".png") || entry.getName().endsWith(".jpg")) {
-					addImage(entry.getName());
+					addImage(entry);
 	            }
 			}
 			
@@ -836,57 +836,47 @@ public class Services {
 	/**
 	 * Copies the desired file into the target generation folder.
 	 */
-	public void addImage(String fileName) {
+	public void addImage(JarEntry entry) {
 		try {
-			boolean fileExists = false;
 			
 			String targetFolder = Uml2Html5.targetFolderPath + "/";
 			JarFile srcFile = new JarFile(Uml2Html5.jarPath + "/Html5Generator.jar");
 			File destFolder = new File(targetFolder);
-			File destFile = new File(targetFolder + fileName);
+			File destFile = new File(targetFolder + entry.getName());
 			
 			if (!destFolder.exists()) {
 				destFolder.mkdirs();
 			}
 			
-			Enumeration<JarEntry> entries = srcFile.entries();
-			JarEntry entry = null;
+			InputStream is = null;
+			FileOutputStream os = null;
 			
-			while (entries.hasMoreElements()) {
-				entry = (JarEntry) entries.nextElement();
-				//System.out.println("ENTRY NAME: " + entry.getName() + " FILENAME: " + fileName);
-				if (entry.getName().equals(fileName)) {
-					fileExists = true;
-					break;
-	            }
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
 			}
 			
-			if (fileExists) {
-				InputStream is = null;
-				FileOutputStream os = null;
-				
-				try {
-					is = srcFile.getInputStream(entry);
-		            os = new FileOutputStream(destFile);
-		            byte[] buffer = new byte[1024];
-		            int length;
-		            while ((length = is.read(buffer)) > 0) {
-		                os.write(buffer, 0, length);
-		            }
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					if (is != null) {
-						is.close();
-					}
-					if (os != null) {
-						os.close();
-					}
-					if (srcFile != null) {
-						srcFile.close();
-					}
+			try {
+				is = srcFile.getInputStream(entry);
+	            os = new FileOutputStream(destFile);
+	            byte[] buffer = new byte[1024];
+	            int length;
+	            while ((length = is.read(buffer)) > 0) {
+	                os.write(buffer, 0, length);
+	            }
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				if (is != null) {
+					is.close();
+				}
+				if (os != null) {
+					os.close();
+				}
+				if (srcFile != null) {
+					srcFile.close();
 				}
 			}
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
