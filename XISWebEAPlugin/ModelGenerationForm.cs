@@ -11,7 +11,7 @@ namespace XisWebEAPlugin
 {
     public partial class ModelGenerationForm : Form
     {
-        private string patternType = null;
+        private string patternType = "List Menu";
         private EA.Repository repository;
         private EA.Package navigationPackage;
         private EA.Package interactionPackage;

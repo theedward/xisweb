@@ -267,29 +267,37 @@ namespace XisWebEAPlugin
 
         private static void AddToHomeISByPattern(EA.Element useCase, XisInteractionSpace targetIS, string patternType)
         {
-            String actionName = "goTo" + targetIS.Element.Name;
+            //sString actionName = "goTo" + targetIS.Element.Name;
 
             switch (patternType)
             {
-                case "Springboard":
-                    XisButton b = new XisButton(repository, homeIS, homeDiagram, useCase.Name, actionName);
-                    b.SetValue(useCase.Name);
-                    XisWebHelper.CreateXisAction(repository, b.Element, actionName, ActionType.Navigate, targetIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(actionName, homeIS, targetIS);
-                    break;
+                //case "Springboard":
+                //    XisButton b = new XisButton(repository, homeIS, homeDiagram, useCase.Name, actionName);
+                //    b.SetValue(useCase.Name);
+                //    XisWebHelper.CreateXisAction(repository, b.Element, actionName, ActionType.Navigate, targetIS.Element.Name);
+                //    CreateXisInteractionSpaceAssociation(actionName, homeIS, targetIS);
+                //    break;
                 case "List Menu":
-                    XisList list = null;
-                    if (homeIS.Widgets.Count > 0)
+                    //Image & Sitemap Creation
+                    if (homeIS.Widgets.Count == 0)
                     {
-                        list = homeIS.Widgets.First() as XisList;
+                        XisImage img = new XisImage(repository, homeIS, homeDiagram, "../images/default.png");
+
+                        XisSiteMap siteMap = new XisSiteMap(repository, homeIS, homeDiagram);
                     }
-                    else
-                    {
-                        list = new XisList(repository, homeDiagram, homeIS, homeIS.Element.Name + "List");
-                    }
-                    XisListItem item = new XisListItem(repository, homeDiagram, list, useCase.Name, actionName);
-                    XisWebHelper.CreateXisAction(repository, item.Element, actionName, ActionType.Navigate, targetIS.Element.Name);
-                    CreateXisInteractionSpaceAssociation(actionName, homeIS, targetIS);
+                    
+                    //XisList list = null;
+                    //if (homeIS.Widgets.Count > 0)
+                    //{
+                    //    list = homeIS.Widgets.First() as XisList;
+                    //}
+                    //else
+                    //{
+                    //    list = new XisList(repository, homeDiagram, homeIS, homeIS.Element.Name + "List");
+                    //}
+                    //XisListItem item = new XisListItem(repository, homeDiagram, list, useCase.Name, actionName);
+                    //XisWebHelper.CreateXisAction(repository, item.Element, actionName, ActionType.Navigate, targetIS.Element.Name);
+                    //CreateXisInteractionSpaceAssociation(actionName, homeIS, targetIS);
                     break;
                 //case "Tab Menu":
                 //    // TODO: Implement Tab

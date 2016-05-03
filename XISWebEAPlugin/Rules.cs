@@ -527,7 +527,7 @@ namespace XisWebEAPlugin
                         DoRule01_to_04(Repository, Package);
                         break;
                     case rule18:
-                        DoRule18(Repository, Package);
+                        //DoRule18(Repository, Package);
                         break;
                     case rule32:
                         DoRule32(Repository, Package);
